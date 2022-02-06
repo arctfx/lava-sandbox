@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>Metaballs2</ProjectName>
+    <ProjectGuid>{63C0FF92-42F6-44BB-98A3-A7ACE198921B}</ProjectGuid>
+    <RootNamespace>Metaballs2</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30128.1</_ProjectFileVersion>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <RunCodeAnalysis Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</RunCodeAnalysis>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectName)_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(VULKAN_SDK)\Include</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64;$(VULKAN_SDK)\Lib</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(VULKAN_SDK)\Include</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64;$(VULKAN_SDK)\Lib</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;D3D;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(ProjectName)_d.exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <Optimization>MinSpace</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;D3D;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
+      <CreateHotpatchableImage>false</CreateHotpatchableImage>
+      <EnablePREfast>false</EnablePREfast>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(ProjectName).exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Framework4\Config.cpp" />
+    <ClCompile Include="..\Framework4\Graphics\Primitives.cpp" />
+    <ClCompile Include="..\Framework4\Graphics\Vulkan\Renderer_Vulkan.cpp" />
+    <ClCompile Include="..\Framework4\GUI\Button.cpp" />
+    <ClCompile Include="..\Framework4\GUI\CheckBox.cpp" />
+    <ClCompile Include="..\Framework4\GUI\Dialog.cpp" />
+    <ClCompile Include="..\Framework4\GUI\DropDownList.cpp" />
+    <ClCompile Include="..\Framework4\GUI\Label.cpp" />
+    <ClCompile Include="..\Framework4\GUI\Slider.cpp" />
+    <ClCompile Include="..\Framework4\GUI\Widget.cpp" />
+    <ClCompile Include="..\Framework4\Math\Half.cpp" />
+    <ClCompile Include="..\Framework4\Platform.cpp" />
+    <ClCompile Include="..\Framework4\SIMD.cpp" />
+    <ClCompile Include="..\Framework4\Demo\DemoApp.cpp" />
+    <ClCompile Include="..\Framework4\Demo\DemoApp_Windows.cpp" />
+    <ClCompile Include="..\Framework4\Graphics\Renderer.cpp" />
+    <ClCompile Include="..\Framework4\Math\Vector.cpp" />
+    <ClCompile Include="..\Framework4\Util\Font.cpp" />
+    <ClCompile Include="..\Framework4\Util\Image.cpp" />
+    <ClCompile Include="..\Framework4\Util\ImageTools.cpp" />
+    <ClCompile Include="..\Framework4\Util\Timer.cpp" />
+    <ClCompile Include="App.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Framework4\Config.h" />
+    <ClInclude Include="..\Framework4\Graphics\Primitives.h" />
+    <ClInclude Include="..\Framework4\GUI\Button.h" />
+    <ClInclude Include="..\Framework4\GUI\CheckBox.h" />
+    <ClInclude Include="..\Framework4\GUI\Dialog.h" />
+    <ClInclude Include="..\Framework4\GUI\DropDownList.h" />
+    <ClInclude Include="..\Framework4\GUI\Label.h" />
+    <ClInclude Include="..\Framework4\GUI\Slider.h" />
+    <ClInclude Include="..\Framework4\GUI\Widget.h" />
+    <ClInclude Include="..\Framework4\Math\Half.h" />
+    <ClInclude Include="..\Framework4\Platform.h" />
+    <ClInclude Include="..\Framework4\SIMD.h" />
+    <ClInclude Include="..\Framework4\Demo\DemoApp.h" />
+    <ClInclude Include="..\Framework4\Graphics\Renderer.h" />
+    <ClInclude Include="..\Framework4\Math\Vector.h" />
+    <ClInclude Include="..\Framework4\Util\Font.h" />
+    <ClInclude Include="..\Framework4\Util\Image.h" />
+    <ClInclude Include="..\Framework4\Util\ImageTools.h" />
+    <ClInclude Include="..\Framework4\Util\Timer.h" />
+    <ClInclude Include="App.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\Framework4\Windows\Resources.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="MarchingCubes.pipeline">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\Framework4\PipelineCompiler\PipelineCompiler.exe %(Fullpath) glslang debug</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Fullpath).h</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Fullpath).h</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\Framework4\PipelineCompiler\PipelineCompiler.exe %(Fullpath) glslang</Command>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildInParallel>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\Framework4\Util\Font.pipeline">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\Framework4\PipelineCompiler\PipelineCompiler.exe %(Fullpath) glslang</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Fullpath).h</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\Framework4\PipelineCompiler\PipelineCompiler.exe %(Fullpath) glslang</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Fullpath).h</Outputs>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildInParallel>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\Framework4\Graphics\Primitives.pipeline">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\Framework4\PipelineCompiler\PipelineCompiler.exe %(Fullpath) glslang</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\Framework4\PipelineCompiler\PipelineCompiler.exe %(Fullpath) glslang</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Fullpath).h</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Fullpath).h</Outputs>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildInParallel>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Sky.pipeline">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\Framework4\PipelineCompiler\PipelineCompiler.exe %(Fullpath) glslang debug</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\Framework4\PipelineCompiler\PipelineCompiler.exe %(Fullpath) glslang</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Fullpath).h</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Fullpath).h</Outputs>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildInParallel>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

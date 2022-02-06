@@ -1,0 +1,1145 @@
+﻿Build started 16/12/2021 9:56:48 PM.
+     1>Project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" on node 2 (Build target(s)).
+     1>Building with tools version "15.0".
+       Target "EnableIntermediateOutputPathMismatchWarning" skipped, due to false condition; ('$(RestoreProjectStyle)' == 'PackageReference') was evaluated as ('' == 'PackageReference').
+     1>Target "_CheckForInvalidConfigurationAndPlatform" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "SetTelemetryEnvironmentVariables" depends on it):
+       Task "Error" skipped, due to false condition; ( '$(_InvalidConfigurationError)' == 'true' ) was evaluated as ( '' == 'true' ).
+       Task "Warning" skipped, due to false condition; ( '$(_InvalidConfigurationWarning)' == 'true' ) was evaluated as ( '' == 'true' ).
+       Task "Message"
+         Configuration=debug
+       Done executing task "Message".
+       Task "Message"
+         Platform=x64
+       Done executing task "Message".
+       Task "Error" skipped, due to false condition; ('$(OutDir)' != '' and !HasTrailingSlash('$(OutDir)')) was evaluated as ('./../../../bin/win64\' != '' and !HasTrailingSlash('./../../../bin/win64\')).
+       Task "Error" skipped, due to false condition; ('$(BaseIntermediateOutputPath)' != '' and !HasTrailingSlash('$(BaseIntermediateOutputPath)')) was evaluated as ('obj\' != '' and !HasTrailingSlash('obj\')).
+       Task "Error" skipped, due to false condition; ('$(IntermediateOutputPath)' != '' and !HasTrailingSlash('$(IntermediateOutputPath)')) was evaluated as ('./build/win64/DX/debug\' != '' and !HasTrailingSlash('./build/win64/DX/debug\')).
+       Task "Error" skipped, due to false condition; ( '$(_InitialMSBuildProjectExtensionsPath)' != '' And '$(MSBuildProjectExtensionsPath)' != '$(_InitialMSBuildProjectExtensionsPath)' ) was evaluated as ( 'D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\obj\' != '' And 'D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\obj\' != 'D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\obj\' ).
+       Task "Warning" skipped, due to false condition; ( '$(EnableBaseIntermediateOutputPathMismatchWarning)' == 'true' And '$(_InitialBaseIntermediateOutputPath)' != '$(BaseIntermediateOutputPath)' And '$(BaseIntermediateOutputPath)' != '$(MSBuildProjectExtensionsPath)' ) was evaluated as ( '' == 'true' And 'obj\' != 'obj\' And 'obj\' != 'D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\obj\' ).
+     1>Done building target "_CheckForInvalidConfigurationAndPlatform" in project "flexDemoD3D.vcxproj".
+       Target "_CheckForInvalidConfigurationAndPlatform" skipped. Previously built successfully.
+     1>Target "SetTelemetryEnvironmentVariables" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.Cpp.DesignTime.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "Build" depends on it):
+       Using "SetEnv" task from assembly "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.Build.CppTasks.Common.dll".
+       Task "SetEnv"
+         VSTEL_SolutionSessionID={35405819-7EB6-4616-B28C-38A00B8E36BE}
+       Done executing task "SetEnv".
+       Task "SetEnv"
+         VSTEL_CurrentSolutionBuildID=4940364
+       Done executing task "SetEnv".
+       Task "SetEnv"
+         VSTEL_ProjectID={EF4EDDD8-2620-47AA-E75D-4C682C276C02}
+       Done executing task "SetEnv".
+     1>Done building target "SetTelemetryEnvironmentVariables" in project "flexDemoD3D.vcxproj".
+     1>Target "_PrepareForBuild" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.BuildSteps.Targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "Build" depends on it):
+       Task "CreateItem" skipped, due to false condition; ('%(CustomBuild.IncludeFileToTool)'!='') was evaluated as (''!='').
+     1>Done building target "_PrepareForBuild" in project "flexDemoD3D.vcxproj".
+     1>Target "_PrepareForReferenceResolution" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "ResolveReferences" depends on it):
+       Task "Message" skipped, due to false condition; ('$(_REFERENCE_DEBUG)'=='true') was evaluated as (''=='true').
+     1>Done building target "_PrepareForReferenceResolution" in project "flexDemoD3D.vcxproj".
+       Target "ComputeCrtSDKReference" skipped, due to false condition; ('@(ClCompile)'!='' and '$(WindowsAppContainer)'=='true' and '$(UseCrtSDKReference)' != 'false') was evaluated as ('..\..\imgui.cpp;..\..\main.cpp;..\..\shadersDemoContext.cpp;..\..\..\core\aabbtree.cpp;..\..\..\core\core.cpp;..\..\..\core\extrude.cpp;..\..\..\core\maths.cpp;..\..\..\core\mesh.cpp;..\..\..\core\perlin.cpp;..\..\..\core\pfm.cpp;..\..\..\core\platform.cpp;..\..\..\core\png.cpp;..\..\..\core\sdf.cpp;..\..\..\core\tga.cpp;..\..\..\core\voxelize.cpp;..\..\d3d12\appD3D12Ctx.cpp;..\..\d3d12\bufferD3D12.cpp;..\..\d3d12\demoContextD3D12.cpp;..\..\d3d12\diffusePointRenderPipelineD3D12.cpp;..\..\d3d12\fluidCompositeRenderPipelineD3D12.cpp;..\..\d3d12\fluidEllipsoidRenderPipelineD3D12.cpp;..\..\d3d12\fluidSmoothRenderPipelineD3D12.cpp;..\..\d3d12\fluidThicknessRenderPipelineD3D12.cpp;..\..\d3d12\imguiGraphD3D12.cpp;..\..\d3d12\imguiInteropD3D12.cpp;..\..\d3d12\lineRenderPipelineD3D12.cpp;..\..\d3d12\meshRenderer.cpp;..\..\d3d12\meshRendererD3D12.cpp;..\..\d3d12\meshRenderPipelineD3D12.cpp;..\..\d3d12\meshUtil.cpp;..\..\d3d12\NvCoDx12CircularResourceHeap.cpp;..\..\d3d12\NvCoDx12CounterFence.cpp;..\..\d3d12\NvCoDx12DescriptorHeap.cpp;..\..\d3d12\NvCoDx12HelperUtil.cpp;..\..\d3d12\NvCoDx12RenderTarget.cpp;..\..\d3d12\NvCoDx12Resource.cpp;..\..\d3d12\NvCoDx12ResourceScopeManager.cpp;..\..\d3d12\NvCoDxDebugUtil.cpp;..\..\d3d12\NvCoDxFormatUtil.cpp;..\..\d3d12\NvCoFreeList.cpp;..\..\d3d12\pipelineUtilD3D12.cpp;..\..\d3d12\pointRenderPipelineD3D12.cpp;..\..\d3d12\renderStateD3D12.cpp;..\..\d3d11\appD3D11Ctx.cpp;..\..\d3d11\debugLineRenderD3D11.cpp;..\..\d3d11\demoContextD3D11.cpp;..\..\d3d11\diffuseRenderD3D11.cpp;..\..\d3d11\fluidRenderD3D11.cpp;..\..\d3d11\imguiGraphD3D11.cpp;..\..\d3d11\imguiInteropD3D11.cpp;..\..\d3d11\meshRenderD3D11.cpp;..\..\d3d11\pointRenderD3D11.cpp;..\..\d3d11\renderTargetD3D11.cpp;..\..\d3d11\shadowMapD3D11.cpp;..\..\d3d\appGraphCtxLoader.cpp;..\..\d3d\imguiGraph.cpp;..\..\d3d\imguiGraphLoader.cpp;..\..\d3d\loader.cpp;..\..\d3d\renderParamsD3D.cpp'!='' and 'false'=='true' and '' != 'false').
+     1>Target "BeforeResolveReferences" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "ResolveReferences" depends on it):
+     1>Done building target "BeforeResolveReferences" in project "flexDemoD3D.vcxproj".
+     1>Target "AssignProjectConfiguration" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "ResolveReferences" depends on it):
+       Task "AssignProjectConfiguration"
+         Project reference "./../../../extensions/compiler/vc14win64/flexExtD3D.vcxproj" has been assigned the "debug|x64" configuration.
+       Done executing task "AssignProjectConfiguration".
+     1>Done building target "AssignProjectConfiguration" in project "flexDemoD3D.vcxproj".
+       Target "AssignProjectConfiguration" skipped. Previously built successfully.
+     1>Target "_SplitProjectReferencesByFileExistence" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "PrepareProjectReferences" depends on it):
+       Using "ResolveNonMSBuildProjectOutput" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "ResolveNonMSBuildProjectOutput"
+         Resolving project reference "./../../../extensions/compiler/vc14win64/flexExtD3D.vcxproj".
+         Project reference "./../../../extensions/compiler/vc14win64/flexExtD3D.vcxproj" has not been resolved.
+       Done executing task "ResolveNonMSBuildProjectOutput".
+     1>Done building target "_SplitProjectReferencesByFileExistence" in project "flexDemoD3D.vcxproj".
+     1>Target "_GetProjectReferenceTargetFrameworkProperties" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "PrepareProjectReferences" depends on it):
+       Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.SkipGetTargetFrameworkProperties)' != 'true') was evaluated as ('true' != 'true').
+       Task "GetReferenceNearestTargetFrameworkTask" skipped, due to false condition; ('@(_ProjectReferenceTargetFrameworkPossibilities->Count())' != '0' and '$(ReferringTargetFrameworkForProjectReferences)' != '') was evaluated as ('0' != '0' and '.NETFramework,Version=v4.0' != '').
+     1>Done building target "_GetProjectReferenceTargetFrameworkProperties" in project "flexDemoD3D.vcxproj".
+     1>Target "PrepareProjectReferences" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "ResolveProjectReferences" depends on it):
+     1>Done building target "PrepareProjectReferences" in project "flexDemoD3D.vcxproj".
+     1>Target "_RemoveNameMetadataFromProjectReferenceItems" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "ResolveProjectReferences" depends on it):
+     1>Done building target "_RemoveNameMetadataFromProjectReferenceItems" in project "flexDemoD3D.vcxproj".
+     1>Target "ResolveProjectReferences" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "ResolveReferences" depends on it):
+       Task "MSBuild"
+         Global Properties:
+           Configuration=debug
+           Platform=x64
+     1>Project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (1) is building "D:\Documents2\Vulkan\FleX-master\extensions\compiler\vc14win64\flexExtD3D.vcxproj" (2) on node 2 (GetTargetPath target(s)).
+     2>Building with tools version "15.0".
+       Target "_PrepareForReferenceResolution" skipped. Previously built successfully.
+       Target "GetResolvedWinMD" skipped. Previously built successfully.
+     2>Target "GetTargetPath" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\extensions\compiler\vc14win64\flexExtD3D.vcxproj" (entry point):
+     2>Done building target "GetTargetPath" in project "flexExtD3D.vcxproj".
+     2>Done Building Project "D:\Documents2\Vulkan\FleX-master\extensions\compiler\vc14win64\flexExtD3D.vcxproj" (GetTargetPath target(s)).
+     1>Done executing task "MSBuild".
+       Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and ('$(BuildingInsideVisualStudio)' == 'true' or '$(BuildProjectReferences)' != 'true') and '$(VisualStudioVersion)' == '10.0' and '@(_MSBuildProjectReferenceExistent)' != '') was evaluated as ('true' == 'true' and './../../../extensions/compiler/vc14win64/flexExtD3D.vcxproj' != '' and ('true' == 'true' or 'true' != 'true') and '15.0' == '10.0' and './../../../extensions/compiler/vc14win64/flexExtD3D.vcxproj' != '').
+       Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '$(BuildingInsideVisualStudio)' != 'true' and '$(BuildProjectReferences)' == 'true' and '@(_MSBuildProjectReferenceExistent)' != '') was evaluated as ('true' == 'true' and './../../../extensions/compiler/vc14win64/flexExtD3D.vcxproj' != '' and 'true' != 'true' and 'true' == 'true' and './../../../extensions/compiler/vc14win64/flexExtD3D.vcxproj' != '').
+       Task "MSBuild"
+         Global Properties:
+           Configuration=debug
+           Platform=x64
+     1>Project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (1) is building "D:\Documents2\Vulkan\FleX-master\extensions\compiler\vc14win64\flexExtD3D.vcxproj" (2:2) on node 2 (GetNativeManifest target(s)).
+   2:2>Building with tools version "15.0".
+   2:2>Target "GetNativeManifest" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "D:\Documents2\Vulkan\FleX-master\extensions\compiler\vc14win64\flexExtD3D.vcxproj" (entry point):
+   2:2>Done building target "GetNativeManifest" in project "flexExtD3D.vcxproj".
+   2:2>Done Building Project "D:\Documents2\Vulkan\FleX-master\extensions\compiler\vc14win64\flexExtD3D.vcxproj" (GetNativeManifest target(s)).
+     1>Done executing task "MSBuild".
+       Task "Warning" skipped, due to false condition; ('@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceNonexistent)' != '') was evaluated as ('./../../../extensions/compiler/vc14win64/flexExtD3D.vcxproj' != '' and '' != '').
+     1>Done building target "ResolveProjectReferences" in project "flexDemoD3D.vcxproj".
+       Target "FindInvalidProjectReferences" skipped, due to false condition; ('$(FindInvalidProjectReferences)' == 'true') was evaluated as ('' == 'true').
+       Target "ResolveNativeReferences" skipped, due to false condition; ('@(NativeReference)'!='') was evaluated as (''!='').
+       Target "_PrepareForReferenceResolution" skipped. Previously built successfully.
+       Target "ResolveProjectReferences" skipped. Previously built successfully.
+       Target "FindInvalidProjectReferences" skipped, due to false condition; ('$(FindInvalidProjectReferences)' == 'true') was evaluated as ('' == 'true').
+     1>Target "GetFrameworkPaths" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.NETFramework.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+     1>Done building target "GetFrameworkPaths" in project "flexDemoD3D.vcxproj".
+       Target "_PrepareForReferenceResolution" skipped. Previously built successfully.
+       Target "GetWinFXPath" skipped, due to false condition; (('@(Page)' != '' or '@(ApplicationDefinition)' != '' or '@(Resource)' != '') and ('$(GetWinFXNativePath)' != '' or '$(GetWinFXWoWPath)' != '' )) was evaluated as (('' != '' or '' != '' or '' != '') and ('' != '' or '' != '' )).
+       Target "GetFrameworkPaths" skipped. Previously built successfully.
+     1>Target "GetReferenceAssemblyPaths" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+       Task "GetReferenceAssemblyPaths" skipped, due to false condition; ('$(TargetFrameworkMoniker)' != '' and ('$(_TargetFrameworkDirectories)' == '' or '$(_FullFrameworkReferenceAssemblyPaths)' == '')) was evaluated as ('' != '' and ('C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0' == '' or 'C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0' == '')).
+     1>Done building target "GetReferenceAssemblyPaths" in project "flexDemoD3D.vcxproj".
+     1>Target "SetBuildDefaultEnvironmentVariables" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.Cpp.Current.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "PrepareForBuild" depends on it):
+       Task "SetEnv"
+         PATH=D:\Documents2\Visual Studio 2017\visual studio\VC\Tools\MSVC\14.16.27023\bin\HostX86\x64;D:\Documents2\Visual Studio 2017\visual studio\VC\Tools\MSVC\14.16.27023\bin\HostX86\x86;C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86;;D:\Documents2\Visual Studio 2017\visual studio\Common7\tools;D:\Documents2\Visual Studio 2017\visual studio\Common7\ide;C:\Program Files (x86)\HTML Help Workshop;;D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin;C:\Windows\Microsoft.NET\Framework\v4.0.30319\;;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\libnvvp;;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\Documents2\Python\Scripts\;D:\Documents2\Python\;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\dotnet\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;D:\Documents2\Git\cmd;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\Documents2\DXSDK;C:\Program Files (x86)\dotnet\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\Documents2\Microsoft VS Code\bin;C:\Users\Computer\.dotnet\tools;
+       Done executing task "SetEnv".
+       Task "SetEnv"
+         LIB=D:\Documents2\Visual Studio 2017\visual studio\VC\Tools\MSVC\14.16.27023\lib\x64;;D:\Documents2\Visual Studio 2017\visual studio\VC\Tools\MSVC\14.16.27023\atlmfc\lib\x64;;D:\Documents2\Visual Studio 2017\visual studio\VC\Auxiliary\VS\lib\x64;;C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\ucrt\x64;;;D:\Documents2\Visual Studio 2017\visual studio\VC\Auxiliary\VS\UnitTest\lib;C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64;lib\um\x64;;Lib\um\x64
+       Done executing task "SetEnv".
+       Task "SetEnv"
+         LIBPATH=D:\Documents2\Visual Studio 2017\visual studio\VC\Tools\MSVC\14.16.27023\atlmfc\lib\x64;;D:\Documents2\Visual Studio 2017\visual studio\VC\Tools\MSVC\14.16.27023\lib\x64;
+       Done executing task "SetEnv".
+       Task "SetEnv"
+         INCLUDE=D:\Documents2\Visual Studio 2017\visual studio\VC\Tools\MSVC\14.16.27023\include;;D:\Documents2\Visual Studio 2017\visual studio\VC\Tools\MSVC\14.16.27023\atlmfc\include;;D:\Documents2\Visual Studio 2017\visual studio\VC\Auxiliary\VS\include;;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\ucrt;;;D:\Documents2\Visual Studio 2017\visual studio\VC\Auxiliary\VS\UnitTest\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\winrt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\cppwinrt;Include\um;
+       Done executing task "SetEnv".
+     1>Done building target "SetBuildDefaultEnvironmentVariables" in project "flexDemoD3D.vcxproj".
+       Target "SetUserMacroEnvironmentVariables" skipped, due to false condition; ('@(BuildMacro)' != '' and '$(DesignTimeBuild)' != 'true') was evaluated as ('' != '' and '' != 'true').
+       Target "_PrepareForReferenceResolution" skipped. Previously built successfully.
+     1>Target "GetResolvedWinMD" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "PrepareForBuild" depends on it):
+     1>Done building target "GetResolvedWinMD" in project "flexDemoD3D.vcxproj".
+     1>Target "PlatformPrepareForBuild" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.Cpp.Platform.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "PrepareForBuild" depends on it):
+       Task "VCMessage" skipped, due to false condition; ('$(_Error64bitToolsNotInstalled)' == 'true') was evaluated as ('' == 'true').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(_ToolsetFound)' != 'true' and '$(PlatformToolset)' == '') was evaluated as (''!='true' and 'true' != 'true' and 'v141' == '').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(_ToolsetFound)' != 'true' and '$(PlatformToolset)' == 'v110') was evaluated as (''!='true' and 'true' != 'true' and 'v141' == 'v110').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(_ToolsetFound)' != 'true' and '$(PlatformToolset)' == 'v100') was evaluated as (''!='true' and 'true' != 'true' and 'v141' == 'v100').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(_ToolsetFound)' != 'true' and '$(PlatformToolset)' == 'v90') was evaluated as (''!='true' and 'true' != 'true' and 'v141' == 'v90').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(_ToolsetFound)' != 'true' and '$(PlatformToolset)' != 'v90' and '$(PlatformToolset)' != 'v100' and '$(PlatformToolset)' != 'v110') was evaluated as (''!='true' and 'true' != 'true' and 'v141' != 'v90' and 'v141' != 'v100' and 'v141' != 'v110').
+     1>Done building target "PlatformPrepareForBuild" in project "flexDemoD3D.vcxproj".
+     1>Target "_CheckWindowsSDKInstalled" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.Cpp.WindowsSDK.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "PrepareForBuild" depends on it):
+       Task "VCMessage" skipped, due to false condition; ('$(WindowsSDKInstalled)' != 'true') was evaluated as ('true' != 'true').
+       Task "VCMessage" skipped, due to false condition; ('$(WindowsAppContainer)' != 'true' and '$(WindowsSDK_Desktop_Support)' != true) was evaluated as ('false' != 'true' and 'true' != true).
+     1>Done building target "_CheckWindowsSDKInstalled" in project "flexDemoD3D.vcxproj".
+       Target "GetFrameworkPaths" skipped. Previously built successfully.
+       Target "GetReferenceAssemblyPaths" skipped. Previously built successfully.
+       Target "AssignLinkMetadata" skipped, due to false condition; ( '$(SynthesizeLinkMetadata)' == 'true' ) was evaluated as ( '' == 'true' ).
+     1>Target "SetCABuildNativeEnvironmentVariables" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\Microsoft\VisualStudio\v15.0\CodeAnalysis\Microsoft.CodeAnalysis.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "PrepareForBuild" depends on it):
+       Task "SetEnv"
+         CAExcludePath=D:\Documents2\Visual Studio 2017\visual studio\VC\Tools\MSVC\14.16.27023\atlmfc\include;D:\Documents2\Visual Studio 2017\visual studio\VC\Tools\MSVC\14.16.27023\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\ucrt;;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\winrt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\cppwinrt;Include\um;
+       Done executing task "SetEnv".
+     1>Done building target "SetCABuildNativeEnvironmentVariables" in project "flexDemoD3D.vcxproj".
+     1>Target "PrepareForBuild" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)' != 'true' and '$(ConfigurationPlatformExists)' != 'true') was evaluated as ('' != 'true' and 'true' != 'true').
+       Task "MakeDir"
+       Done executing task "MakeDir".
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(WindowsAppContainer)'=='true' and '$(ConfigurationType)'!='Application' and '$(ConfigurationType)'!='DynamicLibrary' and '$(ConfigurationType)'!='StaticLibrary') was evaluated as (''!='true' and 'false'=='true' and 'Application'!='Application' and 'Application'!='DynamicLibrary' and 'Application'!='StaticLibrary').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(VCToolsInstallDir)'=='' and '$(UseEnv)' != 'true' and ('$(TargetFrameworkVersion)'=='v3.5' or '$(TargetFrameworkVersion)'=='v3.0' or '$(TargetFrameworkVersion)'=='v2.0' )) was evaluated as (''!='true' and 'D:\Documents2\Visual Studio 2017\visual studio\VC\Tools\MSVC\14.16.27023\'=='' and '' != 'true' and ('v4.0'=='v3.5' or 'v4.0'=='v3.0' or 'v4.0'=='v2.0' )).
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(VCToolsInstallDir)'=='' and '$(UseEnv)' != 'true' and '$(PlatformToolset)'=='v90') was evaluated as (''!='true' and 'D:\Documents2\Visual Studio 2017\visual studio\VC\Tools\MSVC\14.16.27023\'=='' and '' != 'true' and 'v141'=='v90').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(VCToolsInstallDir)'=='' and '$(UseEnv)' != 'true') was evaluated as (''!='true' and 'D:\Documents2\Visual Studio 2017\visual studio\VC\Tools\MSVC\14.16.27023\'=='' and '' != 'true').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(WindowsSDKDir)'=='' and '$(UseEnv)' != 'true') was evaluated as (''!='true' and 'C:\Program Files (x86)\Windows Kits\10\'=='' and '' != 'true').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(IntDirTrailingSlashWarning)'=='true') was evaluated as (''!='true' and ''=='true').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(OutDirTrailingSlashWarning)'=='true') was evaluated as (''!='true' and ''=='true').
+       Task "VCMessage" skipped, due to false condition; ('%(CompatibilityIssues.Identity)' != '' and '$(DesignTimeBuild)'!='true') was evaluated as ('' != '' and ''!='true').
+       Task "VCMessage" skipped, due to false condition; ('$(IgnoreWarnIntDirSharingDetected)' != 'true' and '$(IntDirSharingDetected)' == 'true') was evaluated as ('' != 'true' and '' == 'true').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(IgnoreWarnIntDirInTempDetected)' != 'true' and ('$(_IntDirFullpath.StartsWith($(Tmp), true, null))' == 'true' or '$(_IntDirFullpath.StartsWith($(Temp), true, null))' == 'true' or '$(_OutDirFullpath.StartsWith($(Tmp), true, null))' == 'true' or '$(_OutDirFullpath.StartsWith($(Temp), true, null))' == 'true')) was evaluated as (''!='true' and '' != 'true' and ('False' == 'true' or 'False' == 'true' or 'False' == 'true' or 'False' == 'true')).
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)' != 'true' and '$(SpectreMitigation)' != '' and '$(SpectreMitigation)' != 'false' and (('$(_VC_Target_Library_Platform)' == 'OneCore' and !Exists('$(VC_LibraryPath_VC_x86_OneCore)')) or ('$(_VC_Target_Library_Platform)' == 'Desktop' and !Exists('$(VC_LibraryPath_VC_x86_Desktop)')))) was evaluated as ('' != 'true' and 'false' != '' and 'false' != 'false' and (('Desktop' == 'OneCore' and !Exists('D:\Documents2\Visual Studio 2017\visual studio\VC\Tools\MSVC\14.16.27023\lib\onecore\x86')) or ('Desktop' == 'Desktop' and !Exists('D:\Documents2\Visual Studio 2017\visual studio\VC\Tools\MSVC\14.16.27023\lib\x86')))).
+       Task "MakeDir"
+         Creating directory "./build/win64/DX/debug\flexDemoD3D.tlog\".
+       Done executing task "MakeDir".
+     1>Done building target "PrepareForBuild" in project "flexDemoD3D.vcxproj".
+       Target "_PrepareForReferenceResolution" skipped. Previously built successfully.
+       Target "ComputeCrtSDKReference" skipped, due to false condition; ('@(ClCompile)'!='' and '$(WindowsAppContainer)'=='true' and '$(UseCrtSDKReference)' != 'false') was evaluated as ('..\..\imgui.cpp;..\..\main.cpp;..\..\shadersDemoContext.cpp;..\..\..\core\aabbtree.cpp;..\..\..\core\core.cpp;..\..\..\core\extrude.cpp;..\..\..\core\maths.cpp;..\..\..\core\mesh.cpp;..\..\..\core\perlin.cpp;..\..\..\core\pfm.cpp;..\..\..\core\platform.cpp;..\..\..\core\png.cpp;..\..\..\core\sdf.cpp;..\..\..\core\tga.cpp;..\..\..\core\voxelize.cpp;..\..\d3d12\appD3D12Ctx.cpp;..\..\d3d12\bufferD3D12.cpp;..\..\d3d12\demoContextD3D12.cpp;..\..\d3d12\diffusePointRenderPipelineD3D12.cpp;..\..\d3d12\fluidCompositeRenderPipelineD3D12.cpp;..\..\d3d12\fluidEllipsoidRenderPipelineD3D12.cpp;..\..\d3d12\fluidSmoothRenderPipelineD3D12.cpp;..\..\d3d12\fluidThicknessRenderPipelineD3D12.cpp;..\..\d3d12\imguiGraphD3D12.cpp;..\..\d3d12\imguiInteropD3D12.cpp;..\..\d3d12\lineRenderPipelineD3D12.cpp;..\..\d3d12\meshRenderer.cpp;..\..\d3d12\meshRendererD3D12.cpp;..\..\d3d12\meshRenderPipelineD3D12.cpp;..\..\d3d12\meshUtil.cpp;..\..\d3d12\NvCoDx12CircularResourceHeap.cpp;..\..\d3d12\NvCoDx12CounterFence.cpp;..\..\d3d12\NvCoDx12DescriptorHeap.cpp;..\..\d3d12\NvCoDx12HelperUtil.cpp;..\..\d3d12\NvCoDx12RenderTarget.cpp;..\..\d3d12\NvCoDx12Resource.cpp;..\..\d3d12\NvCoDx12ResourceScopeManager.cpp;..\..\d3d12\NvCoDxDebugUtil.cpp;..\..\d3d12\NvCoDxFormatUtil.cpp;..\..\d3d12\NvCoFreeList.cpp;..\..\d3d12\pipelineUtilD3D12.cpp;..\..\d3d12\pointRenderPipelineD3D12.cpp;..\..\d3d12\renderStateD3D12.cpp;..\..\d3d11\appD3D11Ctx.cpp;..\..\d3d11\debugLineRenderD3D11.cpp;..\..\d3d11\demoContextD3D11.cpp;..\..\d3d11\diffuseRenderD3D11.cpp;..\..\d3d11\fluidRenderD3D11.cpp;..\..\d3d11\imguiGraphD3D11.cpp;..\..\d3d11\imguiInteropD3D11.cpp;..\..\d3d11\meshRenderD3D11.cpp;..\..\d3d11\pointRenderD3D11.cpp;..\..\d3d11\renderTargetD3D11.cpp;..\..\d3d11\shadowMapD3D11.cpp;..\..\d3d\appGraphCtxLoader.cpp;..\..\d3d\imguiGraph.cpp;..\..\d3d\imguiGraphLoader.cpp;..\..\d3d\loader.cpp;..\..\d3d\renderParamsD3D.cpp'!='' and 'false'=='true' and '' != 'false').
+       Target "GetInstalledSDKLocations" skipped, due to false condition; ('@(SDKReference)' != '') was evaluated as ('' != '').
+     1>Target "ResolveSDKReferences" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+       Task "ResolveSDKReference" skipped, due to false condition; ('@(SDKReference)'!='') was evaluated as (''!='').
+     1>Done building target "ResolveSDKReferences" in project "flexDemoD3D.vcxproj".
+       Target "ResolveSDKReferences" skipped. Previously built successfully.
+     1>Target "ExpandSDKReferences" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+       Task "GetSDKReferenceFiles" skipped, due to false condition; ('@(ResolvedSDKReference)'!='') was evaluated as (''!='').
+     1>Done building target "ExpandSDKReferences" in project "flexDemoD3D.vcxproj".
+       Target "ResolveNuGetPackageAssets" skipped, due to false condition; ('$(ResolveNuGetPackages)' == 'true' and exists('$(ProjectLockFile)')) was evaluated as ('true' == 'true' and exists('obj\project.assets.json')).
+     1>Target "ResolveAssemblyReferences" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "ResolveReferences" depends on it):
+       Task "ResolveAssemblyReference" skipped, due to false condition; ('@(Reference)'!='' or '@(_ResolvedProjectReferencePaths)'!='' or '@(_ExplicitReference)' != '') was evaluated as (''!='' or ''!='' or '' != '').
+     1>Done building target "ResolveAssemblyReferences" in project "flexDemoD3D.vcxproj".
+       Target "GenerateBindingRedirects" skipped, due to false condition; ('$(AutoGenerateBindingRedirects)' == 'true' and '$(GenerateBindingRedirectsOutputType)' == 'true') was evaluated as ('' == 'true' and 'true' == 'true').
+       Target "GenerateBindingRedirectsUpdateAppConfig" skipped, due to false condition; ('$(AutoGenerateBindingRedirects)' == 'true' and '$(GenerateBindingRedirectsOutputType)' == 'true' and Exists('$(_GenerateBindingRedirectsIntermediateAppConfig)')) was evaluated as ('' == 'true' and 'true' == 'true' and Exists('./build/win64/DX/debug\NvFlexDemoDebugD3D_x64.exe.config')).
+       Target "ResolveComReferences" skipped, due to false condition; ('@(COMReference)'!='' or '@(COMFileReference)'!='') was evaluated as (''!='' or ''!='').
+     1>Target "AfterResolveReferences" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "ResolveReferences" depends on it):
+     1>Done building target "AfterResolveReferences" in project "flexDemoD3D.vcxproj".
+       Target "ImplicitlyExpandDesignTimeFacades" skipped, due to false condition; ('$(ImplicitlyExpandDesignTimeFacades)' == 'true') was evaluated as ('' == 'true').
+       Target "ResolveTestReferences" skipped, due to false condition; ('@(Shadow)'!='') was evaluated as (''!='').
+     1>Target "ResolveReferences" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "Build" depends on it):
+     1>Done building target "ResolveReferences" in project "flexDemoD3D.vcxproj".
+       Target "PrepareForBuild" skipped. Previously built successfully.
+       Target "PrepareForBuild" skipped. Previously built successfully.
+     1>Target "InitializeBuildStatus" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "Build" depends on it):
+       Task "ReadLinesFromFile"
+       Done executing task "ReadLinesFromFile".
+       Task "WriteLinesToFile"
+       Done executing task "WriteLinesToFile".
+       Task "Touch"
+         Creating "./build/win64/DX/debug\flexDemoD3D.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+       Done executing task "Touch".
+     1>Done building target "InitializeBuildStatus" in project "flexDemoD3D.vcxproj".
+       Target "PrepareProjectReferences" skipped. Previously built successfully.
+     1>Target "BuildGenerateSourcesTraverse" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "BuildGenerateSources" depends on it):
+       Task "MSBuild" skipped, due to false condition; ('$(BuildPassReferences)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceExistent)' != '' and '%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true') was evaluated as ('' == 'true' and './../../../extensions/compiler/vc14win64/flexExtD3D.vcxproj' != '' and './../../../extensions/compiler/vc14win64/flexExtD3D.vcxproj' != '' and 'true' == 'true').
+     1>Done building target "BuildGenerateSourcesTraverse" in project "flexDemoD3D.vcxproj".
+       Target "PrepareForBuild" skipped. Previously built successfully.
+       Target "ResolveReferences" skipped. Previously built successfully.
+     1>Target "BeforeBuildGenerateSources" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.BuildSteps.Targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+     1>Done building target "BeforeBuildGenerateSources" in project "flexDemoD3D.vcxproj".
+     1>Target "PreBuildEvent" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+       Task "Message" skipped, due to false condition; ('%(PreBuildEvent.Message)' != '' and '%(PreBuildEvent.Command)' != '') was evaluated as ('' != '' and '' != '').
+       Task "Exec" skipped, due to false condition; ('%(PreBuildEvent.Command)' != '') was evaluated as ('' != '').
+     1>Done building target "PreBuildEvent" in project "flexDemoD3D.vcxproj".
+       Target "CustomBuild" skipped, due to false condition; ('@(CustomBuild)' != '') was evaluated as ('' != '').
+       Target "PrepareForBuild" skipped. Previously built successfully.
+       Target "InitializeBuildStatus" skipped. Previously built successfully.
+       Target "SetBuildDefaultEnvironmentVariables" skipped. Previously built successfully.
+       Target "SetUserMacroEnvironmentVariables" skipped, due to false condition; ('@(BuildMacro)' != '' and '$(DesignTimeBuild)' != 'true') was evaluated as ('' != '' and '' != 'true').
+     1>Target "_SelectedFiles" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "FxExport" depends on it):
+     1>Done building target "_SelectedFiles" in project "flexDemoD3D.vcxproj".
+     1>Target "MakeDirsForFxc" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "FxExport" depends on it):
+       Task "MakeDir"
+       Done executing task "MakeDir".
+     1>Done building target "MakeDirsForFxc" in project "flexDemoD3D.vcxproj".
+     1>Target "FxExport" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+       Task "FXC" skipped, due to false condition; ('@(FxCompile)' != '' and '%(FxCompile.ExcludedFromBuild)'!='true' and '%(FxCompile.CompileD2DCustomEffect)'=='true') was evaluated as ('./../../d3d/shaders/debugLineVS.hlsl' != '' and ''!='true' and ''=='true').
+       Task "FXC" skipped, due to false condition; ('@(FxCompile)' != '' and '%(FxCompile.ExcludedFromBuild)'!='true' and '%(FxCompile.CompileD2DCustomEffect)'=='true') was evaluated as ('./../../d3d/shaders/debugLinePS.hlsl' != '' and ''!='true' and ''=='true').
+       Task "FXC" skipped, due to false condition; ('@(FxCompile)' != '' and '%(FxCompile.ExcludedFromBuild)'!='true' and '%(FxCompile.CompileD2DCustomEffect)'=='true') was evaluated as ('./../../d3d/shaders/imguiPS.hlsl' != '' and ''!='true' and ''=='true').
+       Task "FXC" skipped, due to false condition; ('@(FxCompile)' != '' and '%(FxCompile.ExcludedFromBuild)'!='true' and '%(FxCompile.CompileD2DCustomEffect)'=='true') was evaluated as ('./../../d3d/shaders/imguiVS.hlsl' != '' and ''!='true' and ''=='true').
+       Task "FXC" skipped, due to false condition; ('@(FxCompile)' != '' and '%(FxCompile.ExcludedFromBuild)'!='true' and '%(FxCompile.CompileD2DCustomEffect)'=='true') was evaluated as ('./../../d3d/shaders/meshPS.hlsl' != '' and ''!='true' and ''=='true').
+       Task "FXC" skipped, due to false condition; ('@(FxCompile)' != '' and '%(FxCompile.ExcludedFromBuild)'!='true' and '%(FxCompile.CompileD2DCustomEffect)'=='true') was evaluated as ('./../../d3d/shaders/meshAsyncComputeBenchPS.hlsl' != '' and ''!='true' and ''=='true').
+       Task "FXC" skipped, due to false condition; ('@(FxCompile)' != '' and '%(FxCompile.ExcludedFromBuild)'!='true' and '%(FxCompile.CompileD2DCustomEffect)'=='true') was evaluated as ('./../../d3d/shaders/meshShadowPS.hlsl' != '' and ''!='true' and ''=='true').
+       Task "FXC" skipped, due to false condition; ('@(FxCompile)' != '' and '%(FxCompile.ExcludedFromBuild)'!='true' and '%(FxCompile.CompileD2DCustomEffect)'=='true') was evaluated as ('./../../d3d/shaders/meshVS.hlsl' != '' and ''!='true' and ''=='true').
+       Task "FXC" skipped, due to false condition; ('@(FxCompile)' != '' and '%(FxCompile.ExcludedFromBuild)'!='true' and '%(FxCompile.CompileD2DCustomEffect)'=='true') was evaluated as ('./../../d3d/shaders/pointVS.hlsl' != '' and ''!='true' and ''=='true').
+       Task "FXC" skipped, due to false condition; ('@(FxCompile)' != '' and '%(FxCompile.ExcludedFromBuild)'!='true' and '%(FxCompile.CompileD2DCustomEffect)'=='true') was evaluated as ('./../../d3d/shaders/pointGS.hlsl' != '' and ''!='true' and ''=='true').
+       Task "FXC" skipped, due to false condition; ('@(FxCompile)' != '' and '%(FxCompile.ExcludedFromBuild)'!='true' and '%(FxCompile.CompileD2DCustomEffect)'=='true') was evaluated as ('./../../d3d/shaders/pointPS.hlsl' != '' and ''!='true' and ''=='true').
+       Task "FXC" skipped, due to false condition; ('@(FxCompile)' != '' and '%(FxCompile.ExcludedFromBuild)'!='true' and '%(FxCompile.CompileD2DCustomEffect)'=='true') was evaluated as ('./../../d3d/shaders/pointShadowPS.hlsl' != '' and ''!='true' and ''=='true').
+       Task "FXC" skipped, due to false condition; ('@(FxCompile)' != '' and '%(FxCompile.ExcludedFromBuild)'!='true' and '%(FxCompile.CompileD2DCustomEffect)'=='true') was evaluated as ('./../../d3d/shaders/diffuseVS.hlsl' != '' and ''!='true' and ''=='true').
+       Task "FXC" skipped, due to false condition; ('@(FxCompile)' != '' and '%(FxCompile.ExcludedFromBuild)'!='true' and '%(FxCompile.CompileD2DCustomEffect)'=='true') was evaluated as ('./../../d3d/shaders/diffuseGS.hlsl' != '' and ''!='true' and ''=='true').
+       Task "FXC" skipped, due to false condition; ('@(FxCompile)' != '' and '%(FxCompile.ExcludedFromBuild)'!='true' and '%(FxCompile.CompileD2DCustomEffect)'=='true') was evaluated as ('./../../d3d/shaders/diffusePS.hlsl' != '' and ''!='true' and ''=='true').
+       Task "FXC" skipped, due to false condition; ('@(FxCompile)' != '' and '%(FxCompile.ExcludedFromBuild)'!='true' and '%(FxCompile.CompileD2DCustomEffect)'=='true') was evaluated as ('./../../d3d/shaders/ellipsoidDepthVS.hlsl' != '' and ''!='true' and ''=='true').
+       Task "FXC" skipped, due to false condition; ('@(FxCompile)' != '' and '%(FxCompile.ExcludedFromBuild)'!='true' and '%(FxCompile.CompileD2DCustomEffect)'=='true') was evaluated as ('./../../d3d/shaders/ellipsoidDepthGS.hlsl' != '' and ''!='true' and ''=='true').
+       Task "FXC" skipped, due to false condition; ('@(FxCompile)' != '' and '%(FxCompile.ExcludedFromBuild)'!='true' and '%(FxCompile.CompileD2DCustomEffect)'=='true') was evaluated as ('./../../d3d/shaders/ellipsoidDepthPS.hlsl' != '' and ''!='true' and ''=='true').
+       Task "FXC" skipped, due to false condition; ('@(FxCompile)' != '' and '%(FxCompile.ExcludedFromBuild)'!='true' and '%(FxCompile.CompileD2DCustomEffect)'=='true') was evaluated as ('./../../d3d/shaders/passThroughVS.hlsl' != '' and ''!='true' and ''=='true').
+       Task "FXC" skipped, due to false condition; ('@(FxCompile)' != '' and '%(FxCompile.ExcludedFromBuild)'!='true' and '%(FxCompile.CompileD2DCustomEffect)'=='true') was evaluated as ('./../../d3d/shaders/blurDepthPS.hlsl' != '' and ''!='true' and ''=='true').
+       Task "FXC" skipped, due to false condition; ('@(FxCompile)' != '' and '%(FxCompile.ExcludedFromBuild)'!='true' and '%(FxCompile.CompileD2DCustomEffect)'=='true') was evaluated as ('./../../d3d/shaders/compositePS.hlsl' != '' and ''!='true' and ''=='true').
+       Task "FXC" skipped, due to false condition; ('@(FxCompile)' != '' and '%(FxCompile.ExcludedFromBuild)'!='true' and '%(FxCompile.CompileD2DCustomEffect)'=='true') was evaluated as ('./../../d3d/shaders/pointThicknessVS.hlsl' != '' and ''!='true' and ''=='true').
+       Task "FXC" skipped, due to false condition; ('@(FxCompile)' != '' and '%(FxCompile.ExcludedFromBuild)'!='true' and '%(FxCompile.CompileD2DCustomEffect)'=='true') was evaluated as ('./../../d3d/shaders/pointThicknessGS.hlsl' != '' and ''!='true' and ''=='true').
+       Task "FXC" skipped, due to false condition; ('@(FxCompile)' != '' and '%(FxCompile.ExcludedFromBuild)'!='true' and '%(FxCompile.CompileD2DCustomEffect)'=='true') was evaluated as ('./../../d3d/shaders/pointThicknessPS.hlsl' != '' and ''!='true' and ''=='true').
+     1>Done building target "FxExport" in project "flexDemoD3D.vcxproj".
+       Target "_SelectedFiles" skipped. Previously built successfully.
+       Target "MakeDirsForFxc" skipped. Previously built successfully.
+       Target "FxExport" skipped. Previously built successfully.
+     1>Target "FxCompile" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+       Using "FXC" task from assembly "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.Build.CppTasks.Common.dll".
+       Task "FXC"
+         All source files are not up-to-date: missing command TLog "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\build\win64\DX\debug\flexDemoD3D.tlog\fxc.command.1.tlog".
+         C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe /nologo /E"debugLineVS" /T vs_5_0 /Fh "../../../demo/d3d/shaders/debugLineVS.hlsl.h" ./../../d3d/shaders/debugLineVS.hlsl 
+         Tracking command:
+         D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\build\win64\DX\debug\flexDemoD3D.tlog /r D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\DEBUGLINEVS.HLSL /b MSBuildConsole_CancelEvent21e4c22213b34778b6fabb16d41c107b  /c "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe"  /nologo /E"debugLineVS" /T vs_5_0 /Fh "../../../demo/d3d/shaders/debugLineVS.hlsl.h" ./../../d3d/shaders/debugLineVS.hlsl 
+         compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\debugLineVS.hlsl.h
+       Done executing task "FXC".
+       Task "FXC"
+         Write Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.write.1.tlog
+         Read Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.read.1.tlog
+         No output for D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\DEBUGLINEPS.HLSL was found in the tracking log; source compilation required.
+         ./../../d3d/shaders/debugLinePS.hlsl will be compiled because not all outputs are available.
+         C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe /nologo /E"debugLinePS" /T ps_5_0 /Fh "../../../demo/d3d/shaders/debugLinePS.hlsl.h" ./../../d3d/shaders/debugLinePS.hlsl 
+         Tracking command:
+         D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\build\win64\DX\debug\flexDemoD3D.tlog /r D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\DEBUGLINEPS.HLSL /b MSBuildConsole_CancelEvent7f62f1c641cd4c53b3fe8839bed24e8d  /c "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe"  /nologo /E"debugLinePS" /T ps_5_0 /Fh "../../../demo/d3d/shaders/debugLinePS.hlsl.h" ./../../d3d/shaders/debugLinePS.hlsl 
+         compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\debugLinePS.hlsl.h
+       Done executing task "FXC".
+       Task "FXC"
+         Write Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.write.1.tlog
+         Read Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.read.1.tlog
+         No output for D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\IMGUIPS.HLSL was found in the tracking log; source compilation required.
+         ./../../d3d/shaders/imguiPS.hlsl will be compiled because not all outputs are available.
+         C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe /nologo /E"imguiPS" /T ps_5_0 /Fh "../../../demo/d3d/shaders/imguiPS.hlsl.h" ./../../d3d/shaders/imguiPS.hlsl 
+         Tracking command:
+         D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\build\win64\DX\debug\flexDemoD3D.tlog /r D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\IMGUIPS.HLSL /b MSBuildConsole_CancelEvent7e39f7259a5644cab6cefd2043f03f4a  /c "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe"  /nologo /E"imguiPS" /T ps_5_0 /Fh "../../../demo/d3d/shaders/imguiPS.hlsl.h" ./../../d3d/shaders/imguiPS.hlsl 
+         compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\imguiPS.hlsl.h
+       Done executing task "FXC".
+       Task "FXC"
+         Write Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.write.1.tlog
+         Read Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.read.1.tlog
+         No output for D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\IMGUIVS.HLSL was found in the tracking log; source compilation required.
+         ./../../d3d/shaders/imguiVS.hlsl will be compiled because not all outputs are available.
+         C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe /nologo /E"imguiVS" /T vs_5_0 /Fh "../../../demo/d3d/shaders/imguiVS.hlsl.h" ./../../d3d/shaders/imguiVS.hlsl 
+         Tracking command:
+         D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\build\win64\DX\debug\flexDemoD3D.tlog /r D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\IMGUIVS.HLSL /b MSBuildConsole_CancelEventfb33fc796e4e4fbc9b50baad851e9d3d  /c "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe"  /nologo /E"imguiVS" /T vs_5_0 /Fh "../../../demo/d3d/shaders/imguiVS.hlsl.h" ./../../d3d/shaders/imguiVS.hlsl 
+         compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\imguiVS.hlsl.h
+       Done executing task "FXC".
+       Task "FXC"
+         Write Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.write.1.tlog
+         Read Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.read.1.tlog
+         No output for D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\MESHPS.HLSL was found in the tracking log; source compilation required.
+         ./../../d3d/shaders/meshPS.hlsl will be compiled because not all outputs are available.
+         C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe /nologo /E"meshPS" /T ps_5_0 /Fh "../../../demo/d3d/shaders/meshPS.hlsl.h" ./../../d3d/shaders/meshPS.hlsl 
+         Tracking command:
+         D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\build\win64\DX\debug\flexDemoD3D.tlog /r D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\MESHPS.HLSL /b MSBuildConsole_CancelEventbd46c14227024c7db3d51b5a77f7ba7e  /c "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe"  /nologo /E"meshPS" /T ps_5_0 /Fh "../../../demo/d3d/shaders/meshPS.hlsl.h" ./../../d3d/shaders/meshPS.hlsl 
+         compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\meshPS.hlsl.h
+       Done executing task "FXC".
+       Task "FXC"
+         Write Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.write.1.tlog
+         Read Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.read.1.tlog
+         No output for D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\MESHASYNCCOMPUTEBENCHPS.HLSL was found in the tracking log; source compilation required.
+         ./../../d3d/shaders/meshAsyncComputeBenchPS.hlsl will be compiled because not all outputs are available.
+         C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe /nologo /E"meshPS" /T ps_5_0 /Fh "../../../demo/d3d/shaders/meshAsyncComputeBenchPS.hlsl.h" ./../../d3d/shaders/meshAsyncComputeBenchPS.hlsl 
+         Tracking command:
+         D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\build\win64\DX\debug\flexDemoD3D.tlog /r D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\MESHASYNCCOMPUTEBENCHPS.HLSL /b MSBuildConsole_CancelEvent18756aaf2ca747f1bd9f1ac27a21629e  /c "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe"  /nologo /E"meshPS" /T ps_5_0 /Fh "../../../demo/d3d/shaders/meshAsyncComputeBenchPS.hlsl.h" ./../../d3d/shaders/meshAsyncComputeBenchPS.hlsl 
+         compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\meshAsyncComputeBenchPS.hlsl.h
+       Done executing task "FXC".
+       Task "FXC"
+         Write Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.write.1.tlog
+         Read Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.read.1.tlog
+         No output for D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\MESHSHADOWPS.HLSL was found in the tracking log; source compilation required.
+         ./../../d3d/shaders/meshShadowPS.hlsl will be compiled because not all outputs are available.
+         C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe /nologo /E"meshPS_Shadow" /T ps_5_0 /Fh "../../../demo/d3d/shaders/meshShadowPS.hlsl.h" ./../../d3d/shaders/meshShadowPS.hlsl 
+         Tracking command:
+         D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\build\win64\DX\debug\flexDemoD3D.tlog /r D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\MESHSHADOWPS.HLSL /b MSBuildConsole_CancelEvent38b75c26e8ca451db9a8fb1193cc5c8d  /c "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe"  /nologo /E"meshPS_Shadow" /T ps_5_0 /Fh "../../../demo/d3d/shaders/meshShadowPS.hlsl.h" ./../../d3d/shaders/meshShadowPS.hlsl 
+         compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\meshShadowPS.hlsl.h
+       Done executing task "FXC".
+       Task "FXC"
+         Write Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.write.1.tlog
+         Read Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.read.1.tlog
+         No output for D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\MESHVS.HLSL was found in the tracking log; source compilation required.
+         ./../../d3d/shaders/meshVS.hlsl will be compiled because not all outputs are available.
+         C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe /nologo /E"meshVS" /T vs_5_0 /Fh "../../../demo/d3d/shaders/meshVS.hlsl.h" ./../../d3d/shaders/meshVS.hlsl 
+         Tracking command:
+         D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\build\win64\DX\debug\flexDemoD3D.tlog /r D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\MESHVS.HLSL /b MSBuildConsole_CancelEvent9966be4c207545a49c4390bbdc689864  /c "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe"  /nologo /E"meshVS" /T vs_5_0 /Fh "../../../demo/d3d/shaders/meshVS.hlsl.h" ./../../d3d/shaders/meshVS.hlsl 
+     1>D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\meshVS.hlsl(24,2-74): warning X3206: implicit truncation of vector type
+         
+         compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\meshVS.hlsl.h
+       Done executing task "FXC".
+       Task "FXC"
+         Write Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.write.1.tlog
+         Read Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.read.1.tlog
+         No output for D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\POINTVS.HLSL was found in the tracking log; source compilation required.
+         ./../../d3d/shaders/pointVS.hlsl will be compiled because not all outputs are available.
+         C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe /nologo /E"pointVS" /T vs_5_0 /Fh "../../../demo/d3d/shaders/pointVS.hlsl.h" ./../../d3d/shaders/pointVS.hlsl 
+         Tracking command:
+         D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\build\win64\DX\debug\flexDemoD3D.tlog /r D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\POINTVS.HLSL /b MSBuildConsole_CancelEventede04ecb8f10440a9bba9e630c77fb05  /c "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe"  /nologo /E"pointVS" /T vs_5_0 /Fh "../../../demo/d3d/shaders/pointVS.hlsl.h" ./../../d3d/shaders/pointVS.hlsl 
+         compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\pointVS.hlsl.h
+       Done executing task "FXC".
+       Task "FXC"
+         Write Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.write.1.tlog
+         Read Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.read.1.tlog
+         No output for D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\POINTGS.HLSL was found in the tracking log; source compilation required.
+         ./../../d3d/shaders/pointGS.hlsl will be compiled because not all outputs are available.
+         C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe /nologo /E"pointGS" /T gs_5_0 /Fh "../../../demo/d3d/shaders/pointGS.hlsl.h" ./../../d3d/shaders/pointGS.hlsl 
+         Tracking command:
+         D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\build\win64\DX\debug\flexDemoD3D.tlog /r D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\POINTGS.HLSL /b MSBuildConsole_CancelEventf9c59561ab604ef791d063afbc0ad605  /c "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe"  /nologo /E"pointGS" /T gs_5_0 /Fh "../../../demo/d3d/shaders/pointGS.hlsl.h" ./../../d3d/shaders/pointGS.hlsl 
+         compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\pointGS.hlsl.h
+       Done executing task "FXC".
+       Task "FXC"
+         Write Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.write.1.tlog
+         Read Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.read.1.tlog
+         No output for D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\POINTPS.HLSL was found in the tracking log; source compilation required.
+         ./../../d3d/shaders/pointPS.hlsl will be compiled because not all outputs are available.
+         C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe /nologo /E"pointPS" /T ps_5_0 /Fh "../../../demo/d3d/shaders/pointPS.hlsl.h" ./../../d3d/shaders/pointPS.hlsl 
+         Tracking command:
+         D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\build\win64\DX\debug\flexDemoD3D.tlog /r D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\POINTPS.HLSL /b MSBuildConsole_CancelEvent753c9c2a5c394e809a057e25d72565c1  /c "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe"  /nologo /E"pointPS" /T ps_5_0 /Fh "../../../demo/d3d/shaders/pointPS.hlsl.h" ./../../d3d/shaders/pointPS.hlsl 
+         compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\pointPS.hlsl.h
+       Done executing task "FXC".
+       Task "FXC"
+         Write Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.write.1.tlog
+         Read Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.read.1.tlog
+         No output for D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\POINTSHADOWPS.HLSL was found in the tracking log; source compilation required.
+         ./../../d3d/shaders/pointShadowPS.hlsl will be compiled because not all outputs are available.
+         C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe /nologo /E"pointShadowPS" /T ps_5_0 /Fh "../../../demo/d3d/shaders/pointShadowPS.hlsl.h" ./../../d3d/shaders/pointShadowPS.hlsl 
+         Tracking command:
+         D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\build\win64\DX\debug\flexDemoD3D.tlog /r D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\POINTSHADOWPS.HLSL /b MSBuildConsole_CancelEvent91ebcddd4e244c71be32d64cb55f5290  /c "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe"  /nologo /E"pointShadowPS" /T ps_5_0 /Fh "../../../demo/d3d/shaders/pointShadowPS.hlsl.h" ./../../d3d/shaders/pointShadowPS.hlsl 
+         compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\pointShadowPS.hlsl.h
+       Done executing task "FXC".
+       Task "FXC"
+         Write Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.write.1.tlog
+         Read Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.read.1.tlog
+         No output for D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\DIFFUSEVS.HLSL was found in the tracking log; source compilation required.
+         ./../../d3d/shaders/diffuseVS.hlsl will be compiled because not all outputs are available.
+         C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe /nologo /E"diffuseVS" /T vs_5_0 /Fh "../../../demo/d3d/shaders/diffuseVS.hlsl.h" ./../../d3d/shaders/diffuseVS.hlsl 
+         Tracking command:
+         D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\build\win64\DX\debug\flexDemoD3D.tlog /r D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\DIFFUSEVS.HLSL /b MSBuildConsole_CancelEvent579eaa51118b4f49b8ae4e5b18b00aa5  /c "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe"  /nologo /E"diffuseVS" /T vs_5_0 /Fh "../../../demo/d3d/shaders/diffuseVS.hlsl.h" ./../../d3d/shaders/diffuseVS.hlsl 
+         compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\diffuseVS.hlsl.h
+       Done executing task "FXC".
+       Task "FXC"
+         Write Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.write.1.tlog
+         Read Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.read.1.tlog
+         No output for D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\DIFFUSEGS.HLSL was found in the tracking log; source compilation required.
+         ./../../d3d/shaders/diffuseGS.hlsl will be compiled because not all outputs are available.
+         C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe /nologo /E"diffuseGS" /T gs_5_0 /Fh "../../../demo/d3d/shaders/diffuseGS.hlsl.h" ./../../d3d/shaders/diffuseGS.hlsl 
+         Tracking command:
+         D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\build\win64\DX\debug\flexDemoD3D.tlog /r D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\DIFFUSEGS.HLSL /b MSBuildConsole_CancelEventee112ebf117647b99fea71cd4105e4d8  /c "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe"  /nologo /E"diffuseGS" /T gs_5_0 /Fh "../../../demo/d3d/shaders/diffuseGS.hlsl.h" ./../../d3d/shaders/diffuseGS.hlsl 
+         compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\diffuseGS.hlsl.h
+       Done executing task "FXC".
+       Task "FXC"
+         Write Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.write.1.tlog
+         Read Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.read.1.tlog
+         No output for D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\DIFFUSEPS.HLSL was found in the tracking log; source compilation required.
+         ./../../d3d/shaders/diffusePS.hlsl will be compiled because not all outputs are available.
+         C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe /nologo /E"diffusePS" /T ps_5_0 /Fh "../../../demo/d3d/shaders/diffusePS.hlsl.h" ./../../d3d/shaders/diffusePS.hlsl 
+         Tracking command:
+         D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\build\win64\DX\debug\flexDemoD3D.tlog /r D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\DIFFUSEPS.HLSL /b MSBuildConsole_CancelEvente241ac5f0d2e4fe9b37a18ea2e824169  /c "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe"  /nologo /E"diffusePS" /T ps_5_0 /Fh "../../../demo/d3d/shaders/diffusePS.hlsl.h" ./../../d3d/shaders/diffusePS.hlsl 
+         compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\diffusePS.hlsl.h
+       Done executing task "FXC".
+       Task "FXC"
+         Write Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.write.1.tlog
+         Read Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.read.1.tlog
+         No output for D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\ELLIPSOIDDEPTHVS.HLSL was found in the tracking log; source compilation required.
+         ./../../d3d/shaders/ellipsoidDepthVS.hlsl will be compiled because not all outputs are available.
+         C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe /nologo /E"ellipsoidDepthVS" /T vs_5_0 /Fh "../../../demo/d3d/shaders/ellipsoidDepthVS.hlsl.h" ./../../d3d/shaders/ellipsoidDepthVS.hlsl 
+         Tracking command:
+         D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\build\win64\DX\debug\flexDemoD3D.tlog /r D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\ELLIPSOIDDEPTHVS.HLSL /b MSBuildConsole_CancelEvent3b2a99fe052f4dba8ca0a15bbcea00d3  /c "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe"  /nologo /E"ellipsoidDepthVS" /T vs_5_0 /Fh "../../../demo/d3d/shaders/ellipsoidDepthVS.hlsl.h" ./../../d3d/shaders/ellipsoidDepthVS.hlsl 
+         compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\ellipsoidDepthVS.hlsl.h
+       Done executing task "FXC".
+       Task "FXC"
+         Write Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.write.1.tlog
+         Read Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.read.1.tlog
+         No output for D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\ELLIPSOIDDEPTHGS.HLSL was found in the tracking log; source compilation required.
+         ./../../d3d/shaders/ellipsoidDepthGS.hlsl will be compiled because not all outputs are available.
+         C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe /nologo /E"ellipsoidDepthGS" /T gs_5_0 /Fh "../../../demo/d3d/shaders/ellipsoidDepthGS.hlsl.h" ./../../d3d/shaders/ellipsoidDepthGS.hlsl 
+         Tracking command:
+         D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\build\win64\DX\debug\flexDemoD3D.tlog /r D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\ELLIPSOIDDEPTHGS.HLSL /b MSBuildConsole_CancelEventda5cdb95b27a4d718a519a4b9982022a  /c "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe"  /nologo /E"ellipsoidDepthGS" /T gs_5_0 /Fh "../../../demo/d3d/shaders/ellipsoidDepthGS.hlsl.h" ./../../d3d/shaders/ellipsoidDepthGS.hlsl 
+         compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\ellipsoidDepthGS.hlsl.h
+       Done executing task "FXC".
+       Task "FXC"
+         Write Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.write.1.tlog
+         Read Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.read.1.tlog
+         No output for D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\ELLIPSOIDDEPTHPS.HLSL was found in the tracking log; source compilation required.
+         ./../../d3d/shaders/ellipsoidDepthPS.hlsl will be compiled because not all outputs are available.
+         C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe /nologo /E"ellipsoidDepthPS" /T ps_5_0 /Fh "../../../demo/d3d/shaders/ellipsoidDepthPS.hlsl.h" ./../../d3d/shaders/ellipsoidDepthPS.hlsl 
+         Tracking command:
+         D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\build\win64\DX\debug\flexDemoD3D.tlog /r D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\ELLIPSOIDDEPTHPS.HLSL /b MSBuildConsole_CancelEvent92568b4e2e1a48c78dae296bd8d72abb  /c "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe"  /nologo /E"ellipsoidDepthPS" /T ps_5_0 /Fh "../../../demo/d3d/shaders/ellipsoidDepthPS.hlsl.h" ./../../d3d/shaders/ellipsoidDepthPS.hlsl 
+         compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\ellipsoidDepthPS.hlsl.h
+       Done executing task "FXC".
+       Task "FXC"
+         Write Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.write.1.tlog
+         Read Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.read.1.tlog
+         No output for D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\PASSTHROUGHVS.HLSL was found in the tracking log; source compilation required.
+         ./../../d3d/shaders/passThroughVS.hlsl will be compiled because not all outputs are available.
+         C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe /nologo /E"passThroughVS" /T vs_5_0 /Fh "../../../demo/d3d/shaders/passThroughVS.hlsl.h" ./../../d3d/shaders/passThroughVS.hlsl 
+         Tracking command:
+         D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\build\win64\DX\debug\flexDemoD3D.tlog /r D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\PASSTHROUGHVS.HLSL /b MSBuildConsole_CancelEvent7fcd9e07cde4422e859758c742e43753  /c "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe"  /nologo /E"passThroughVS" /T vs_5_0 /Fh "../../../demo/d3d/shaders/passThroughVS.hlsl.h" ./../../d3d/shaders/passThroughVS.hlsl 
+         compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\passThroughVS.hlsl.h
+       Done executing task "FXC".
+       Task "FXC"
+         Write Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.write.1.tlog
+         Read Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.read.1.tlog
+         No output for D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\BLURDEPTHPS.HLSL was found in the tracking log; source compilation required.
+         ./../../d3d/shaders/blurDepthPS.hlsl will be compiled because not all outputs are available.
+         C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe /nologo /E"blurDepthPS" /T ps_5_0 /Fh "../../../demo/d3d/shaders/blurDepthPS.hlsl.h" ./../../d3d/shaders/blurDepthPS.hlsl 
+         Tracking command:
+         D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\build\win64\DX\debug\flexDemoD3D.tlog /r D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\BLURDEPTHPS.HLSL /b MSBuildConsole_CancelEvent06c7e01b72b34f46bbb6e69e55624eb9  /c "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe"  /nologo /E"blurDepthPS" /T ps_5_0 /Fh "../../../demo/d3d/shaders/blurDepthPS.hlsl.h" ./../../d3d/shaders/blurDepthPS.hlsl 
+         compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\blurDepthPS.hlsl.h
+       Done executing task "FXC".
+       Task "FXC"
+         Write Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.write.1.tlog
+         Read Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.read.1.tlog
+         No output for D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\COMPOSITEPS.HLSL was found in the tracking log; source compilation required.
+         ./../../d3d/shaders/compositePS.hlsl will be compiled because not all outputs are available.
+         C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe /nologo /E"compositePS" /T ps_5_0 /Fh "../../../demo/d3d/shaders/compositePS.hlsl.h" ./../../d3d/shaders/compositePS.hlsl 
+         Tracking command:
+         D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\build\win64\DX\debug\flexDemoD3D.tlog /r D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\COMPOSITEPS.HLSL /b MSBuildConsole_CancelEvent79f4ef2e410f4c8ab49554f036960464  /c "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe"  /nologo /E"compositePS" /T ps_5_0 /Fh "../../../demo/d3d/shaders/compositePS.hlsl.h" ./../../d3d/shaders/compositePS.hlsl 
+         compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\compositePS.hlsl.h
+       Done executing task "FXC".
+       Task "FXC"
+         Write Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.write.1.tlog
+         Read Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.read.1.tlog
+         No output for D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\POINTTHICKNESSVS.HLSL was found in the tracking log; source compilation required.
+         ./../../d3d/shaders/pointThicknessVS.hlsl will be compiled because not all outputs are available.
+         C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe /nologo /E"pointThicknessVS" /T vs_5_0 /Fh "../../../demo/d3d/shaders/pointThicknessVS.hlsl.h" ./../../d3d/shaders/pointThicknessVS.hlsl 
+         Tracking command:
+         D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\build\win64\DX\debug\flexDemoD3D.tlog /r D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\POINTTHICKNESSVS.HLSL /b MSBuildConsole_CancelEventcf3905c5227e4a6da9863128f184c1bd  /c "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe"  /nologo /E"pointThicknessVS" /T vs_5_0 /Fh "../../../demo/d3d/shaders/pointThicknessVS.hlsl.h" ./../../d3d/shaders/pointThicknessVS.hlsl 
+         compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\pointThicknessVS.hlsl.h
+       Done executing task "FXC".
+       Task "FXC"
+         Write Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.write.1.tlog
+         Read Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.read.1.tlog
+         No output for D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\POINTTHICKNESSGS.HLSL was found in the tracking log; source compilation required.
+         ./../../d3d/shaders/pointThicknessGS.hlsl will be compiled because not all outputs are available.
+         C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe /nologo /E"pointThicknessGS" /T gs_5_0 /Fh "../../../demo/d3d/shaders/pointThicknessGS.hlsl.h" ./../../d3d/shaders/pointThicknessGS.hlsl 
+         Tracking command:
+         D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\build\win64\DX\debug\flexDemoD3D.tlog /r D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\POINTTHICKNESSGS.HLSL /b MSBuildConsole_CancelEventdfc4383841614dbea8682b2980c2c9e4  /c "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe"  /nologo /E"pointThicknessGS" /T gs_5_0 /Fh "../../../demo/d3d/shaders/pointThicknessGS.hlsl.h" ./../../d3d/shaders/pointThicknessGS.hlsl 
+         compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\pointThicknessGS.hlsl.h
+       Done executing task "FXC".
+       Task "FXC"
+         Write Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.write.1.tlog
+         Read Tracking Logs:
+         	.\build\win64\DX\debug\flexDemoD3D.tlog\fxc.read.1.tlog
+         No output for D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\POINTTHICKNESSPS.HLSL was found in the tracking log; source compilation required.
+         ./../../d3d/shaders/pointThicknessPS.hlsl will be compiled because not all outputs are available.
+         C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe /nologo /E"pointThicknessPS" /T ps_5_0 /Fh "../../../demo/d3d/shaders/pointThicknessPS.hlsl.h" ./../../d3d/shaders/pointThicknessPS.hlsl 
+         Tracking command:
+         D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\build\win64\DX\debug\flexDemoD3D.tlog /r D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\SHADERS\POINTTHICKNESSPS.HLSL /b MSBuildConsole_CancelEventddac95a53af74661a72011535bb548ab  /c "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\fxc.exe"  /nologo /E"pointThicknessPS" /T ps_5_0 /Fh "../../../demo/d3d/shaders/pointThicknessPS.hlsl.h" ./../../d3d/shaders/pointThicknessPS.hlsl 
+         compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\pointThicknessPS.hlsl.h
+       Done executing task "FXC".
+     1>Done building target "FxCompile" in project "flexDemoD3D.vcxproj".
+       Target "_CreateCopyFileItems" skipped, due to false condition; ('@(CopyFileToFolders)' != '') was evaluated as ('' != '').
+       Target "_SelectedFiles" skipped. Previously built successfully.
+     1>Target "CopyFileToFolders" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+       Using "GetOutOfDateItems" task from assembly "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.Build.CppTasks.Common.dll".
+       Task "GetOutOfDateItems"
+       Done executing task "GetOutOfDateItems".
+       Task "Copy" skipped, due to false condition; ('@(_OutOfDateCopyFile)' != '') was evaluated as ('' != '').
+     1>Done building target "CopyFileToFolders" in project "flexDemoD3D.vcxproj".
+       Target "Xsd" skipped, due to false condition; ('@(Xsd)' != '') was evaluated as ('' != '').
+     1>Target "_Xsd" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+     1>Done building target "_Xsd" in project "flexDemoD3D.vcxproj".
+     1>Target "MakeDirsForMidl" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_Midl" depends on it):
+       Task "Makedir"
+       Done executing task "Makedir".
+     1>Done building target "MakeDirsForMidl" in project "flexDemoD3D.vcxproj".
+       Target "Midl" skipped, due to false condition; ('@(Midl)' != '') was evaluated as ('' != '').
+       Target "CustomBuild" skipped, due to false condition; ('@(CustomBuild)' != '') was evaluated as ('' != '').
+     1>Target "ComputeMIDLGeneratedCompileInputs" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_Midl" depends on it):
+     1>Done building target "ComputeMIDLGeneratedCompileInputs" in project "flexDemoD3D.vcxproj".
+     1>Target "AfterMidl" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_Midl" depends on it):
+     1>Done building target "AfterMidl" in project "flexDemoD3D.vcxproj".
+     1>Target "_Midl" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+     1>Done building target "_Midl" in project "flexDemoD3D.vcxproj".
+     1>Target "AfterBuildGenerateSources" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.BuildSteps.Targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+     1>Done building target "AfterBuildGenerateSources" in project "flexDemoD3D.vcxproj".
+     1>Target "AfterBuildGenerateSourcesEvent" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+     1>Done building target "AfterBuildGenerateSourcesEvent" in project "flexDemoD3D.vcxproj".
+     1>Target "_BuildGenerateSourcesAction" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "BuildGenerateSources" depends on it):
+     1>Done building target "_BuildGenerateSourcesAction" in project "flexDemoD3D.vcxproj".
+     1>Target "BuildGenerateSources" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "Build" depends on it):
+     1>Done building target "BuildGenerateSources" in project "flexDemoD3D.vcxproj".
+       Target "PrepareProjectReferences" skipped. Previously built successfully.
+     1>Target "BuildCompileTraverse" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "BuildCompile" depends on it):
+       Task "MSBuild" skipped, due to false condition; ('$(BuildPassReferences)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceExistent)' != ''  and '%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true') was evaluated as ('' == 'true' and './../../../extensions/compiler/vc14win64/flexExtD3D.vcxproj' != '' and './../../../extensions/compiler/vc14win64/flexExtD3D.vcxproj' != ''  and 'true' == 'true').
+     1>Done building target "BuildCompileTraverse" in project "flexDemoD3D.vcxproj".
+       Target "PrepareForBuild" skipped. Previously built successfully.
+       Target "ResolveReferences" skipped. Previously built successfully.
+     1>Target "BeforeClCompile" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_ClCompile" depends on it):
+     1>Done building target "BeforeClCompile" in project "flexDemoD3D.vcxproj".
+       Target "ComputeMIDLGeneratedCompileInputs" skipped. Previously built successfully.
+     1>Target "ComputeCLInputPDBName" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_ClCompile" depends on it):
+     1>Done building target "ComputeCLInputPDBName" in project "flexDemoD3D.vcxproj".
+       Target "ResolveReferences" skipped. Previously built successfully.
+     1>Target "ComputeReferenceCLInput" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_ClCompile" depends on it):
+       Task "WriteLinesToFile" skipped, due to false condition; (('@(_ReferenceCopyLocalPaths)'!='') and '$(DesignTimeBuild)' != 'true') was evaluated as ((''!='') and '' != 'true').
+       Task "Message" skipped, due to false condition; ('$(_REFERENCE_DEBUG)'=='true') was evaluated as (''=='true').
+     1>Done building target "ComputeReferenceCLInput" in project "flexDemoD3D.vcxproj".
+     1>Target "WarnCompileDuplicatedFilename" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_ClCompile" depends on it):
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'imgui.cpp' != 'imgui.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'main.cpp' != 'main.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'shadersDemoContext.cpp' != 'shadersDemoContext.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'aabbtree.cpp' != 'aabbtree.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'core.cpp' != 'core.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'extrude.cpp' != 'extrude.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'maths.cpp' != 'maths.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'mesh.cpp' != 'mesh.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'perlin.cpp' != 'perlin.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'pfm.cpp' != 'pfm.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'platform.cpp' != 'platform.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'png.cpp' != 'png.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'sdf.cpp' != 'sdf.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'tga.cpp' != 'tga.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'voxelize.cpp' != 'voxelize.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'appD3D12Ctx.cpp' != 'appD3D12Ctx.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'bufferD3D12.cpp' != 'bufferD3D12.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'demoContextD3D12.cpp' != 'demoContextD3D12.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'diffusePointRenderPipelineD3D12.cpp' != 'diffusePointRenderPipelineD3D12.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'fluidCompositeRenderPipelineD3D12.cpp' != 'fluidCompositeRenderPipelineD3D12.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'fluidEllipsoidRenderPipelineD3D12.cpp' != 'fluidEllipsoidRenderPipelineD3D12.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'fluidSmoothRenderPipelineD3D12.cpp' != 'fluidSmoothRenderPipelineD3D12.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'fluidThicknessRenderPipelineD3D12.cpp' != 'fluidThicknessRenderPipelineD3D12.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'imguiGraphD3D12.cpp' != 'imguiGraphD3D12.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'imguiInteropD3D12.cpp' != 'imguiInteropD3D12.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'lineRenderPipelineD3D12.cpp' != 'lineRenderPipelineD3D12.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'meshRenderer.cpp' != 'meshRenderer.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'meshRendererD3D12.cpp' != 'meshRendererD3D12.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'meshRenderPipelineD3D12.cpp' != 'meshRenderPipelineD3D12.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'meshUtil.cpp' != 'meshUtil.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'NvCoDx12CircularResourceHeap.cpp' != 'NvCoDx12CircularResourceHeap.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'NvCoDx12CounterFence.cpp' != 'NvCoDx12CounterFence.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'NvCoDx12DescriptorHeap.cpp' != 'NvCoDx12DescriptorHeap.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'NvCoDx12HelperUtil.cpp' != 'NvCoDx12HelperUtil.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'NvCoDx12RenderTarget.cpp' != 'NvCoDx12RenderTarget.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'NvCoDx12Resource.cpp' != 'NvCoDx12Resource.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'NvCoDx12ResourceScopeManager.cpp' != 'NvCoDx12ResourceScopeManager.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'NvCoDxDebugUtil.cpp' != 'NvCoDxDebugUtil.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'NvCoDxFormatUtil.cpp' != 'NvCoDxFormatUtil.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'NvCoFreeList.cpp' != 'NvCoFreeList.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'pipelineUtilD3D12.cpp' != 'pipelineUtilD3D12.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'pointRenderPipelineD3D12.cpp' != 'pointRenderPipelineD3D12.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'renderStateD3D12.cpp' != 'renderStateD3D12.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'appD3D11Ctx.cpp' != 'appD3D11Ctx.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'debugLineRenderD3D11.cpp' != 'debugLineRenderD3D11.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'demoContextD3D11.cpp' != 'demoContextD3D11.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'diffuseRenderD3D11.cpp' != 'diffuseRenderD3D11.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'fluidRenderD3D11.cpp' != 'fluidRenderD3D11.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'imguiGraphD3D11.cpp' != 'imguiGraphD3D11.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'imguiInteropD3D11.cpp' != 'imguiInteropD3D11.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'meshRenderD3D11.cpp' != 'meshRenderD3D11.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'pointRenderD3D11.cpp' != 'pointRenderD3D11.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'renderTargetD3D11.cpp' != 'renderTargetD3D11.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'shadowMapD3D11.cpp' != 'shadowMapD3D11.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'appGraphCtxLoader.cpp' != 'appGraphCtxLoader.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'imguiGraph.cpp' != 'imguiGraph.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'imguiGraphLoader.cpp' != 'imguiGraphLoader.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'loader.cpp' != 'loader.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'renderParamsD3D.cpp' != 'renderParamsD3D.cpp' and './build/win64/DX/debug\' == './build/win64/DX/debug\').
+     1>Done building target "WarnCompileDuplicatedFilename" in project "flexDemoD3D.vcxproj".
+     1>Target "FixupCLCompileOptions" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_ClCompile" depends on it):
+     1>Done building target "FixupCLCompileOptions" in project "flexDemoD3D.vcxproj".
+     1>Target "MakeDirsForCl" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_ClCompile" depends on it):
+       Task "MakeDir"
+       Done executing task "MakeDir".
+     1>Done building target "MakeDirsForCl" in project "flexDemoD3D.vcxproj".
+       Target "_SelectedFiles" skipped. Previously built successfully.
+       Target "ComputeMIDLGeneratedCompileInputs" skipped. Previously built successfully.
+       Target "ComputeCLInputPDBName" skipped. Previously built successfully.
+       Target "ComputeReferenceCLInput" skipped. Previously built successfully.
+       Target "WarnCompileDuplicatedFilename" skipped. Previously built successfully.
+       Target "FixupCLCompileOptions" skipped. Previously built successfully.
+       Target "_SelectedFiles" skipped. Previously built successfully.
+     1>Target "SelectCustomBuild" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "SelectClCompile" depends on it):
+     1>Done building target "SelectCustomBuild" in project "flexDemoD3D.vcxproj".
+     1>Target "SelectClCompile" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "ClCompile" depends on it):
+     1>Done building target "SelectClCompile" in project "flexDemoD3D.vcxproj".
+       Target "GenerateTargetFrameworkMonikerAttribute" skipped, due to false condition; ('$(GenerateTargetFrameworkAttribute)' == 'true') was evaluated as ('false' == 'true').
+       Target "ManagedIncrementalBuildPreProcessDependencyGraph" skipped, due to false condition; ('@(ClCompile)' != '' and '$(EnableManagedIncrementalBuild)' == 'True') was evaluated as ('..\..\imgui.cpp;..\..\main.cpp;..\..\shadersDemoContext.cpp;..\..\..\core\aabbtree.cpp;..\..\..\core\core.cpp;..\..\..\core\extrude.cpp;..\..\..\core\maths.cpp;..\..\..\core\mesh.cpp;..\..\..\core\perlin.cpp;..\..\..\core\pfm.cpp;..\..\..\core\platform.cpp;..\..\..\core\png.cpp;..\..\..\core\sdf.cpp;..\..\..\core\tga.cpp;..\..\..\core\voxelize.cpp;..\..\d3d12\appD3D12Ctx.cpp;..\..\d3d12\bufferD3D12.cpp;..\..\d3d12\demoContextD3D12.cpp;..\..\d3d12\diffusePointRenderPipelineD3D12.cpp;..\..\d3d12\fluidCompositeRenderPipelineD3D12.cpp;..\..\d3d12\fluidEllipsoidRenderPipelineD3D12.cpp;..\..\d3d12\fluidSmoothRenderPipelineD3D12.cpp;..\..\d3d12\fluidThicknessRenderPipelineD3D12.cpp;..\..\d3d12\imguiGraphD3D12.cpp;..\..\d3d12\imguiInteropD3D12.cpp;..\..\d3d12\lineRenderPipelineD3D12.cpp;..\..\d3d12\meshRenderer.cpp;..\..\d3d12\meshRendererD3D12.cpp;..\..\d3d12\meshRenderPipelineD3D12.cpp;..\..\d3d12\meshUtil.cpp;..\..\d3d12\NvCoDx12CircularResourceHeap.cpp;..\..\d3d12\NvCoDx12CounterFence.cpp;..\..\d3d12\NvCoDx12DescriptorHeap.cpp;..\..\d3d12\NvCoDx12HelperUtil.cpp;..\..\d3d12\NvCoDx12RenderTarget.cpp;..\..\d3d12\NvCoDx12Resource.cpp;..\..\d3d12\NvCoDx12ResourceScopeManager.cpp;..\..\d3d12\NvCoDxDebugUtil.cpp;..\..\d3d12\NvCoDxFormatUtil.cpp;..\..\d3d12\NvCoFreeList.cpp;..\..\d3d12\pipelineUtilD3D12.cpp;..\..\d3d12\pointRenderPipelineD3D12.cpp;..\..\d3d12\renderStateD3D12.cpp;..\..\d3d11\appD3D11Ctx.cpp;..\..\d3d11\debugLineRenderD3D11.cpp;..\..\d3d11\demoContextD3D11.cpp;..\..\d3d11\diffuseRenderD3D11.cpp;..\..\d3d11\fluidRenderD3D11.cpp;..\..\d3d11\imguiGraphD3D11.cpp;..\..\d3d11\imguiInteropD3D11.cpp;..\..\d3d11\meshRenderD3D11.cpp;..\..\d3d11\pointRenderD3D11.cpp;..\..\d3d11\renderTargetD3D11.cpp;..\..\d3d11\shadowMapD3D11.cpp;..\..\d3d\appGraphCtxLoader.cpp;..\..\d3d\imguiGraph.cpp;..\..\d3d\imguiGraphLoader.cpp;..\..\d3d\loader.cpp;..\..\d3d\renderParamsD3D.cpp' != '' and 'false' == 'True').
+     1>Target "ClCompile" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_ClCompile" depends on it):
+       Task "Delete"
+       Done executing task "Delete".
+       Task "CL" skipped, due to false condition; ('%(ClCompile.PrecompiledHeader)' == 'Create' and '%(ClCompile.ExcludedFromBuild)'!='true' and '%(ClCompile.CompilerIteration)' == '') was evaluated as ('NotUsing' == 'Create' and ''!='true' and '' == '').
+       Using "CL" task from assembly "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.Build.CppTasks.Common.dll".
+       Task "CL"
+         Forcing recompile of all source files due to missing PDB "./build/win64/DX/debug\vc141.pdb".
+         Environment Variables passed to tool:
+           VS_UNICODE_OUTPUT=1028
+         D:\Documents2\Visual Studio 2017\visual studio\VC\Tools\MSVC\14.16.27023\bin\HostX86\x64\CL.exe /c /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2/include" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2/extras/cupti/include" /I./../../.. /I./../.. /I./../../d3d11 /I./../../d3d12 /I"./../../../external/SDL2-2.0.4/include" /I./../../../external/D3D12/include /Zi /nologo /W3 /WX- /diagnostics:classic /Od /D _CONSOLE /D WIN32 /D _CRT_SECURE_NO_WARNINGS /D FLEX_DX /D FLEX_DX12 /D _DEBUG /D _ITERATOR_DEBUG_LEVEL=0 /Gm- /EHsc /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"./build/win64/DX/debug\\" /Fd"./build/win64/DX/debug\vc141.pdb" /Gd /TP /FC /errorReport:prompt  /d2Zi+ ..\..\imgui.cpp ..\..\main.cpp ..\..\shadersDemoContext.cpp ..\..\..\core\aabbtree.cpp ..\..\..\core\core.cpp ..\..\..\core\extrude.cpp ..\..\..\core\maths.cpp ..\..\..\core\mesh.cpp ..\..\..\core\perlin.cpp ..\..\..\core\pfm.cpp ..\..\..\core\platform.cpp ..\..\..\core\png.cpp ..\..\..\core\sdf.cpp ..\..\..\core\tga.cpp ..\..\..\core\voxelize.cpp ..\..\d3d12\appD3D12Ctx.cpp ..\..\d3d12\bufferD3D12.cpp ..\..\d3d12\demoContextD3D12.cpp ..\..\d3d12\diffusePointRenderPipelineD3D12.cpp ..\..\d3d12\fluidCompositeRenderPipelineD3D12.cpp ..\..\d3d12\fluidEllipsoidRenderPipelineD3D12.cpp ..\..\d3d12\fluidSmoothRenderPipelineD3D12.cpp ..\..\d3d12\fluidThicknessRenderPipelineD3D12.cpp ..\..\d3d12\imguiGraphD3D12.cpp ..\..\d3d12\imguiInteropD3D12.cpp ..\..\d3d12\lineRenderPipelineD3D12.cpp ..\..\d3d12\meshRenderer.cpp ..\..\d3d12\meshRendererD3D12.cpp ..\..\d3d12\meshRenderPipelineD3D12.cpp ..\..\d3d12\meshUtil.cpp ..\..\d3d12\NvCoDx12CircularResourceHeap.cpp ..\..\d3d12\NvCoDx12CounterFence.cpp ..\..\d3d12\NvCoDx12DescriptorHeap.cpp ..\..\d3d12\NvCoDx12HelperUtil.cpp ..\..\d3d12\NvCoDx12RenderTarget.cpp ..\..\d3d12\NvCoDx12Resource.cpp ..\..\d3d12\NvCoDx12ResourceScopeManager.cpp ..\..\d3d12\NvCoDxDebugUtil.cpp ..\..\d3d12\NvCoDxFormatUtil.cpp ..\..\d3d12\NvCoFreeList.cpp ..\..\d3d12\pipelineUtilD3D12.cpp ..\..\d3d12\pointRenderPipelineD3D12.cpp ..\..\d3d12\renderStateD3D12.cpp ..\..\d3d11\appD3D11Ctx.cpp ..\..\d3d11\debugLineRenderD3D11.cpp ..\..\d3d11\demoContextD3D11.cpp ..\..\d3d11\diffuseRenderD3D11.cpp ..\..\d3d11\fluidRenderD3D11.cpp ..\..\d3d11\imguiGraphD3D11.cpp ..\..\d3d11\imguiInteropD3D11.cpp ..\..\d3d11\meshRenderD3D11.cpp ..\..\d3d11\pointRenderD3D11.cpp ..\..\d3d11\renderTargetD3D11.cpp ..\..\d3d11\shadowMapD3D11.cpp ..\..\d3d\appGraphCtxLoader.cpp ..\..\d3d\imguiGraph.cpp ..\..\d3d\imguiGraphLoader.cpp ..\..\d3d\loader.cpp ..\..\d3d\renderParamsD3D.cpp
+         Tracking command:
+         D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\build\win64\DX\debug\flexDemoD3D.tlog /r "D:\DOCUMENTS2\VULKAN\FLEX-MASTER\CORE\AABBTREE.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\CORE\CORE.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\CORE\EXTRUDE.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\CORE\MATHS.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\CORE\MESH.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\CORE\PERLIN.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\CORE\PFM.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\CORE\PLATFORM.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\CORE\PNG.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\CORE\SDF.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\CORE\TGA.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\CORE\VOXELIZE.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D11\APPD3D11CTX.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D11\DEBUGLINERENDERD3D11.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D11\DEMOCONTEXTD3D11.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D11\DIFFUSERENDERD3D11.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D11\FLUIDRENDERD3D11.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D11\IMGUIGRAPHD3D11.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D11\IMGUIINTEROPD3D11.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D11\MESHRENDERD3D11.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D11\POINTRENDERD3D11.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D11\RENDERTARGETD3D11.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D11\SHADOWMAPD3D11.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D12\APPD3D12CTX.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D12\BUFFERD3D12.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D12\DEMOCONTEXTD3D12.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D12\DIFFUSEPOINTRENDERPIPELINED3D12.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D12\FLUIDCOMPOSITERENDERPIPELINED3D12.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D12\FLUIDELLIPSOIDRENDERPIPELINED3D12.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D12\FLUIDSMOOTHRENDERPIPELINED3D12.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D12\FLUIDTHICKNESSRENDERPIPELINED3D12.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D12\IMGUIGRAPHD3D12.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D12\IMGUIINTEROPD3D12.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D12\LINERENDERPIPELINED3D12.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D12\MESHRENDERER.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D12\MESHRENDERERD3D12.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D12\MESHRENDERPIPELINED3D12.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D12\MESHUTIL.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D12\NVCODX12CIRCULARRESOURCEHEAP.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D12\NVCODX12COUNTERFENCE.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D12\NVCODX12DESCRIPTORHEAP.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D12\NVCODX12HELPERUTIL.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D12\NVCODX12RENDERTARGET.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D12\NVCODX12RESOURCE.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D12\NVCODX12RESOURCESCOPEMANAGER.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D12\NVCODXDEBUGUTIL.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D12\NVCODXFORMATUTIL.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D12\NVCOFREELIST.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D12\PIPELINEUTILD3D12.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D12\POINTRENDERPIPELINED3D12.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D12\RENDERSTATED3D12.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\APPGRAPHCTXLOADER.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\IMGUIGRAPH.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\IMGUIGRAPHLOADER.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\LOADER.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\D3D\RENDERPARAMSD3D.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\IMGUI.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\MAIN.CPP|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\SHADERSDEMOCONTEXT.CPP" /b MSBuildConsole_CancelEventf545b987495e4d98a76f043e3dfaeb8c  /c "D:\Documents2\Visual Studio 2017\visual studio\VC\Tools\MSVC\14.16.27023\bin\HostX86\x64\CL.exe"  /c /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2/include" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2/extras/cupti/include" /I./../../.. /I./../.. /I./../../d3d11 /I./../../d3d12 /I"./../../../external/SDL2-2.0.4/include" /I./../../../external/D3D12/include /Zi /nologo /W3 /WX- /diagnostics:classic /Od /D _CONSOLE /D WIN32 /D _CRT_SECURE_NO_WARNINGS /D FLEX_DX /D FLEX_DX12 /D _DEBUG /D _ITERATOR_DEBUG_LEVEL=0 /Gm- /EHsc /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"./build/win64/DX/debug\\" /Fd"./build/win64/DX/debug\vc141.pdb" /Gd /TP /FC /errorReport:prompt  /d2Zi+ ..\..\imgui.cpp ..\..\main.cpp ..\..\shadersDemoContext.cpp ..\..\..\core\aabbtree.cpp ..\..\..\core\core.cpp ..\..\..\core\extrude.cpp ..\..\..\core\maths.cpp ..\..\..\core\mesh.cpp ..\..\..\core\perlin.cpp ..\..\..\core\pfm.cpp ..\..\..\core\platform.cpp ..\..\..\core\png.cpp ..\..\..\core\sdf.cpp ..\..\..\core\tga.cpp ..\..\..\core\voxelize.cpp ..\..\d3d12\appD3D12Ctx.cpp ..\..\d3d12\bufferD3D12.cpp ..\..\d3d12\demoContextD3D12.cpp ..\..\d3d12\diffusePointRenderPipelineD3D12.cpp ..\..\d3d12\fluidCompositeRenderPipelineD3D12.cpp ..\..\d3d12\fluidEllipsoidRenderPipelineD3D12.cpp ..\..\d3d12\fluidSmoothRenderPipelineD3D12.cpp ..\..\d3d12\fluidThicknessRenderPipelineD3D12.cpp ..\..\d3d12\imguiGraphD3D12.cpp ..\..\d3d12\imguiInteropD3D12.cpp ..\..\d3d12\lineRenderPipelineD3D12.cpp ..\..\d3d12\meshRenderer.cpp ..\..\d3d12\meshRendererD3D12.cpp ..\..\d3d12\meshRenderPipelineD3D12.cpp ..\..\d3d12\meshUtil.cpp ..\..\d3d12\NvCoDx12CircularResourceHeap.cpp ..\..\d3d12\NvCoDx12CounterFence.cpp ..\..\d3d12\NvCoDx12DescriptorHeap.cpp ..\..\d3d12\NvCoDx12HelperUtil.cpp ..\..\d3d12\NvCoDx12RenderTarget.cpp ..\..\d3d12\NvCoDx12Resource.cpp ..\..\d3d12\NvCoDx12ResourceScopeManager.cpp ..\..\d3d12\NvCoDxDebugUtil.cpp ..\..\d3d12\NvCoDxFormatUtil.cpp ..\..\d3d12\NvCoFreeList.cpp ..\..\d3d12\pipelineUtilD3D12.cpp ..\..\d3d12\pointRenderPipelineD3D12.cpp ..\..\d3d12\renderStateD3D12.cpp ..\..\d3d11\appD3D11Ctx.cpp ..\..\d3d11\debugLineRenderD3D11.cpp ..\..\d3d11\demoContextD3D11.cpp ..\..\d3d11\diffuseRenderD3D11.cpp ..\..\d3d11\fluidRenderD3D11.cpp ..\..\d3d11\imguiGraphD3D11.cpp ..\..\d3d11\imguiInteropD3D11.cpp ..\..\d3d11\meshRenderD3D11.cpp ..\..\d3d11\pointRenderD3D11.cpp ..\..\d3d11\renderTargetD3D11.cpp ..\..\d3d11\shadowMapD3D11.cpp ..\..\d3d\appGraphCtxLoader.cpp ..\..\d3d\imguiGraph.cpp ..\..\d3d\imguiGraphLoader.cpp ..\..\d3d\loader.cpp ..\..\d3d\renderParamsD3D.cpp
+         imgui.cpp
+         main.cpp
+         shadersDemoContext.cpp
+         aabbtree.cpp
+         core.cpp
+         extrude.cpp
+         maths.cpp
+         mesh.cpp
+         perlin.cpp
+         pfm.cpp
+         platform.cpp
+         png.cpp
+         sdf.cpp
+         tga.cpp
+         voxelize.cpp
+         appD3D12Ctx.cpp
+         bufferD3D12.cpp
+         demoContextD3D12.cpp
+         diffusePointRenderPipelineD3D12.cpp
+         fluidCompositeRenderPipelineD3D12.cpp
+         Generating Code...
+         Compiling...
+         fluidEllipsoidRenderPipelineD3D12.cpp
+         fluidSmoothRenderPipelineD3D12.cpp
+         fluidThicknessRenderPipelineD3D12.cpp
+         imguiGraphD3D12.cpp
+         imguiInteropD3D12.cpp
+         lineRenderPipelineD3D12.cpp
+         meshRenderer.cpp
+         meshRendererD3D12.cpp
+         meshRenderPipelineD3D12.cpp
+         meshUtil.cpp
+         NvCoDx12CircularResourceHeap.cpp
+         NvCoDx12CounterFence.cpp
+         NvCoDx12DescriptorHeap.cpp
+         NvCoDx12HelperUtil.cpp
+         NvCoDx12RenderTarget.cpp
+         NvCoDx12Resource.cpp
+         NvCoDx12ResourceScopeManager.cpp
+         NvCoDxDebugUtil.cpp
+         NvCoDxFormatUtil.cpp
+         NvCoFreeList.cpp
+         Generating Code...
+         Compiling...
+         pipelineUtilD3D12.cpp
+         pointRenderPipelineD3D12.cpp
+         renderStateD3D12.cpp
+         appD3D11Ctx.cpp
+         debugLineRenderD3D11.cpp
+         demoContextD3D11.cpp
+         diffuseRenderD3D11.cpp
+         fluidRenderD3D11.cpp
+         imguiGraphD3D11.cpp
+         imguiInteropD3D11.cpp
+         meshRenderD3D11.cpp
+         pointRenderD3D11.cpp
+         renderTargetD3D11.cpp
+         shadowMapD3D11.cpp
+         appGraphCtxLoader.cpp
+         imguiGraph.cpp
+         imguiGraphLoader.cpp
+         loader.cpp
+         renderParamsD3D.cpp
+         Generating Code...
+       Done executing task "CL".
+     1>Done building target "ClCompile" in project "flexDemoD3D.vcxproj".
+       Target "RunSelectedFileNativeCodeAnalysis" skipped, due to false condition; ('$(RunCppAnalysis)'=='true' and '$(SelectedFiles)'!='') was evaluated as ('false'=='true' and ''!='').
+       Target "ManagedIncrementalBuildPostProcessDependencyGraph" skipped, due to false condition; ('@(ClCompile)' != '' and '$(EnableManagedIncrementalBuild)' == 'True') was evaluated as ('..\..\imgui.cpp;..\..\main.cpp;..\..\shadersDemoContext.cpp;..\..\..\core\aabbtree.cpp;..\..\..\core\core.cpp;..\..\..\core\extrude.cpp;..\..\..\core\maths.cpp;..\..\..\core\mesh.cpp;..\..\..\core\perlin.cpp;..\..\..\core\pfm.cpp;..\..\..\core\platform.cpp;..\..\..\core\png.cpp;..\..\..\core\sdf.cpp;..\..\..\core\tga.cpp;..\..\..\core\voxelize.cpp;..\..\d3d12\appD3D12Ctx.cpp;..\..\d3d12\bufferD3D12.cpp;..\..\d3d12\demoContextD3D12.cpp;..\..\d3d12\diffusePointRenderPipelineD3D12.cpp;..\..\d3d12\fluidCompositeRenderPipelineD3D12.cpp;..\..\d3d12\fluidEllipsoidRenderPipelineD3D12.cpp;..\..\d3d12\fluidSmoothRenderPipelineD3D12.cpp;..\..\d3d12\fluidThicknessRenderPipelineD3D12.cpp;..\..\d3d12\imguiGraphD3D12.cpp;..\..\d3d12\imguiInteropD3D12.cpp;..\..\d3d12\lineRenderPipelineD3D12.cpp;..\..\d3d12\meshRenderer.cpp;..\..\d3d12\meshRendererD3D12.cpp;..\..\d3d12\meshRenderPipelineD3D12.cpp;..\..\d3d12\meshUtil.cpp;..\..\d3d12\NvCoDx12CircularResourceHeap.cpp;..\..\d3d12\NvCoDx12CounterFence.cpp;..\..\d3d12\NvCoDx12DescriptorHeap.cpp;..\..\d3d12\NvCoDx12HelperUtil.cpp;..\..\d3d12\NvCoDx12RenderTarget.cpp;..\..\d3d12\NvCoDx12Resource.cpp;..\..\d3d12\NvCoDx12ResourceScopeManager.cpp;..\..\d3d12\NvCoDxDebugUtil.cpp;..\..\d3d12\NvCoDxFormatUtil.cpp;..\..\d3d12\NvCoFreeList.cpp;..\..\d3d12\pipelineUtilD3D12.cpp;..\..\d3d12\pointRenderPipelineD3D12.cpp;..\..\d3d12\renderStateD3D12.cpp;..\..\d3d11\appD3D11Ctx.cpp;..\..\d3d11\debugLineRenderD3D11.cpp;..\..\d3d11\demoContextD3D11.cpp;..\..\d3d11\diffuseRenderD3D11.cpp;..\..\d3d11\fluidRenderD3D11.cpp;..\..\d3d11\imguiGraphD3D11.cpp;..\..\d3d11\imguiInteropD3D11.cpp;..\..\d3d11\meshRenderD3D11.cpp;..\..\d3d11\pointRenderD3D11.cpp;..\..\d3d11\renderTargetD3D11.cpp;..\..\d3d11\shadowMapD3D11.cpp;..\..\d3d\appGraphCtxLoader.cpp;..\..\d3d\imguiGraph.cpp;..\..\d3d\imguiGraphLoader.cpp;..\..\d3d\loader.cpp;..\..\d3d\renderParamsD3D.cpp' != '' and 'false' == 'True').
+     1>Target "AfterClCompile" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_ClCompile" depends on it):
+     1>Done building target "AfterClCompile" in project "flexDemoD3D.vcxproj".
+     1>Target "_ClCompile" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_BuildCompileAction" depends on it):
+     1>Done building target "_ClCompile" in project "flexDemoD3D.vcxproj".
+       Target "_ResGen" skipped, due to false condition; ('@(EmbeddedResource)'!='') was evaluated as (''!='').
+     1>Target "BeforeResourceCompile" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_ResourceCompile" depends on it):
+     1>Done building target "BeforeResourceCompile" in project "flexDemoD3D.vcxproj".
+     1>Target "MakeDirsForResourceCompile" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_ResourceCompile" depends on it):
+       Task "MakeDir"
+       Done executing task "MakeDir".
+     1>Done building target "MakeDirsForResourceCompile" in project "flexDemoD3D.vcxproj".
+       Target "ResourceCompile" skipped, due to false condition; ('@(ResourceCompile)' != '') was evaluated as ('' != '').
+     1>Target "AfterResourceCompile" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_ResourceCompile" depends on it):
+     1>Done building target "AfterResourceCompile" in project "flexDemoD3D.vcxproj".
+     1>Target "_ResourceCompile" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_BuildCompileAction" depends on it):
+     1>Done building target "_ResourceCompile" in project "flexDemoD3D.vcxproj".
+       Target "_ImpLib" skipped, due to false condition; ('$(ImpLibCompiled)' == 'true') was evaluated as ('' == 'true').
+       Target "_Lib" skipped, due to false condition; ('$(LibCompiled)' == 'true') was evaluated as ('' == 'true').
+     1>Target "AfterBuildCompileEvent" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_BuildCompileAction" depends on it):
+     1>Done building target "AfterBuildCompileEvent" in project "flexDemoD3D.vcxproj".
+     1>Target "_BuildCompileAction" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "BuildCompile" depends on it):
+     1>Done building target "_BuildCompileAction" in project "flexDemoD3D.vcxproj".
+     1>Target "BuildCompile" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "Build" depends on it):
+     1>Done building target "BuildCompile" in project "flexDemoD3D.vcxproj".
+       Target "PrepareProjectReferences" skipped. Previously built successfully.
+     1>Target "BuildLinkTraverse" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "BuildLink" depends on it):
+       Task "MSBuild" skipped, due to false condition; ('$(BuildPassReferences)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceExistent)' != ''  and '%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true') was evaluated as ('' == 'true' and './../../../extensions/compiler/vc14win64/flexExtD3D.vcxproj' != '' and './../../../extensions/compiler/vc14win64/flexExtD3D.vcxproj' != ''  and 'true' == 'true').
+     1>Done building target "BuildLinkTraverse" in project "flexDemoD3D.vcxproj".
+       Target "PrepareForBuild" skipped. Previously built successfully.
+       Target "ResolveReferences" skipped. Previously built successfully.
+     1>Target "ComputeLegacyManifestEmbedding" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_BuildLinkAction" depends on it):
+       Task "VCMessage" skipped, due to false condition; ('$(RevertManifestEmbedding)' == 'true' and '$(_LegacyManifestEmbeddingDebug)' == 'true') was evaluated as ('' == 'true' and '' == 'true').
+     1>Done building target "ComputeLegacyManifestEmbedding" in project "flexDemoD3D.vcxproj".
+     1>Target "BeforeLink" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_Link" depends on it):
+     1>Done building target "BeforeLink" in project "flexDemoD3D.vcxproj".
+     1>Target "ComputeRCOutputs" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "ComputeRCGeneratedLinkInputs" depends on it):
+     1>Done building target "ComputeRCOutputs" in project "flexDemoD3D.vcxproj".
+     1>Target "ComputeRCGeneratedLinkInputs" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_Link" depends on it):
+     1>Done building target "ComputeRCGeneratedLinkInputs" in project "flexDemoD3D.vcxproj".
+     1>Target "ComputeManifestGeneratedLinkerInputs" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_Link" depends on it):
+     1>Done building target "ComputeManifestGeneratedLinkerInputs" in project "flexDemoD3D.vcxproj".
+     1>Target "ComputeCustomBuildOutput" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_Link" depends on it):
+       Task "CreateItem" skipped, due to false condition; ('%(CustomBuildOutputs.OutputItemType)'!='') was evaluated as (''!='').
+       Task "MakeDir"
+       Done executing task "MakeDir".
+     1>Done building target "ComputeCustomBuildOutput" in project "flexDemoD3D.vcxproj".
+       Target "ComputeMIDLGeneratedCompileInputs" skipped. Previously built successfully.
+       Target "ComputeCLInputPDBName" skipped. Previously built successfully.
+       Target "ComputeReferenceCLInput" skipped. Previously built successfully.
+       Target "WarnCompileDuplicatedFilename" skipped. Previously built successfully.
+       Target "FixupCLCompileOptions" skipped. Previously built successfully.
+     1>Target "ComputeCLOutputs" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "ComputeCLGeneratedLinkInputs" depends on it):
+     1>Done building target "ComputeCLOutputs" in project "flexDemoD3D.vcxproj".
+     1>Target "ComputeCLGeneratedLinkInputs" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_Link" depends on it):
+     1>Done building target "ComputeCLGeneratedLinkInputs" in project "flexDemoD3D.vcxproj".
+     1>Target "ComputeLinkInputsFromProject" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_Link" depends on it):
+     1>Done building target "ComputeLinkInputsFromProject" in project "flexDemoD3D.vcxproj".
+       Target "PrepareForBuild" skipped. Previously built successfully.
+       Target "ResolveReferences" skipped. Previously built successfully.
+     1>Target "ResolvedLinkLib" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "ComputeReferenceLinkInputs" depends on it):
+       Task "MSBuild"
+         Global Properties:
+           Configuration=debug
+           Platform=x64
+     1>Project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (1) is building "D:\Documents2\Vulkan\FleX-master\extensions\compiler\vc14win64\flexExtD3D.vcxproj" (2:3) on node 2 (GetResolvedLinkLibs target(s)).
+   2:3>Building with tools version "15.0".
+   2:3>Target "GetResolvedLinkLibs" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\extensions\compiler\vc14win64\flexExtD3D.vcxproj" (entry point):
+       Task "Message" skipped, due to false condition; ('$(_REFERENCE_DEBUG)'=='true') was evaluated as (''=='true').
+   2:3>Done building target "GetResolvedLinkLibs" in project "flexExtD3D.vcxproj".
+   2:3>Done Building Project "D:\Documents2\Vulkan\FleX-master\extensions\compiler\vc14win64\flexExtD3D.vcxproj" (GetResolvedLinkLibs target(s)).
+     1>Done executing task "MSBuild".
+     1>Done building target "ResolvedLinkLib" in project "flexDemoD3D.vcxproj".
+     1>Target "ComputeResolveLinkObj" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "ComputeReferenceLinkInputs" depends on it):
+       Task "CallTarget" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.UseLibraryDependencyInputs)'=='true') was evaluated as ('false'=='true').
+     1>Done building target "ComputeResolveLinkObj" in project "flexDemoD3D.vcxproj".
+     1>Target "ComputeReferenceLinkInputs" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_Link" depends on it):
+       Task "VCMessage" skipped, due to false condition; ('%(ProjectReferenceToLink.ProjectType)' == 'DynamicLibrary' and '$(WindowsAppContainer)' == 'true' and '%(ProjectReferenceToLink.WindowsAppContainer)' != 'true') was evaluated as ('DynamicLibrary' == 'DynamicLibrary' and 'false' == 'true' and 'false' != 'true').
+       Task "Message" skipped, due to false condition; ('$(_REFERENCE_DEBUG)'=='true') was evaluated as (''=='true').
+     1>Done building target "ComputeReferenceLinkInputs" in project "flexDemoD3D.vcxproj".
+     1>Target "ComputeManifestInputsTargets" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_Link" depends on it):
+     1>Done building target "ComputeManifestInputsTargets" in project "flexDemoD3D.vcxproj".
+       Target "ManifestResourceCompile" skipped, due to false condition; ('$(EmbedManifestBy)' == 'LINK' and '@(Manifest)' != '') was evaluated as ('MT' == 'LINK' and '' != '').
+       Target "AssignWinFXEmbeddedResource" skipped, due to false condition; ('@(WinFXEmbeddedResource)' != '') was evaluated as ('' != '').
+     1>Target "AssignTargetPaths" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "PrepareResourceNames" depends on it):
+       Task "AssignTargetPath"
+       Done executing task "AssignTargetPath".
+       Task "AssignTargetPath"
+       Done executing task "AssignTargetPath".
+       Task "AssignTargetPath"
+       Done executing task "AssignTargetPath".
+       Task "AssignTargetPath"
+       Done executing task "AssignTargetPath".
+       Task "AssignTargetPath" skipped, due to false condition; ('@(_DeploymentBaseManifestWithTargetPath)'=='' and '%(None.Extension)'=='.manifest') was evaluated as (''=='' and ''=='.manifest').
+     1>Done building target "AssignTargetPaths" in project "flexDemoD3D.vcxproj".
+       Target "AssignTargetPaths" skipped. Previously built successfully.
+     1>Target "SplitResourcesByCulture" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "PrepareResourceNames" depends on it):
+       Task "Warning" skipped, due to false condition; ('@(ResxWithNoCulture)'!='') was evaluated as (''!='').
+       Task "Warning" skipped, due to false condition; ('@(ResxWithCulture)'!='') was evaluated as (''!='').
+       Task "Warning" skipped, due to false condition; ('@(NonResxWithCulture)'!='') was evaluated as (''!='').
+       Task "Warning" skipped, due to false condition; ('@(NonResxWithNoCulture)'!='') was evaluated as (''!='').
+       Task "AssignCulture"
+       Done executing task "AssignCulture".
+     1>Done building target "SplitResourcesByCulture" in project "flexDemoD3D.vcxproj".
+       Target "CreateManifestResourceNames" skipped, due to false condition; ('@(EmbeddedResource)' != '') was evaluated as ('' != '').
+     1>Target "CreateCustomManifestResourceNames" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "PrepareResourceNames" depends on it):
+     1>Done building target "CreateCustomManifestResourceNames" in project "flexDemoD3D.vcxproj".
+     1>Target "PrepareResourceNames" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_Link" depends on it):
+     1>Done building target "PrepareResourceNames" in project "flexDemoD3D.vcxproj".
+     1>Target "MakeDirsForLink" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_Link" depends on it):
+       Task "MakeDir"
+       Done executing task "MakeDir".
+     1>Done building target "MakeDirsForLink" in project "flexDemoD3D.vcxproj".
+     1>Target "DoLinkOutputFilesMatch" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_Link" depends on it):
+       Task "VCMessage" skipped, due to false condition; ('@(_OutputFileFromLink)' == '') was evaluated as ('./../../../bin/win64\NvFlexDemoDebugD3D_x64.exe' == '').
+       Task "VCMessage" skipped, due to false condition; ('@(_OutputFileFromLink)' != '' and '%(_OutputFileFromLink.FullPath)' != '$([System.IO.Path]::GetFullPath($(TargetPath)))') was evaluated as ('./../../../bin/win64\NvFlexDemoDebugD3D_x64.exe' != '' and 'D:\Documents2\Vulkan\FleX-master\bin\win64\NvFlexDemoDebugD3D_x64.exe' != 'D:\Documents2\Vulkan\FleX-master\bin\win64\NvFlexDemoDebugD3D_x64.exe').
+       Task "VCMessage" skipped, due to false condition; ('@(_OutputFileFromLink)' != '' and '%(_OutputFileFromLink.Extension)' != '' and '%(_OutputFileFromLink.Extension)' != '$(TargetExt)') was evaluated as ('./../../../bin/win64\NvFlexDemoDebugD3D_x64.exe' != '' and '.exe' != '' and '.exe' != '.exe').
+       Task "VCMessage" skipped, due to false condition; ('@(_OutputFileFromLink)' != '' and '%(_OutputFileFromLink.Filename)' != '' and '%(_OutputFileFromLink.Filename)' != '$(TargetName)') was evaluated as ('./../../../bin/win64\NvFlexDemoDebugD3D_x64.exe' != '' and 'NvFlexDemoDebugD3D_x64' != '' and 'NvFlexDemoDebugD3D_x64' != 'NvFlexDemoDebugD3D_x64').
+       Task "VCMessage" skipped, due to false condition; ('%(Link.MinimumRequiredVersion)' != '' and ('%(Link.Subsystem)' == '' or '%(Link.Subsystem)' == 'NotSet')) was evaluated as ('' != '' and ('Console' == '' or 'Console' == 'NotSet')).
+     1>Done building target "DoLinkOutputFilesMatch" in project "flexDemoD3D.vcxproj".
+     1>Target "PreLinkEvent" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_Link" depends on it):
+       Task "Message" skipped, due to false condition; ('%(PreLinkEvent.Message)' != '' and '%(PreLinkEvent.Command)' != '') was evaluated as ('' != '' and '' != '').
+       Task "Exec" skipped, due to false condition; ('%(PreLinkEvent.Command)' != '') was evaluated as ('' != '').
+     1>Done building target "PreLinkEvent" in project "flexDemoD3D.vcxproj".
+     1>Target "ComputeLinkSwitches" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "Link" depends on it):
+     1>Done building target "ComputeLinkSwitches" in project "flexDemoD3D.vcxproj".
+     1>Target "Link" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_Link" depends on it):
+       Using "Link" task from assembly "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.Build.CppTasks.Common.dll".
+       Task "Link"
+         All source files are not up-to-date: missing command TLog "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\build\win64\DX\debug\flexDemoD3D.tlog\link.command.1.tlog".
+         Environment Variables passed to tool:
+           VS_UNICODE_OUTPUT=1608
+         D:\Documents2\Visual Studio 2017\visual studio\VC\Tools\MSVC\14.16.27023\bin\HostX86\x64\link.exe /ERRORREPORT:PROMPT /OUT:"./../../../bin/win64\NvFlexDemoDebugD3D_x64.exe" /NOLOGO /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2/lib/x64" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib d3dcompiler.lib delayimp.lib "./../../../external/SDL2-2.0.4/lib/x64/SDL2.lib" "./../../../external/SDL2-2.0.4/lib/x64/SDL2main.lib" ./../../../external/NvToolsExt/lib/x64/nvToolsExt64_1.lib ./../../../external/D3D12/libs/x64/d3d12.lib ./../../../lib/win64/NvFlexDebugD3D_x64.lib ./../../../lib/win64/NvFlexExtDebugD3D_x64.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"./../../../bin/win64\/NvFlexDemoDebugD3D_x64.exe.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"./../../../bin/win64\NvFlexDemoDebugD3D_x64.lib" /MACHINE:X64 /DELAYLOAD:d3d11.dll /DELAYLOAD:d3d12.dll /DELAYLOAD:dxgi.dll ./build/win64/DX/debug\imgui.obj
+         ./build/win64/DX/debug\main.obj
+         ./build/win64/DX/debug\shadersDemoContext.obj
+         ./build/win64/DX/debug\aabbtree.obj
+         ./build/win64/DX/debug\core.obj
+         ./build/win64/DX/debug\extrude.obj
+         ./build/win64/DX/debug\maths.obj
+         ./build/win64/DX/debug\mesh.obj
+         ./build/win64/DX/debug\perlin.obj
+         ./build/win64/DX/debug\pfm.obj
+         ./build/win64/DX/debug\platform.obj
+         ./build/win64/DX/debug\png.obj
+         ./build/win64/DX/debug\sdf.obj
+         ./build/win64/DX/debug\tga.obj
+         ./build/win64/DX/debug\voxelize.obj
+         ./build/win64/DX/debug\appD3D12Ctx.obj
+         ./build/win64/DX/debug\bufferD3D12.obj
+         ./build/win64/DX/debug\demoContextD3D12.obj
+         ./build/win64/DX/debug\diffusePointRenderPipelineD3D12.obj
+         ./build/win64/DX/debug\fluidCompositeRenderPipelineD3D12.obj
+         ./build/win64/DX/debug\fluidEllipsoidRenderPipelineD3D12.obj
+         ./build/win64/DX/debug\fluidSmoothRenderPipelineD3D12.obj
+         ./build/win64/DX/debug\fluidThicknessRenderPipelineD3D12.obj
+         ./build/win64/DX/debug\imguiGraphD3D12.obj
+         ./build/win64/DX/debug\imguiInteropD3D12.obj
+         ./build/win64/DX/debug\lineRenderPipelineD3D12.obj
+         ./build/win64/DX/debug\meshRenderer.obj
+         ./build/win64/DX/debug\meshRendererD3D12.obj
+         ./build/win64/DX/debug\meshRenderPipelineD3D12.obj
+         ./build/win64/DX/debug\meshUtil.obj
+         ./build/win64/DX/debug\NvCoDx12CircularResourceHeap.obj
+         ./build/win64/DX/debug\NvCoDx12CounterFence.obj
+         ./build/win64/DX/debug\NvCoDx12DescriptorHeap.obj
+         ./build/win64/DX/debug\NvCoDx12HelperUtil.obj
+         ./build/win64/DX/debug\NvCoDx12RenderTarget.obj
+         ./build/win64/DX/debug\NvCoDx12Resource.obj
+         ./build/win64/DX/debug\NvCoDx12ResourceScopeManager.obj
+         ./build/win64/DX/debug\NvCoDxDebugUtil.obj
+         ./build/win64/DX/debug\NvCoDxFormatUtil.obj
+         ./build/win64/DX/debug\NvCoFreeList.obj
+         ./build/win64/DX/debug\pipelineUtilD3D12.obj
+         ./build/win64/DX/debug\pointRenderPipelineD3D12.obj
+         ./build/win64/DX/debug\renderStateD3D12.obj
+         ./build/win64/DX/debug\appD3D11Ctx.obj
+         ./build/win64/DX/debug\debugLineRenderD3D11.obj
+         ./build/win64/DX/debug\demoContextD3D11.obj
+         ./build/win64/DX/debug\diffuseRenderD3D11.obj
+         ./build/win64/DX/debug\fluidRenderD3D11.obj
+         ./build/win64/DX/debug\imguiGraphD3D11.obj
+         ./build/win64/DX/debug\imguiInteropD3D11.obj
+         ./build/win64/DX/debug\meshRenderD3D11.obj
+         ./build/win64/DX/debug\pointRenderD3D11.obj
+         ./build/win64/DX/debug\renderTargetD3D11.obj
+         ./build/win64/DX/debug\shadowMapD3D11.obj
+         ./build/win64/DX/debug\appGraphCtxLoader.obj
+         ./build/win64/DX/debug\imguiGraph.obj
+         ./build/win64/DX/debug\imguiGraphLoader.obj
+         ./build/win64/DX/debug\loader.obj
+         ./build/win64/DX/debug\renderParamsD3D.obj
+         "D:\Documents2\Vulkan\FleX-master\lib\win64\NvFlexExtDebugD3D_x64.lib"
+         Tracking command:
+         D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Tracker.exe /a /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\build\win64\DX\debug\flexDemoD3D.tlog /r "D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\AABBTREE.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\APPD3D11CTX.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\APPD3D12CTX.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\APPGRAPHCTXLOADER.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\BUFFERD3D12.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\CORE.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\DEBUGLINERENDERD3D11.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\DEMOCONTEXTD3D11.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\DEMOCONTEXTD3D12.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\DIFFUSEPOINTRENDERPIPELINED3D12.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\DIFFUSERENDERD3D11.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\EXTRUDE.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\FLUIDCOMPOSITERENDERPIPELINED3D12.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\FLUIDELLIPSOIDRENDERPIPELINED3D12.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\FLUIDRENDERD3D11.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\FLUIDSMOOTHRENDERPIPELINED3D12.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\FLUIDTHICKNESSRENDERPIPELINED3D12.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\IMGUI.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\IMGUIGRAPH.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\IMGUIGRAPHD3D11.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\IMGUIGRAPHD3D12.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\IMGUIGRAPHLOADER.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\IMGUIINTEROPD3D11.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\IMGUIINTEROPD3D12.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\LINERENDERPIPELINED3D12.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\LOADER.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\MAIN.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\MATHS.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\MESH.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\MESHRENDERD3D11.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\MESHRENDERER.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\MESHRENDERERD3D12.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\MESHRENDERPIPELINED3D12.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\MESHUTIL.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\NVCODX12CIRCULARRESOURCEHEAP.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\NVCODX12COUNTERFENCE.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\NVCODX12DESCRIPTORHEAP.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\NVCODX12HELPERUTIL.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\NVCODX12RENDERTARGET.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\NVCODX12RESOURCE.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\NVCODX12RESOURCESCOPEMANAGER.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\NVCODXDEBUGUTIL.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\NVCODXFORMATUTIL.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\NVCOFREELIST.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\PERLIN.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\PFM.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\PIPELINEUTILD3D12.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\PLATFORM.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\PNG.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\POINTRENDERD3D11.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\POINTRENDERPIPELINED3D12.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\RENDERPARAMSD3D.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\RENDERSTATED3D12.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\RENDERTARGETD3D11.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\SDF.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\SHADERSDEMOCONTEXT.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\SHADOWMAPD3D11.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\TGA.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\DEMO\COMPILER\VC14WIN64\BUILD\WIN64\DX\DEBUG\VOXELIZE.OBJ|D:\DOCUMENTS2\VULKAN\FLEX-MASTER\LIB\WIN64\NVFLEXEXTDEBUGD3D_X64.LIB" /b MSBuildConsole_CancelEvent9ede9f79d2934f098cbc990b79f2533c  /c "D:\Documents2\Visual Studio 2017\visual studio\VC\Tools\MSVC\14.16.27023\bin\HostX86\x64\link.exe"  /ERRORREPORT:PROMPT /OUT:"./../../../bin/win64\NvFlexDemoDebugD3D_x64.exe" /NOLOGO /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2/lib/x64" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib d3dcompiler.lib delayimp.lib "./../../../external/SDL2-2.0.4/lib/x64/SDL2.lib" "./../../../external/SDL2-2.0.4/lib/x64/SDL2main.lib" ./../../../external/NvToolsExt/lib/x64/nvToolsExt64_1.lib ./../../../external/D3D12/libs/x64/d3d12.lib ./../../../lib/win64/NvFlexDebugD3D_x64.lib ./../../../lib/win64/NvFlexExtDebugD3D_x64.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"./../../../bin/win64\/NvFlexDemoDebugD3D_x64.exe.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"./../../../bin/win64\NvFlexDemoDebugD3D_x64.lib" /MACHINE:X64 /DELAYLOAD:d3d11.dll /DELAYLOAD:d3d12.dll /DELAYLOAD:dxgi.dll ./build/win64/DX/debug\imgui.obj
+         ./build/win64/DX/debug\main.obj
+         ./build/win64/DX/debug\shadersDemoContext.obj
+         ./build/win64/DX/debug\aabbtree.obj
+         ./build/win64/DX/debug\core.obj
+         ./build/win64/DX/debug\extrude.obj
+         ./build/win64/DX/debug\maths.obj
+         ./build/win64/DX/debug\mesh.obj
+         ./build/win64/DX/debug\perlin.obj
+         ./build/win64/DX/debug\pfm.obj
+         ./build/win64/DX/debug\platform.obj
+         ./build/win64/DX/debug\png.obj
+         ./build/win64/DX/debug\sdf.obj
+         ./build/win64/DX/debug\tga.obj
+         ./build/win64/DX/debug\voxelize.obj
+         ./build/win64/DX/debug\appD3D12Ctx.obj
+         ./build/win64/DX/debug\bufferD3D12.obj
+         ./build/win64/DX/debug\demoContextD3D12.obj
+         ./build/win64/DX/debug\diffusePointRenderPipelineD3D12.obj
+         ./build/win64/DX/debug\fluidCompositeRenderPipelineD3D12.obj
+         ./build/win64/DX/debug\fluidEllipsoidRenderPipelineD3D12.obj
+         ./build/win64/DX/debug\fluidSmoothRenderPipelineD3D12.obj
+         ./build/win64/DX/debug\fluidThicknessRenderPipelineD3D12.obj
+         ./build/win64/DX/debug\imguiGraphD3D12.obj
+         ./build/win64/DX/debug\imguiInteropD3D12.obj
+         ./build/win64/DX/debug\lineRenderPipelineD3D12.obj
+         ./build/win64/DX/debug\meshRenderer.obj
+         ./build/win64/DX/debug\meshRendererD3D12.obj
+         ./build/win64/DX/debug\meshRenderPipelineD3D12.obj
+         ./build/win64/DX/debug\meshUtil.obj
+         ./build/win64/DX/debug\NvCoDx12CircularResourceHeap.obj
+         ./build/win64/DX/debug\NvCoDx12CounterFence.obj
+         ./build/win64/DX/debug\NvCoDx12DescriptorHeap.obj
+         ./build/win64/DX/debug\NvCoDx12HelperUtil.obj
+         ./build/win64/DX/debug\NvCoDx12RenderTarget.obj
+         ./build/win64/DX/debug\NvCoDx12Resource.obj
+         ./build/win64/DX/debug\NvCoDx12ResourceScopeManager.obj
+         ./build/win64/DX/debug\NvCoDxDebugUtil.obj
+         ./build/win64/DX/debug\NvCoDxFormatUtil.obj
+         ./build/win64/DX/debug\NvCoFreeList.obj
+         ./build/win64/DX/debug\pipelineUtilD3D12.obj
+         ./build/win64/DX/debug\pointRenderPipelineD3D12.obj
+         ./build/win64/DX/debug\renderStateD3D12.obj
+         ./build/win64/DX/debug\appD3D11Ctx.obj
+         ./build/win64/DX/debug\debugLineRenderD3D11.obj
+         ./build/win64/DX/debug\demoContextD3D11.obj
+         ./build/win64/DX/debug\diffuseRenderD3D11.obj
+         ./build/win64/DX/debug\fluidRenderD3D11.obj
+         ./build/win64/DX/debug\imguiGraphD3D11.obj
+         ./build/win64/DX/debug\imguiInteropD3D11.obj
+         ./build/win64/DX/debug\meshRenderD3D11.obj
+         ./build/win64/DX/debug\pointRenderD3D11.obj
+         ./build/win64/DX/debug\renderTargetD3D11.obj
+         ./build/win64/DX/debug\shadowMapD3D11.obj
+         ./build/win64/DX/debug\appGraphCtxLoader.obj
+         ./build/win64/DX/debug\imguiGraph.obj
+         ./build/win64/DX/debug\imguiGraphLoader.obj
+         ./build/win64/DX/debug\loader.obj
+         ./build/win64/DX/debug\renderParamsD3D.obj
+         "D:\Documents2\Vulkan\FleX-master\lib\win64\NvFlexExtDebugD3D_x64.lib"
+            Creating library ./../../../bin/win64\NvFlexDemoDebugD3D_x64.lib and object ./../../../bin/win64\NvFlexDemoDebugD3D_x64.exp
+       Done executing task "Link".
+       Task "Message"
+         flexDemoD3D.vcxproj -> D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\./../../../bin/win64\NvFlexDemoDebugD3D_x64.exe
+       Done executing task "Message".
+       Task "VCMessage" skipped, due to false condition; (('$(EmbedManifestBy)' != 'LINK' or '$(LegacyManifestEmbedding)' != 'true' or '$(LinkSkippedExecution)' == 'true') and
+                    %(Link.GenerateDebugInformation) == 'DebugFastLink' and %(Link.ProgramDataBaseFileName) != '') was evaluated as (('MT' != 'LINK' or '' != 'true' or 'False' == 'true') and
+                    true == 'DebugFastLink' and  != '').
+       Task "VCMessage" skipped, due to false condition; (('$(EmbedManifestBy)' != 'LINK' or '$(LegacyManifestEmbedding)' != 'true' or '$(LinkSkippedExecution)' == 'true') and
+                    %(Link.GenerateDebugInformation) == 'true' and %(Link.ProgramDataBaseFileName) != '') was evaluated as (('MT' != 'LINK' or '' != 'true' or 'False' == 'true') and
+                    true == 'true' and  != '').
+     1>Done building target "Link" in project "flexDemoD3D.vcxproj".
+       Target "MetaGenInputsOutputs" skipped, due to false condition; ('$(EnableManagedIncrementalBuild)' == 'True') was evaluated as ('false' == 'True').
+       Target "ComputeMetaGenInputs" skipped, due to false condition; ('$(CLRSupport)'!='' and '$(CLRSupport)'!='false') was evaluated as ('false'!='' and 'false'!='false').
+       Target "MetaGen" skipped, due to false condition; ('@(MetaGen)' != '') was evaluated as ('' != '').
+     1>Target "ComputeLinkImportLibraryOutputsForClean" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_Link" depends on it):
+       Task "WriteLinesToFile"
+       Done executing task "WriteLinesToFile".
+     1>Done building target "ComputeLinkImportLibraryOutputsForClean" in project "flexDemoD3D.vcxproj".
+     1>Target "AfterLink" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_Link" depends on it):
+     1>Done building target "AfterLink" in project "flexDemoD3D.vcxproj".
+     1>Target "_Link" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_BuildLinkAction" depends on it):
+     1>Done building target "_Link" in project "flexDemoD3D.vcxproj".
+     1>Target "_ALink" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_BuildLinkAction" depends on it):
+     1>Done building target "_ALink" in project "flexDemoD3D.vcxproj".
+       Target "ComputeLegacyManifestEmbedding" skipped. Previously built successfully.
+     1>Target "_Manifest" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_BuildLinkAction" depends on it):
+       Task "CallTarget" skipped, due to false condition; ('$(LegacyManifestEmbedding)' == 'true') was evaluated as ('' == 'true').
+     1>Done building target "_Manifest" in project "flexDemoD3D.vcxproj".
+     1>Target "RegisterOutput" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_BuildLinkAction" depends on it):
+       Task "Exec" skipped, due to false condition; ('$(ConfigurationType)'=='DynamicLibrary' and '%(Link.RegisterOutput)'=='true' and '%(Link.PerUserRedirection)'!='true') was evaluated as ('Application'=='DynamicLibrary' and 'false'=='true' and 'false'!='true').
+       Task "Exec" skipped, due to false condition; ('$(ConfigurationType)'=='DynamicLibrary' and '%(Link.RegisterOutput)'=='true' and '%(Link.PerUserRedirection)'=='true') was evaluated as ('Application'=='DynamicLibrary' and 'false'=='true' and 'false'=='true').
+       Task "Exec" skipped, due to false condition; ('$(ConfigurationType)'=='Application' and '%(Link.RegisterOutput)'=='true' and '%(Link.PerUserRedirection)'!='true') was evaluated as ('Application'=='Application' and 'false'=='true' and 'false'!='true').
+       Task "Exec" skipped, due to false condition; ('$(ConfigurationType)'=='Application' and '%(Link.RegisterOutput)'=='true' and '%(Link.PerUserRedirection)'=='true') was evaluated as ('Application'=='Application' and 'false'=='true' and 'false'=='true').
+       Task "VCMessage" skipped, due to false condition; ('$(_RegisterOutputExitCode)' != '' and '$(_RegisterOutputExitCode)' != '0') was evaluated as ('' != '' and '' != '0').
+     1>Done building target "RegisterOutput" in project "flexDemoD3D.vcxproj".
+       Target "PrepareForBuild" skipped. Previously built successfully.
+       Target "ResolveReferences" skipped. Previously built successfully.
+     1>Target "ResolvedXDCMake" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_XdcMake" depends on it):
+       Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.Extension)' == '.vcxproj' and '@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceExistent)' != '' and '$(_ClCompileGenerateXMLDocumentationFiles)' == 'true') was evaluated as ('.vcxproj' == '.vcxproj' and './../../../extensions/compiler/vc14win64/flexExtD3D.vcxproj' != '' and './../../../extensions/compiler/vc14win64/flexExtD3D.vcxproj' != '' and '' == 'true').
+     1>Done building target "ResolvedXDCMake" in project "flexDemoD3D.vcxproj".
+     1>Target "ComputeCLCompileGeneratedXDCFiles" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_XdcMake" depends on it):
+     1>Done building target "ComputeCLCompileGeneratedXDCFiles" in project "flexDemoD3D.vcxproj".
+     1>Target "MakeDirsForXdcMake" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_XdcMake" depends on it):
+       Task "MakeDir"
+       Done executing task "MakeDir".
+     1>Done building target "MakeDirsForXdcMake" in project "flexDemoD3D.vcxproj".
+       Target "XdcMake" skipped, due to false condition; ('@(XdcMake)' != '') was evaluated as ('' != '').
+     1>Target "_XdcMake" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_BuildLinkAction" depends on it):
+     1>Done building target "_XdcMake" in project "flexDemoD3D.vcxproj".
+     1>Target "ComputeCLCompileGeneratedSbrFiles" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_BscMake" depends on it):
+     1>Done building target "ComputeCLCompileGeneratedSbrFiles" in project "flexDemoD3D.vcxproj".
+     1>Target "MakeDirsForBscMake" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_BscMake" depends on it):
+       Task "MakeDir"
+       Done executing task "MakeDir".
+     1>Done building target "MakeDirsForBscMake" in project "flexDemoD3D.vcxproj".
+       Target "BscMake" skipped, due to false condition; ('@(BscMake)' != '') was evaluated as ('' != '').
+       Target "CustomBuildStep" skipped, due to false condition; ('@(CustomBuildStep)' != '' and '$(SelectedFiles)'=='') was evaluated as ('' != '' and ''=='').
+     1>Target "_BscMake" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_BuildLinkAction" depends on it):
+     1>Done building target "_BscMake" in project "flexDemoD3D.vcxproj".
+     1>Target "_GenerateSatelliteAssemblyInputs" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "CreateSatelliteAssemblies" depends on it):
+       Task "Warning" skipped, due to false condition; ('@(ManifestResourceWithCulture)'!='' and '%(ManifestResourceWithCulture.EmittedForCompatibilityOnly)'=='') was evaluated as (''!='' and ''=='').
+       Task "Warning" skipped, due to false condition; ('@(ManifestNonResxWithCultureOnDisk)'!='' and '%(ManifestNonResxWithCultureOnDisk.EmittedForCompatibilityOnly)'=='') was evaluated as (''!='' and ''=='').
+     1>Done building target "_GenerateSatelliteAssemblyInputs" in project "flexDemoD3D.vcxproj".
+       Target "ComputeIntermediateSatelliteAssemblies" skipped, due to false condition; (@(ReferenceSatellitePaths->'%(DestinationSubDirectory)') != '') was evaluated as ( != '').
+       Target "GenerateSatelliteAssemblies" skipped, due to false condition; ('@(_SatelliteAssemblyResourceInputs)' != '') was evaluated as ('' != '').
+     1>Target "CreateSatelliteAssemblies" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_BuildLinkAction" depends on it):
+     1>Done building target "CreateSatelliteAssemblies" in project "flexDemoD3D.vcxproj".
+     1>Target "_Appverifier" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_BuildLinkAction" depends on it):
+     1>Done building target "_Appverifier" in project "flexDemoD3D.vcxproj".
+     1>Target "_Deploy" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_BuildLinkAction" depends on it):
+     1>Done building target "_Deploy" in project "flexDemoD3D.vcxproj".
+       Target "ComputeIntermediateSatelliteAssemblies" skipped, due to false condition; (@(ReferenceSatellitePaths->'%(DestinationSubDirectory)') != '') was evaluated as ( != '').
+       Target "_CopyFilesMarkedCopyLocal" skipped, due to false condition; ('@(ReferenceCopyLocalPaths)' != '') was evaluated as ('' != '').
+       Target "AssignTargetPaths" skipped. Previously built successfully.
+       Target "_SplitProjectReferencesByFileExistence" skipped. Previously built successfully.
+       Target "_GetProjectReferenceTargetFrameworkProperties" skipped. Previously built successfully.
+     1>Target "GetCopyToOutputDirectoryXamlAppDefs" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Xaml.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "GetCopyToOutputDirectoryItems" depends on it):
+       Task "AssignTargetPath"
+       Done executing task "AssignTargetPath".
+     1>Done building target "GetCopyToOutputDirectoryXamlAppDefs" in project "flexDemoD3D.vcxproj".
+     1>Target "GetCopyToOutputDirectoryItems" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_CopySourceItemsToOutputDirectory" depends on it):
+       Task "MSBuild"
+         Global Properties:
+           Configuration=debug
+           Platform=x64
+     1>Project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (1) is building "D:\Documents2\Vulkan\FleX-master\extensions\compiler\vc14win64\flexExtD3D.vcxproj" (2:4) on node 2 (GetCopyToOutputDirectoryItems target(s)).
+   2:4>Building with tools version "15.0".
+       Target "GetCopyToOutputDirectoryItems" skipped. Previously built successfully.
+   2:4>Done Building Project "D:\Documents2\Vulkan\FleX-master\extensions\compiler\vc14win64\flexExtD3D.vcxproj" (GetCopyToOutputDirectoryItems target(s)).
+     1>Done executing task "MSBuild".
+       Task "AssignTargetPath"
+       Done executing task "AssignTargetPath".
+     1>Done building target "GetCopyToOutputDirectoryItems" in project "flexDemoD3D.vcxproj".
+       Target "_CopyOutOfDateSourceItemsToOutputDirectory" skipped, due to false condition; ( '@(_SourceItemsToCopyToOutputDirectory)' != '' ) was evaluated as ( '' != '' ).
+       Target "_CopyOutOfDateSourceItemsToOutputDirectoryAlways" skipped, due to false condition; ( '@(_SourceItemsToCopyToOutputDirectoryAlways)' != '' ) was evaluated as ( '' != '' ).
+     1>Target "_CopySourceItemsToOutputDirectory" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "CopyFilesToOutputDirectory" depends on it):
+     1>Done building target "_CopySourceItemsToOutputDirectory" in project "flexDemoD3D.vcxproj".
+       Target "_CopyAppConfigFile" skipped, due to false condition; ( '@(AppConfigWithTargetPath)' != '' ) was evaluated as ( '' != '' ).
+       Target "_CopyManifestFiles" skipped, due to false condition; ( '$(_DeploymentCopyApplicationManifest)'=='true' or '$(GenerateClickOnceManifests)'=='true' ) was evaluated as ( ''=='true' or ''=='true' ).
+     1>Target "_CheckForCompileOutputs" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "CopyFilesToOutputDirectory" depends on it):
+     1>Done building target "_CheckForCompileOutputs" in project "flexDemoD3D.vcxproj".
+       Target "_SGenCheckForOutputs" skipped, due to false condition; ('$(_SGenGenerateSerializationAssembliesConfig)' == 'On' or ('@(WebReferenceUrl)'!='' and '$(_SGenGenerateSerializationAssembliesConfig)' == 'Auto')) was evaluated as ('Off' == 'On' or (''!='' and 'Off' == 'Auto')).
+     1>Target "CopyFilesToOutputDirectory" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "PrepareForRun" depends on it):
+       Task "Copy" skipped, due to false condition; ('$(CopyBuildOutputToOutputDirectory)' == 'true' and '$(SkipCopyBuildProduct)' != 'true') was evaluated as ('true' == 'true' and 'true' != 'true').
+       Task "CopyRefAssembly" skipped, due to false condition; ('$(ProduceReferenceAssembly)' == 'true' and '$(CopyBuildOutputToOutputDirectory)' == 'true' and '$(SkipCopyBuildProduct)' != 'true') was evaluated as ('false' == 'true' and 'true' == 'true' and 'true' != 'true').
+       Task "Message" skipped, due to false condition; ('$(CopyBuildOutputToOutputDirectory)' == 'true' and '$(SkipCopyBuildProduct)'!='true') was evaluated as ('true' == 'true' and 'true'!='true').
+       Task "Copy" skipped, due to false condition; ('@(AddModules)' != '') was evaluated as ('' != '').
+       Task "Copy" skipped, due to false condition; ('$(_SGenDllCreated)'=='true') was evaluated as ('false'=='true').
+       Task "Copy" skipped, due to false condition; ('$(_DebugSymbolsProduced)'=='true' and '$(SkipCopyingSymbolsToOutputDirectory)' != 'true' and '$(CopyOutputSymbolsToOutputDirectory)'=='true') was evaluated as ('false'=='true' and '' != 'true' and 'true'=='true').
+       Task "Copy" skipped, due to false condition; ('$(_DocumentationFileProduced)'=='true') was evaluated as ('false'=='true').
+       Task "Copy" skipped, due to false condition; ('@(IntermediateSatelliteAssembliesWithTargetPath)' != '') was evaluated as ('' != '').
+       Task "Copy" skipped, due to false condition; ('@(ReferenceComWrappersToCopyLocal)' != '' or '@(ResolvedIsolatedComModules)' != '' or '@(_DeploymentLooseManifestFile)' != '' or '@(NativeReferenceFile)' != '' ) was evaluated as ('' != '' or '' != '' or '' != '' or '' != '' ).
+       Task "Copy" skipped, due to false condition; ('$(SkipCopyWinMDArtifact)' != 'true' and '@(WinMDExpArtifacts)' != '') was evaluated as ('' != 'true' and '' != '').
+       Task "Message" skipped, due to false condition; ('$(SkipCopyWinMDArtifact)' != 'true' and '$(_WindowsMetadataOutputPath)' != '') was evaluated as ('' != 'true' and '' != '').
+     1>Done building target "CopyFilesToOutputDirectory" in project "flexDemoD3D.vcxproj".
+     1>Target "PrepareForRun" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_BuildLinkAction" depends on it):
+     1>Done building target "PrepareForRun" in project "flexDemoD3D.vcxproj".
+       Target "CustomBuildStep" skipped, due to false condition; ('@(CustomBuildStep)' != '' and '$(SelectedFiles)'=='') was evaluated as ('' != '' and ''=='').
+     1>Target "PostBuildEvent" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "_BuildLinkAction" depends on it):
+       Task "Message" skipped, due to false condition; ('%(PostBuildEvent.Message)' != '' and '%(PostBuildEvent.Command)' != '') was evaluated as ('' != '' and '' != '').
+       Task "Exec" skipped, due to false condition; ('%(PostBuildEvent.Command)' != '') was evaluated as ('' != '').
+     1>Done building target "PostBuildEvent" in project "flexDemoD3D.vcxproj".
+     1>Target "_BuildLinkAction" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "BuildLink" depends on it):
+     1>Done building target "_BuildLinkAction" in project "flexDemoD3D.vcxproj".
+     1>Target "BuildLink" in file "D:\Documents2\Visual Studio 2017\visual studio\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "Build" depends on it):
+     1>Done building target "BuildLink" in project "flexDemoD3D.vcxproj".
+     1>Target "AfterBuild" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.BuildSteps.Targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "Build" depends on it):
+     1>Done building target "AfterBuild" in project "flexDemoD3D.vcxproj".
+     1>Target "FinalizeBuildStatus" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (target "Build" depends on it):
+       Task "Delete"
+         Deleting file "./build/win64/DX/debug\flexDemoD3D.tlog\unsuccessfulbuild".
+       Done executing task "Delete".
+       Task "Touch"
+         Touching "./build/win64/DX/debug\flexDemoD3D.tlog\flexDemoD3D.lastbuildstate".
+       Done executing task "Touch".
+     1>Done building target "FinalizeBuildStatus" in project "flexDemoD3D.vcxproj".
+       Target "_CheckForInvalidConfigurationAndPlatform" skipped. Previously built successfully.
+       Target "_CheckForInvalidConfigurationAndPlatform" skipped. Previously built successfully.
+     1>Target "Build" in file "D:\Documents2\Visual Studio 2017\visual studio\Common7\IDE\VC\VCTargets\Microsoft.BuildSteps.Targets" from project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (entry point):
+     1>Done building target "Build" in project "flexDemoD3D.vcxproj".
+     1>Done Building Project "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+       "D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\flexDemoD3D.vcxproj" (Build target) (1) ->
+       (FxCompile target) -> 
+         D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\meshVS.hlsl(24,2-74): warning X3206: implicit truncation of vector type
+
+    1 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:02:46.94

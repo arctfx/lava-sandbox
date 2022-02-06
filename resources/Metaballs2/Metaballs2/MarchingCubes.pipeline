@@ -1,0 +1,766 @@
+
+/* * * * * * * * * * * * * Author's note * * * * * * * * * * * *\
+*   _       _   _       _   _       _   _       _     _ _ _ _   *
+*  |_|     |_| |_|     |_| |_|_   _|_| |_|     |_|  _|_|_|_|_|  *
+*  |_|_ _ _|_| |_|     |_| |_|_|_|_|_| |_|     |_| |_|_ _ _     *
+*  |_|_|_|_|_| |_|     |_| |_| |_| |_| |_|     |_|   |_|_|_|_   *
+*  |_|     |_| |_|_ _ _|_| |_|     |_| |_|_ _ _|_|  _ _ _ _|_|  *
+*  |_|     |_|   |_|_|_|   |_|     |_|   |_|_|_|   |_|_|_|_|    *
+*                                                               *
+*                     http://www.humus.name                     *
+*                                                                *
+* This file is a part of the work done by Humus. You are free to   *
+* use the code in any way you like, modified, unmodified or copied   *
+* into your own work. However, I expect you to respect these points:  *
+*  - If you use this file and its contents unmodified, or use a major *
+*    part of this file, please credit the author and leave this note. *
+*  - For use in anything commercial, please request my approval.     *
+*  - Share your work and ideas too as much as you can.             *
+*                                                                *
+\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/*
+ * This shader implements mesh extraction from an isosurface using Marching Cubes. The isosurface is defined by where the field() function below is zero.
+ * In this demo a "metaballs" function is used, but any function should work. The only input here is the position and radius of the balls defining the surface.
+ * Using the mesh shader implementation this method can be entirely a streaming operation with no intermediate memory required. A compute shader based implementation
+ * is also provided, which requires intermediate memory. The theoretical max amount of memory needed is enormous, so a conservative max amount is allocated based
+ * on observed real-world needs in this demo. For better performance, both for the mesh shader and compute shader versions, a prepass can be used to evaluate the field()
+ * function across the whole grid, avoiding recomputations at the cost of more memory used. We only store the sign bit though, allowing this to be relatively compact
+ * at 16MB to support the maximum 512x512x512 grid.
+ *
+ * The shader operates on a volume in [0,0,0-1,1,1] divided into 128x128x128 cubes by default (configurable). Each task shader workgroup works on a 4x4x4 subvolume,
+ * checking whether the isosurface intersects any of these cubes. The cubes that are intersected are passed on to the mesh shader, the rest are culled. Given that
+ * most of the volume is fully inside or fully outside the isosurface, this culling improves performance by well over an order of magnitude.
+ *
+ * Each mesh shader workgroup works on a single cube, outputting between 1 and 5 triangles.
+ */
+
+[Rootsig]
+
+const uint DEFAULT_SHIFT = 7; // 128x128x128 cubes by default. (1 << 7) == 128
+const uint DEFAULT_BALL_COUNT = 32;
+const uint MAX_BALL_COUNT = 128;
+
+#ifdef VULKAN
+	// Specialization constant to make driver able to unroll the heavy field() function
+	layout(constant_id = 0) const uint BALL_COUNT = DEFAULT_BALL_COUNT;
+	layout(constant_id = 1) const uint SHIFT = DEFAULT_SHIFT;
+	#extension GL_EXT_shader_8bit_storage: require
+#else
+	typedef uint8 uint8_t;
+#endif
+
+const uint COMPUTE_WG_SIZE = 64;
+const uint WG_CHUNKS = COMPUTE_WG_SIZE / 32;
+
+// Declare shader inputs
+struct SConstants
+{
+	mat4 ViewProj;
+
+	vec3 CamPos;
+	uint Padding;
+
+	vec4 Balls[MAX_BALL_COUNT];
+};
+
+struct SMarchingCubesLookup
+{
+	uint    Indices[4];
+	uint8_t Vertices[12];
+	uint8_t TriangleCount;
+	uint8_t VertexCount;
+};
+
+struct SComputeMeshletData
+{
+	uint MeshletID;
+	uint Vertex;
+	uint Index;
+};
+
+struct SCounters
+{
+	// For indirect dispatch
+	uint MeshletCount;
+	uint One0;
+	uint One1;
+
+	// For indirect draw
+	uint IndexCount;
+	uint InstanceCount;
+	uint FirstIndex;
+	int  VertexOffset;
+	uint FirstInstance;
+
+	uint VertexCount;
+};
+
+// A vec3 equivalent, except this aligns to 4 bytes instead of 16
+struct PackedVec3
+{
+	float x, y, z;
+};
+
+struct SVertex
+{
+	PackedVec3 Pos;
+	PackedVec3 Normal;
+};
+
+// Define the root signature. This will be parsed by the PipelineCompiler.
+ROOT_BEGIN
+	CBUFFER		SConstants Constants;
+	RT_BEGIN Resources
+		STRUCTUREDBUFFER	SMarchingCubesLookup MarchingCubesLookup;
+		TEXTURE				textureCube Skybox;
+
+		RWSTRUCTUREDBUFFER	SCounters Counters;
+		RWSTRUCTUREDBUFFER	SComputeMeshletData Meshlets;
+		RWSTRUCTUREDBUFFER	SVertex Vertices;
+		RWSTRUCTUREDBUFFER	uint Indices;
+
+		RWTEXTURE			layout(r8ui) uimage3D Field;
+	RT_END
+	ST_BEGIN Samplers
+		SAMPLER				sampler Filter;
+	ST_END
+ROOT_END
+
+#define GRID_SIZE (1 << SHIFT)
+#define STEP_SIZE (1.0f / float(GRID_SIZE))
+
+// Task shader to mesh shader I/O
+struct MeshletData
+{
+	uint MeshletID;
+};
+
+// Pixel shader input
+struct PS_IN
+{
+	vec3 Pos;
+	vec3 Normal;
+};
+
+// The isosurface is define where this function returns zero
+float field(vec3 pos)
+{
+	// Compute metaballs
+	float sum = -1.0f;
+	for (int i = 0; i < BALL_COUNT; i++)
+	{
+		vec3 d = Constants.Balls[i].xyz - pos;
+		sum += Constants.Balls[i].w / dot(d, d);
+	}
+
+	// Occasionally some balls swing across the outer edge of the volume, causing a visible cut.
+	// For more visually pleasing results, we manipulate the field a bit with a fade gradient near the edge, so that the balls flatten against the edge instead.
+	vec3 d = abs(pos - vec3(0.5f));
+	float edge_dist = max(d.x, max(d.y, d.z));
+	sum = sum * min(0.5f * (0.5f - edge_dist), 1.0f) - 0.001f;
+
+	return sum;
+}
+
+// Wide version of the above for computing 8 values in parallel. It's not really any faster at low values of BALL_COUNT,
+// but it's more compiler friendly when BALL_COUNT is large and doesn't fall off any performance cliff like calling field() eight times does.
+uint field8(vec3 pos)
+{
+	float sum0 = -1.0f;
+	float sum1 = -1.0f;
+	float sum2 = -1.0f;
+	float sum3 = -1.0f;
+	float sum4 = -1.0f;
+	float sum5 = -1.0f;
+	float sum6 = -1.0f;
+	float sum7 = -1.0f;
+	for (int i = 0; i < BALL_COUNT; i++)
+	{
+		vec3 d0 = Constants.Balls[i].xyz - pos;
+		vec3 d1 = d0 - STEP_SIZE;
+		d0 *= d0;
+		d1 *= d1;
+
+		sum0 += Constants.Balls[i].w / (d0.x + d0.y + d0.z);
+		sum1 += Constants.Balls[i].w / (d1.x + d0.y + d0.z);
+		sum2 += Constants.Balls[i].w / (d0.x + d1.y + d0.z);
+		sum3 += Constants.Balls[i].w / (d1.x + d1.y + d0.z);
+		sum4 += Constants.Balls[i].w / (d0.x + d0.y + d1.z);
+		sum5 += Constants.Balls[i].w / (d1.x + d0.y + d1.z);
+		sum6 += Constants.Balls[i].w / (d0.x + d1.y + d1.z);
+		sum7 += Constants.Balls[i].w / (d1.x + d1.y + d1.z);
+	}
+
+	vec3 d0 = abs(pos - vec3(0.5f));
+	vec3 d1 = abs(pos + (STEP_SIZE - vec3(0.5f)));
+	sum0 = sum0 * min(0.5f * (0.5f - max(d0.x, max(d0.y, d0.z))), 1.0f) - 0.001f;
+	sum1 = sum1 * min(0.5f * (0.5f - max(d1.x, max(d0.y, d0.z))), 1.0f) - 0.001f;
+	sum2 = sum2 * min(0.5f * (0.5f - max(d0.x, max(d1.y, d0.z))), 1.0f) - 0.001f;
+	sum3 = sum3 * min(0.5f * (0.5f - max(d1.x, max(d1.y, d0.z))), 1.0f) - 0.001f;
+	sum4 = sum4 * min(0.5f * (0.5f - max(d0.x, max(d0.y, d1.z))), 1.0f) - 0.001f;
+	sum5 = sum5 * min(0.5f * (0.5f - max(d1.x, max(d0.y, d1.z))), 1.0f) - 0.001f;
+	sum6 = sum6 * min(0.5f * (0.5f - max(d0.x, max(d1.y, d1.z))), 1.0f) - 0.001f;
+	sum7 = sum7 * min(0.5f * (0.5f - max(d1.x, max(d1.y, d1.z))), 1.0f) - 0.001f;
+
+	uint value;
+	value  = (sum0 >= 0)? 0x01 : 0;
+	value |= (sum1 >= 0)? 0x02 : 0;
+	value |= (sum2 >= 0)? 0x04 : 0;
+	value |= (sum3 >= 0)? 0x08 : 0;
+	value |= (sum4 >= 0)? 0x10 : 0;
+	value |= (sum5 >= 0)? 0x20 : 0;
+	value |= (sum6 >= 0)? 0x40 : 0;
+	value |= (sum7 >= 0)? 0x80 : 0;
+
+	return value;
+}
+
+[Task: TaskShader, TaskShaderPrepass]
+
+#extension GL_NV_mesh_shader : require
+#extension GL_KHR_shader_subgroup_ballot : require
+
+out taskNV Out
+{
+	MeshletData meshlets[64];
+};
+
+shared uint values[5][5][5]; // 125 intermediate values for the 5x5x5 corners of 4x4x4 cubes
+shared uint fetch_values[3][3][3]; // 3x3x3 samples, fetching 6x6x6 values of which we use 5x5x5
+
+layout(local_size_x = 32) in;
+void main()
+{
+	uint thread_id = gl_LocalInvocationID.x;
+	uint workgroup_id = gl_WorkGroupID.x;
+
+#if defined(TaskShader)
+	// Convert linear meshlet_id into x, y and z coordinates. We process a 4x4x4 volume of cubes per task shader invocation. For that we need to evaluate 5x5x5 field function values.
+	uint mi_x = 4 * ((workgroup_id >> (0*(SHIFT-2))) & (GRID_SIZE/4 - 1));
+	uint mi_y = 4 * ((workgroup_id >> (1*(SHIFT-2))) & (GRID_SIZE/4 - 1));
+	uint mi_z = 4 * ((workgroup_id >> (2*(SHIFT-2))));
+#elif defined(TaskShaderPrepass)
+	uint mi_x = 2 * ((workgroup_id >> (0*(SHIFT-2))) & (GRID_SIZE/4 - 1));
+	uint mi_y = 2 * ((workgroup_id >> (1*(SHIFT-2))) & (GRID_SIZE/4 - 1));
+	uint mi_z = 2 * ((workgroup_id >> (2*(SHIFT-2))));
+
+	{
+		uint i = thread_id;
+
+		uint t = (342 * i) >> 10; // Fast i / 3, works for values < 512. (342/1024 = 0.333984375 ~ 1/3)
+		uint x = i - 3 * t;       // Fast i % 3
+		uint z = min((342 * t) >> 10, 2); // Clamped to 2, for early-out to work properly. 27 lanes used, so last 5 lanes just repeat other lanes
+		uint y = t - 3 * z;
+
+		uint v = imageLoad(Field, ivec3(mi_x + x, mi_y + y, mi_z + z)).r;
+
+		// If the bits are either all zeros or all ones we can early-out
+		uvec4 ballot0 = subgroupBallot(v != 0);
+		uvec4 ballot1 = subgroupBallot(v != 0xFF);
+
+		if (ballot0.x == 0 || ballot1.x == 0)
+		{
+			gl_TaskCountNV = 0;
+			return;
+		}
+
+		if (thread_id < 27)
+			fetch_values[z][y][x] = v;
+	}
+
+	mi_x *= 2;
+	mi_y *= 2;
+	mi_z *= 2;
+#endif
+
+
+	// 125 values are needed, so this loops 4 times, 3 lanes get wasted on last iteration
+	for (uint i = thread_id; i < 5 * 5 * 5; i += 32)
+	{
+		uint t = (205 * i) >> 10; // Fast i / 5, works for values < 1024. (205/1024 = 0.2001953125 ~ 1/5)
+		uint x = i - 5 * t;       // Fast i % 5
+		uint z = (205 * t) >> 10;
+		uint y = t - 5 * z;
+
+#if defined(TaskShader)
+		vec3 pos = vec3(mi_x + x, mi_y + y, mi_z + z) * STEP_SIZE;
+		values[z][y][x] = (field(pos) >= 0.0f)? 1 : 0;
+#elif defined(TaskShaderPrepass)
+		uint v = fetch_values[z / 2][y / 2][x / 2];
+		values[z][y][x] = (v >> ((x & 1) + 2 * (y & 1) + 4 * (z & 1))) & 1;
+#endif
+	}
+
+	// Two loops, all lanes used
+	uint count = 0;
+	for (uint i = thread_id; i < 64; i += 32)
+	{
+		uint x = i & 0x3;
+		uint y = (i >> 2) & 0x3;
+		uint z = i >> 4;
+
+		// Collect the sign bits for the cube corners. If all are zeros or all ones we're either fully inside or outside
+		// the surface, so no triangles will be generated. In all other cases, the isosurface cuts through the cube somewhere.
+		uint cube_index;
+		cube_index  = (values[z + 0][y + 0][x + 0] << 0);
+		cube_index |= (values[z + 0][y + 0][x + 1] << 1);
+		cube_index |= (values[z + 0][y + 1][x + 0] << 2);
+		cube_index |= (values[z + 0][y + 1][x + 1] << 3);
+		cube_index |= (values[z + 1][y + 0][x + 0] << 4);
+		cube_index |= (values[z + 1][y + 0][x + 1] << 5);
+		cube_index |= (values[z + 1][y + 1][x + 0] << 6);
+		cube_index |= (values[z + 1][y + 1][x + 1] << 7);
+
+		// See if our cube intersects the isosurface
+		bool accept = (cube_index != 0 && cube_index != 0xFF);
+
+		// Gather which lanes have an intersected cube and get the index where to put ours (if we have a valid one)
+		uvec4 ballot = subgroupBallot(accept);
+
+		if (accept)
+		{
+			uint index = bitCount(ballot.x & ((1 << thread_id) - 1));
+
+			// Output a linear meshlet ID for the mesh shader
+			uint meshlet_id = ((((mi_z + z) << SHIFT) + mi_y + y) << SHIFT) + mi_x + x;
+			meshlets[count + index].MeshletID = meshlet_id;
+		}
+
+		count += bitCount(ballot.x);
+	}
+
+	if (thread_id == 0)
+		gl_TaskCountNV = count;
+}
+
+[Mesh: MeshShader]
+
+#extension GL_NV_mesh_shader : require
+#extension GL_KHR_shader_subgroup_ballot : require
+#extension GL_KHR_shader_subgroup_shuffle_relative : require
+
+in taskNV In
+{
+	MeshletData meshlets[64];
+};
+
+layout (location = 0) out PS_IN Out[];
+
+// 8 intermediate corner values and normals in LDS
+struct Corner
+{
+	vec3 normal;
+	float value;
+};
+shared Corner corners[8];
+
+layout(local_size_x = 32) in;
+layout(triangles, max_vertices = 12, max_primitives = 5) out;
+void main()
+{
+	const uint thread_id  = gl_LocalInvocationID.x;
+	const uint meshlet_id = meshlets[gl_WorkGroupID.x].MeshletID;
+
+	// Convert linear meshlet_id into x, y and z coordinates
+	uint mi_x = (meshlet_id >> (0*SHIFT)) & (GRID_SIZE - 1);
+	uint mi_y = (meshlet_id >> (1*SHIFT)) & (GRID_SIZE - 1);
+	uint mi_z = (meshlet_id >> (2*SHIFT));
+
+	// Corner positions of the cube
+	vec3 corner_pos0 = vec3(mi_x, mi_y, mi_z) * STEP_SIZE;
+	vec3 corner_pos1 = corner_pos0 + STEP_SIZE;
+
+	// First 8 lanes evaluate the field for each corner, the other 24 evaluate at offsetted positions in x, y and z so we can compute a normal at each corner from the field gradient
+	vec3 pos = vec3((thread_id & 1) != 0? corner_pos1.x : corner_pos0.x, (thread_id & 2) != 0? corner_pos1.y : corner_pos0.y, (thread_id & 4) != 0? corner_pos1.z : corner_pos0.z);
+
+	const float epsilon = (1.0f / 16.0f) * STEP_SIZE;
+	uint off = thread_id / 8;
+	pos.x += (off == 1)? epsilon : 0.0f;
+	pos.y += (off == 2)? epsilon : 0.0f;
+	pos.z += (off == 3)? epsilon : 0.0f;
+
+	// Evaluate the field function for all 32 lanes
+	float value = field(pos);
+
+	// Grab data from other lanes so we can compute the normal by computing the difference in value in x, y and z directions.
+	vec3 normal;
+	normal.x = subgroupShuffleDown(value, 8);
+	normal.y = subgroupShuffleDown(value, 16);
+	normal.z = subgroupShuffleDown(value, 24);
+
+	// Save intermediates to LDS. Corner positions can be computed directly from indices, so no need to put in LDS.
+	if (thread_id < 8)
+	{
+		Corner corner;
+		corner.normal = normalize(value - normal);
+		corner.value = value;
+		corners[thread_id] = corner;
+	}
+
+	// Look up the Marching Cubes index from the signs of corner nodes. Only the lowest 8 lanes are relevant here, hence the 0xFF mask.
+	uvec4 ballot = subgroupBallot(value >= 0.0f);
+	uint index = (ballot.x & 0xFF);
+
+	const uint triangle_count = uint(MarchingCubesLookup[index].TriangleCount);
+	if (thread_id == 0)
+	{
+		gl_PrimitiveCountNV = triangle_count;
+	}
+
+	// Output up to 12 vertices, one lane per vertex
+	if (thread_id < uint(MarchingCubesLookup[index].VertexCount))
+	{
+		// Look up the corner indices for this edge
+		uint edge = uint(MarchingCubesLookup[index].Vertices[thread_id]);
+		uint i0 = edge & 0x7;
+		uint i1 = edge >> 3;
+
+		// Corner positions
+		vec3 pos0 = vec3((i0 & 1) != 0? corner_pos1.x : corner_pos0.x, (i0 & 2) != 0? corner_pos1.y : corner_pos0.y, (i0 & 4) != 0? corner_pos1.z : corner_pos0.z);
+		vec3 pos1 = vec3((i1 & 1) != 0? corner_pos1.x : corner_pos0.x, (i1 & 2) != 0? corner_pos1.y : corner_pos0.y, (i1 & 4) != 0? corner_pos1.z : corner_pos0.z);
+
+		// Interpolate position and normal
+		float mix_f = corners[i0].value / (corners[i0].value - corners[i1].value);
+		vec3 pos    = mix(pos0, pos1, mix_f);
+		vec3 normal = mix(corners[i0].normal, corners[i1].normal, mix_f);
+
+		// Output final vertex
+		gl_MeshVerticesNV[thread_id].gl_Position = Constants.ViewProj * vec4(pos, 1.0f);
+		Out[thread_id].Pos    = pos;
+		Out[thread_id].Normal = normal;
+	}
+
+	// Output up to 15 indices. Using packed 8bit indices, so at most only 4 lanes get used here.
+	const uint index_count = triangle_count * 3;
+	if (thread_id * 4 < index_count)
+	{
+		writePackedPrimitiveIndices4x8NV(thread_id * 4, MarchingCubesLookup[index].Indices[thread_id]);
+	}
+}
+
+[Compute: InitCounters]
+
+layout(local_size_x = 1) in;
+void main()
+{
+	Counters[0].MeshletCount = 0;
+	Counters[0].One0         = 1;
+	Counters[0].One1         = 1;
+
+	Counters[0].IndexCount    = 0;
+	Counters[0].InstanceCount = 1;
+	Counters[0].FirstIndex    = 0;
+	Counters[0].VertexOffset  = 0;
+	Counters[0].FirstInstance = 0;
+
+	Counters[0].VertexCount  = 0;
+}
+
+[Compute: TaskShaderCompute, TaskShaderComputePrepass]
+
+#extension GL_KHR_shader_subgroup_ballot : require
+#extension GL_KHR_shader_subgroup_vote : require
+#extension GL_KHR_shader_subgroup_arithmetic : require
+
+shared uint values[5][5][5]; // 125 intermediate values for the 5x5x5 corners of 4x4x4 cubes
+shared uint fetch_values[3][3][3]; // 3x3x3 samples, fetching 6x6x6 values of which we use 5x5x5
+shared bool early_out;
+
+layout(local_size_x = COMPUTE_WG_SIZE) in;
+void main()
+{
+	uint thread_id = gl_LocalInvocationID.x;
+	uint workgroup_id = gl_WorkGroupID.x;
+
+#if defined(TaskShaderCompute)
+	// Convert linear meshlet_id into x, y and z coordinates. We process a 4x4x4 volume of cubes per task shader invocation. For that we need to evaluate 5x5x5 field function values.
+	uint mi_x = 4 * ((workgroup_id >> (0*(SHIFT-2))) & (GRID_SIZE/4 - 1));
+	uint mi_y = 4 * ((workgroup_id >> (1*(SHIFT-2))) & (GRID_SIZE/4 - 1));
+	uint mi_z = 4 * ((workgroup_id >> (2*(SHIFT-2))));
+#elif defined(TaskShaderComputePrepass)
+	uint mi_x = 2 * ((workgroup_id >> (0*(SHIFT-2))) & (GRID_SIZE/4 - 1));
+	uint mi_y = 2 * ((workgroup_id >> (1*(SHIFT-2))) & (GRID_SIZE/4 - 1));
+	uint mi_z = 2 * ((workgroup_id >> (2*(SHIFT-2))));
+
+	{
+		uint i = thread_id;
+
+		uint t = (342 * i) >> 10; // Fast i / 3, works for values < 512. (342/1024 = 0.333984375 ~ 1/3)
+		uint x = i - 3 * t;       // Fast i % 3
+		uint z = min((342 * t) >> 10, 2); // Clamped to 2, for early-out to work properly. 27 lanes used, so remaining lanes just repeat other lanes
+		uint y = t - 3 * z;
+
+		uint v = imageLoad(Field, ivec3(mi_x + x, mi_y + y, mi_z + z)).r;
+
+		// If the bits are either all zeros or all ones we can early-out
+		uvec4 ballot0 = subgroupBallot(v != 0);
+		uvec4 ballot1 = subgroupBallot(v != 0xFF);
+
+		// Since our workgroup can be larger than the subgroup size, we need to early-out on all subgroups, so we write a bool to LDS for all threads to read.
+		bool result = (ballot0.x == 0 || ballot1.x == 0);
+		if (thread_id == 0)
+			early_out = result;
+
+		barrier();
+
+		if (early_out)
+		{
+			return;
+		}
+
+		if (thread_id < 27)
+			fetch_values[z][y][x] = v;
+	}
+
+	mi_x *= 2;
+	mi_y *= 2;
+	mi_z *= 2;
+
+	barrier();
+#endif
+
+	// 125 values are needed, so this loops 4 times, 3 lanes get wasted on last iteration
+	for (uint i = thread_id; i < 5 * 5 * 5; i += COMPUTE_WG_SIZE)
+	{
+		uint t = (205 * i) >> 10; // Fast i / 5, works for values < 1024. (205/1024 = 0.2001953125 ~ 1/5)
+		uint x = i - 5 * t;       // Fast i % 5
+		uint z = (205 * t) >> 10;
+		uint y = t - 5 * z;
+
+#if defined(TaskShaderCompute)
+		vec3 pos = vec3(mi_x + x, mi_y + y, mi_z + z) * STEP_SIZE;
+		values[z][y][x] = (field(pos) >= 0.0f)? 1 : 0;
+#elif defined(TaskShaderComputePrepass)
+		uint v = fetch_values[z / 2][y / 2][x / 2];
+		values[z][y][x] = (v >> ((x & 1) + 2 * (y & 1) + 4 * (z & 1))) & 1;
+#endif
+	}
+
+	barrier();
+
+	// Two loops, all lanes used
+	for (uint i = thread_id; i < 64; i += COMPUTE_WG_SIZE)
+	{
+		uint x = i & 0x3;
+		uint y = (i >> 2) & 0x3;
+		uint z = i >> 4;
+
+		// Collect the sign bits for the cube corners. If all are zeros or all ones we're either fully inside or outside
+		// the surface, so no triangles will be generated. In all other cases, the isosurface cuts through the cube somewhere.
+		uint cube_index;
+		cube_index  = (values[z + 0][y + 0][x + 0] << 0);
+		cube_index |= (values[z + 0][y + 0][x + 1] << 1);
+		cube_index |= (values[z + 0][y + 1][x + 0] << 2);
+		cube_index |= (values[z + 0][y + 1][x + 1] << 3);
+		cube_index |= (values[z + 1][y + 0][x + 0] << 4);
+		cube_index |= (values[z + 1][y + 0][x + 1] << 5);
+		cube_index |= (values[z + 1][y + 1][x + 0] << 6);
+		cube_index |= (values[z + 1][y + 1][x + 1] << 7);
+
+		// See if our cube intersects the isosurface
+		bool accept = (cube_index != 0 && cube_index != 0xFF);
+
+		if (accept)
+		{
+			// Output a linear meshlet ID for the mesh shader
+			uint meshlet_id = ((((mi_z + z) << SHIFT) + mi_y + y) << SHIFT) + mi_x + x;
+
+			const uint index_count  = uint(MarchingCubesLookup[cube_index].TriangleCount) * 3;
+			const uint vertex_count = uint(MarchingCubesLookup[cube_index].VertexCount);
+
+			uint index     = atomicAdd(Counters[0].MeshletCount, 1);
+			uint vertex_id = atomicAdd(Counters[0].VertexCount, vertex_count);
+			uint index_id  = atomicAdd(Counters[0].IndexCount,  index_count);
+
+			Meshlets[index].MeshletID = meshlet_id;
+			Meshlets[index].Vertex = vertex_id;
+			Meshlets[index].Index  = index_id;
+		}
+	}
+
+}
+
+[Compute: AdjustMeshletCount]
+
+layout(local_size_x = 1) in;
+void main()
+{
+	// Round up number of meshlets to be evenly divisible by WG_CHUNKS. Pad up with meshlets outside of cube, which will generate no geometry.
+	uint meshlet_count = Counters[0].MeshletCount;
+	while ((meshlet_count & (WG_CHUNKS - 1)) != 0)
+	{
+		Meshlets[meshlet_count++].MeshletID = 0xFFFFFFFF;
+	}
+
+	Counters[0].MeshletCount = meshlet_count / WG_CHUNKS;
+}
+
+[Compute: MeshShaderCompute]
+
+#extension GL_KHR_shader_subgroup_ballot : require
+#extension GL_KHR_shader_subgroup_shuffle_relative : require
+
+// 8 intermediate corner values and normals in LDS
+struct Corner
+{
+	vec3 normal;
+	float value;
+};
+shared Corner corners[WG_CHUNKS][8];
+
+layout(local_size_x = COMPUTE_WG_SIZE) in;
+void main()
+{
+	uint thread_id = gl_LocalInvocationID.x & 31;
+	uint chunk_id  = gl_LocalInvocationID.x / 32;
+	uint meshlet = gl_WorkGroupID.x * WG_CHUNKS + chunk_id;
+
+	uint meshlet_id = Meshlets[meshlet].MeshletID;
+	uint vertex_id  = Meshlets[meshlet].Vertex;
+	uint index_id   = Meshlets[meshlet].Index;
+
+	// Convert linear meshlet_id into x, y and z coordinates
+	uint mi_x = (meshlet_id >> (0*SHIFT)) & (GRID_SIZE - 1);
+	uint mi_y = (meshlet_id >> (1*SHIFT)) & (GRID_SIZE - 1);
+	uint mi_z = (meshlet_id >> (2*SHIFT));
+
+	// Corner positions of the cube
+	vec3 corner_pos0 = vec3(mi_x, mi_y, mi_z) * STEP_SIZE;
+	vec3 corner_pos1 = corner_pos0 + STEP_SIZE;
+
+	// First 8 lanes evaluate the field for each corner, the other 24 evaluate at offsetted positions in x, y and z so we can compute a normal at each corner from the field gradient
+	vec3 pos = vec3((thread_id & 1) != 0? corner_pos1.x : corner_pos0.x, (thread_id & 2) != 0? corner_pos1.y : corner_pos0.y, (thread_id & 4) != 0? corner_pos1.z : corner_pos0.z);
+
+	const float epsilon = (1.0f / 16.0f) * STEP_SIZE;
+	uint off = thread_id / 8;
+	pos.x += (off == 1)? epsilon : 0.0f;
+	pos.y += (off == 2)? epsilon : 0.0f;
+	pos.z += (off == 3)? epsilon : 0.0f;
+
+	// Evaluate the field function for all 32 lanes
+	float value = field(pos);
+
+	// Grab data from other lanes so we can compute the normal by computing the difference in value in x, y and z directions.
+	vec3 normal;
+	normal.x = subgroupShuffleDown(value, 8);
+	normal.y = subgroupShuffleDown(value, 16);
+	normal.z = subgroupShuffleDown(value, 24);
+
+	// Save intermediates to LDS. Corner positions can be computed directly from indices, so no need to put in LDS.
+	if (thread_id < 8)
+	{
+		Corner corner;
+		corner.normal = normalize(value - normal);
+		corner.value = value;
+		corners[chunk_id][thread_id] = corner;
+	}
+
+	// Look up the Marching Cubes index from the signs of corner nodes. Only the lowest 8 lanes are relevant here, hence the 0xFF mask.
+	uvec4 ballot = subgroupBallot(value >= 0.0f);
+	uint cube_index = (ballot[chunk_id & (gl_SubgroupSize / 32 - 1)] & 0xFF);
+
+	// Output up to 12 vertices, one lane per vertex
+	if (thread_id < uint(MarchingCubesLookup[cube_index].VertexCount))
+	{
+		// Look up the corner indices for this edge
+		uint edge = uint(MarchingCubesLookup[cube_index].Vertices[thread_id]);
+		uint i0 = edge & 0x7;
+		uint i1 = edge >> 3;
+
+		// Corner positions
+		vec3 pos0 = vec3((i0 & 1) != 0? corner_pos1.x : corner_pos0.x, (i0 & 2) != 0? corner_pos1.y : corner_pos0.y, (i0 & 4) != 0? corner_pos1.z : corner_pos0.z);
+		vec3 pos1 = vec3((i1 & 1) != 0? corner_pos1.x : corner_pos0.x, (i1 & 2) != 0? corner_pos1.y : corner_pos0.y, (i1 & 4) != 0? corner_pos1.z : corner_pos0.z);
+
+		// Interpolate position and normal
+		float mix_f = corners[chunk_id][i0].value / (corners[chunk_id][i0].value - corners[chunk_id][i1].value);
+		vec3 pos    = mix(pos0, pos1, mix_f);
+		vec3 normal = mix(corners[chunk_id][i0].normal, corners[chunk_id][i1].normal, mix_f);
+
+		// Output final vertex
+		SVertex Out;
+		Out.Pos    = PackedVec3(pos.x, pos.y, pos.z);
+		Out.Normal = PackedVec3(normal.x, normal.y, normal.z);
+		Vertices[vertex_id + thread_id] = Out;
+	}
+
+	// Output up to 15 indices. Using packed 8bit indices.
+	const uint index_count = uint(MarchingCubesLookup[cube_index].TriangleCount) * 3;
+	if (thread_id < index_count)
+	{
+		uint index = MarchingCubesLookup[cube_index].Indices[thread_id / 4];
+		index >>= (8 * (thread_id & 3));
+		index &= 0xFF;
+
+		Indices[index_id + thread_id] = vertex_id + index;
+	}
+}
+
+[Compute: EvaluateField]
+
+layout(local_size_x = 4, local_size_y = 4, local_size_z = 4) in;
+void main()
+{
+	uvec3 i_pos = gl_GlobalInvocationID;
+
+#if 1
+	// Use a wide version computing all 8 values in parallel to be more compiler friendly.
+	uint value = field8(vec3(2 * i_pos) * STEP_SIZE);
+#else
+	uint value;
+	value  = (field(vec3(2 * i_pos + ivec3(0, 0, 0)) * STEP_SIZE) >= 0)? 0x01 : 0;
+	value |= (field(vec3(2 * i_pos + ivec3(1, 0, 0)) * STEP_SIZE) >= 0)? 0x02 : 0;
+	value |= (field(vec3(2 * i_pos + ivec3(0, 1, 0)) * STEP_SIZE) >= 0)? 0x04 : 0;
+	value |= (field(vec3(2 * i_pos + ivec3(1, 1, 0)) * STEP_SIZE) >= 0)? 0x08 : 0;
+	value |= (field(vec3(2 * i_pos + ivec3(0, 0, 1)) * STEP_SIZE) >= 0)? 0x10 : 0;
+	value |= (field(vec3(2 * i_pos + ivec3(1, 0, 1)) * STEP_SIZE) >= 0)? 0x20 : 0;
+	value |= (field(vec3(2 * i_pos + ivec3(0, 1, 1)) * STEP_SIZE) >= 0)? 0x40 : 0;
+	value |= (field(vec3(2 * i_pos + ivec3(1, 1, 1)) * STEP_SIZE) >= 0)? 0x80 : 0;
+#endif
+
+	imageStore(Field, ivec3(i_pos), uvec4(value));
+}
+
+[Vertex: VertexShader]
+
+layout(location = 0) in vec3 Pos;
+layout(location = 1) in vec3 Normal;
+layout(location = 0) out PS_IN Out;
+
+void main()
+{
+	gl_Position = Constants.ViewProj * vec4(Pos, 1.0f);
+
+	Out.Pos    = Pos;
+	Out.Normal = Normal;
+}
+
+
+[Pixel: PixelShader]
+
+layout(location = 0) in PS_IN In;
+layout(location = 0) out vec3 Out;
+
+void main()
+{
+	vec3 view_vec = normalize(In.Pos - Constants.CamPos);
+	vec3 normal = normalize(In.Normal);
+
+	// Compute reflection and refraction vectors
+	const float ETA = 1.12f;
+	float c = dot(view_vec, normal);
+	float d = ETA * c;
+	float k = clamp(d * d + (1.0f - ETA * ETA), 0.0f, 1.0f);
+	vec3 refl_vec = view_vec - 2.0f * c * normal;
+	vec3 refr_vec = ETA * view_vec - (d + sqrt(k)) * normal;
+
+	// Sample and blend
+	vec3 refl = texture(samplerCube(Skybox, Filter), refl_vec).rgb;
+	vec3 refr = texture(samplerCube(Skybox, Filter), refr_vec).rgb;
+	vec3 sky = mix(refl, refr, k);
+
+	// Add a cheap and fake bubble color effect
+	vec3 bubble_tint = 0.25f * pow(1.0f - k, 5.0f) * abs(normal);
+
+	Out = sky + bubble_tint;
+}

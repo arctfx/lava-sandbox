@@ -1,0 +1,102 @@
+﻿  compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\debugLineVS.hlsl.h
+  compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\debugLinePS.hlsl.h
+  compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\imguiPS.hlsl.h
+  compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\imguiVS.hlsl.h
+  compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\meshPS.hlsl.h
+  compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\meshAsyncComputeBenchPS.hlsl.h
+  compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\meshShadowPS.hlsl.h
+D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\meshVS.hlsl(24,2-74): warning X3206: implicit truncation of vector type
+  
+  compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\meshVS.hlsl.h
+  compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\pointVS.hlsl.h
+  compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\pointGS.hlsl.h
+D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\pointPS.hlsl(39,3-82): warning X4121: gradient-based operations must be moved out of flow control to prevent divergence. Performance may improve by using a non-gradient operation
+  
+  compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\pointPS.hlsl.h
+  compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\pointShadowPS.hlsl.h
+  compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\diffuseVS.hlsl.h
+  compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\diffuseGS.hlsl.h
+  compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\diffusePS.hlsl.h
+  compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\ellipsoidDepthVS.hlsl.h
+  compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\ellipsoidDepthGS.hlsl.h
+  compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\ellipsoidDepthPS.hlsl.h
+  compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\passThroughVS.hlsl.h
+  compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\blurDepthPS.hlsl.h
+D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\compositePS.hlsl(47,3-78): warning X4121: gradient-based operations must be moved out of flow control to prevent divergence. Performance may improve by using a non-gradient operation
+  
+  compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\compositePS.hlsl.h
+  compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\pointThicknessVS.hlsl.h
+  compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\pointThicknessGS.hlsl.h
+  compilation header save succeeded; see D:\Documents2\Vulkan\FleX-master\demo\d3d\shaders\pointThicknessPS.hlsl.h
+  imgui.cpp
+  main.cpp
+  shadersDemoContext.cpp
+  aabbtree.cpp
+  core.cpp
+  extrude.cpp
+  maths.cpp
+  mesh.cpp
+  perlin.cpp
+  pfm.cpp
+  platform.cpp
+  png.cpp
+  sdf.cpp
+  tga.cpp
+  voxelize.cpp
+  imguiRenderGL.cpp
+  shader.cpp
+  shadersGL.cpp
+  appD3D11Ctx.cpp
+  debugLineRenderD3D11.cpp
+  Generating Code...
+  Compiling...
+  demoContextD3D11.cpp
+  diffuseRenderD3D11.cpp
+  fluidRenderD3D11.cpp
+  imguiGraphD3D11.cpp
+  imguiInteropD3D11.cpp
+  meshRenderD3D11.cpp
+  pointRenderD3D11.cpp
+  renderTargetD3D11.cpp
+  shadowMapD3D11.cpp
+  appD3D12Ctx.cpp
+  bufferD3D12.cpp
+  demoContextD3D12.cpp
+  diffusePointRenderPipelineD3D12.cpp
+  fluidCompositeRenderPipelineD3D12.cpp
+  fluidEllipsoidRenderPipelineD3D12.cpp
+  fluidSmoothRenderPipelineD3D12.cpp
+  fluidThicknessRenderPipelineD3D12.cpp
+  imguiGraphD3D12.cpp
+  imguiInteropD3D12.cpp
+  lineRenderPipelineD3D12.cpp
+  Generating Code...
+  Compiling...
+  meshRenderer.cpp
+  meshRendererD3D12.cpp
+  meshRenderPipelineD3D12.cpp
+  meshUtil.cpp
+  NvCoDx12CircularResourceHeap.cpp
+  NvCoDx12CounterFence.cpp
+  NvCoDx12DescriptorHeap.cpp
+  NvCoDx12HelperUtil.cpp
+  NvCoDx12RenderTarget.cpp
+  NvCoDx12Resource.cpp
+  NvCoDx12ResourceScopeManager.cpp
+  NvCoDxDebugUtil.cpp
+  NvCoDxFormatUtil.cpp
+  NvCoFreeList.cpp
+  pipelineUtilD3D12.cpp
+  pointRenderPipelineD3D12.cpp
+  renderStateD3D12.cpp
+  appGraphCtxLoader.cpp
+  imguiGraph.cpp
+  imguiGraphLoader.cpp
+  Generating Code...
+  Compiling...
+  loader.cpp
+  renderParamsD3D.cpp
+  Generating Code...
+     Creating library ./../../../bin/win64\NvFlexDemoDebugCUDA_x64.lib and object ./../../../bin/win64\NvFlexDemoDebugCUDA_x64.exp
+  flexDemoCUDA.vcxproj -> D:\Documents2\Vulkan\FleX-master\demo\compiler\vc14win64\./../../../bin/win64\NvFlexDemoDebugCUDA_x64.exe
+  flexDemoCUDA.vcxproj -> ./../../../bin/win64\/NvFlexDemoDebugCUDA_x64.exe.pdb (Full PDB)

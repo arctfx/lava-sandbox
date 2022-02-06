@@ -1,0 +1,26 @@
+3D object TO-DO:
+Stanford Dragon
+Pretty Parrot
+Rubber Duck
+Icecube
+Glass
+Cup
+Bonsai
+Bunny
+
+Shaders TO-DO:
+subsurface scattering (SSS)
+Refraction and reflection
+Smooth clothing (bezier)
+Smooth fluids (fluid shader
+
+Futures TO-DO:
+import models
+skybox
+built-in asset library
+texturing (materials)
+
+advanced TO-DO:
+new GUI
+Boost.Python console
+shader console + hot loading

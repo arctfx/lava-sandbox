@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="App.cpp" />
+    <ClCompile Include="..\Framework4\Demo\DemoApp.cpp">
+      <Filter>Framework4\Demo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Framework4\Demo\DemoApp_Windows.cpp">
+      <Filter>Framework4\Demo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Framework4\Graphics\Primitives.cpp">
+      <Filter>Framework4\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Framework4\Graphics\Renderer.cpp">
+      <Filter>Framework4\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Framework4\GUI\Button.cpp">
+      <Filter>Framework4\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Framework4\GUI\CheckBox.cpp">
+      <Filter>Framework4\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Framework4\GUI\Dialog.cpp">
+      <Filter>Framework4\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Framework4\GUI\DropDownList.cpp">
+      <Filter>Framework4\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Framework4\GUI\Label.cpp">
+      <Filter>Framework4\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Framework4\GUI\Slider.cpp">
+      <Filter>Framework4\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Framework4\GUI\Widget.cpp">
+      <Filter>Framework4\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Framework4\Math\Vector.cpp">
+      <Filter>Framework4\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Framework4\Util\Font.cpp">
+      <Filter>Framework4\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Framework4\Util\ImageTools.cpp">
+      <Filter>Framework4\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Framework4\Util\Image.cpp">
+      <Filter>Framework4\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Framework4\Util\Timer.cpp">
+      <Filter>Framework4\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Framework4\Config.cpp">
+      <Filter>Framework4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Framework4\Platform.cpp">
+      <Filter>Framework4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Framework4\SIMD.cpp">
+      <Filter>Framework4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Framework4\Graphics\Vulkan\Renderer_Vulkan.cpp">
+      <Filter>Framework4\Graphics\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Framework4\Math\Half.cpp">
+      <Filter>Framework4\Math</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="App.h" />
+    <ClInclude Include="..\Framework4\Demo\DemoApp.h">
+      <Filter>Framework4\Demo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Framework4\Graphics\Primitives.h">
+      <Filter>Framework4\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Framework4\Graphics\Renderer.h">
+      <Filter>Framework4\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Framework4\GUI\Button.h">
+      <Filter>Framework4\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Framework4\GUI\CheckBox.h">
+      <Filter>Framework4\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Framework4\GUI\Dialog.h">
+      <Filter>Framework4\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Framework4\GUI\DropDownList.h">
+      <Filter>Framework4\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Framework4\GUI\Label.h">
+      <Filter>Framework4\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Framework4\GUI\Slider.h">
+      <Filter>Framework4\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Framework4\GUI\Widget.h">
+      <Filter>Framework4\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Framework4\Math\Vector.h">
+      <Filter>Framework4\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Framework4\Util\Font.h">
+      <Filter>Framework4\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Framework4\Util\Image.h">
+      <Filter>Framework4\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Framework4\Util\ImageTools.h">
+      <Filter>Framework4\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Framework4\Util\Timer.h">
+      <Filter>Framework4\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Framework4\Config.h">
+      <Filter>Framework4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Framework4\Platform.h">
+      <Filter>Framework4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Framework4\SIMD.h">
+      <Filter>Framework4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Framework4\Math\Half.h">
+      <Filter>Framework4\Math</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\Framework4\Util\Font.pipeline">
+      <Filter>Framework4\Util</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Framework4\Graphics\Primitives.pipeline">
+      <Filter>Framework4\Graphics</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Sky.pipeline" />
+    <CustomBuild Include="MarchingCubes.pipeline" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Framework4">
+      <UniqueIdentifier>{56d569c5-ed85-46f3-81e8-0561b966a16d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework4\Demo">
+      <UniqueIdentifier>{c792206d-0711-4ce3-b603-e313f524691b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework4\Graphics">
+      <UniqueIdentifier>{79488954-617f-49dd-aa99-863bf0a409a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework4\GUI">
+      <UniqueIdentifier>{bf087ab5-2380-43bf-9df3-dce063dddddf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework4\Math">
+      <UniqueIdentifier>{79f106bc-4763-45a7-a6f9-77600acdf80b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework4\Util">
+      <UniqueIdentifier>{1d772c8e-6798-44cd-83e9-2dcd3db0b482}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework4\Windows">
+      <UniqueIdentifier>{31417480-381b-42b3-a9c7-22e67395e9b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework4\Graphics\Vulkan">
+      <UniqueIdentifier>{4f5f0901-6c21-4463-9977-b51d37aba424}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\Framework4\Windows\Resources.rc">
+      <Filter>Framework4\Windows</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,66 @@
+
+/* * * * * * * * * * * * * Author's note * * * * * * * * * * * *\
+*   _       _   _       _   _       _   _       _     _ _ _ _   *
+*  |_|     |_| |_|     |_| |_|_   _|_| |_|     |_|  _|_|_|_|_|  *
+*  |_|_ _ _|_| |_|     |_| |_|_|_|_|_| |_|     |_| |_|_ _ _     *
+*  |_|_|_|_|_| |_|     |_| |_| |_| |_| |_|     |_|   |_|_|_|_   *
+*  |_|     |_| |_|_ _ _|_| |_|     |_| |_|_ _ _|_|  _ _ _ _|_|  *
+*  |_|     |_|   |_|_|_|   |_|     |_|   |_|_|_|   |_|_|_|_|    *
+*                                                               *
+*                     http://www.humus.name                     *
+*                                                                *
+* This file is a part of the work done by Humus. You are free to   *
+* use the code in any way you like, modified, unmodified or copied   *
+* into your own work. However, I expect you to respect these points:  *
+*  - If you use this file and its contents unmodified, or use a major *
+*    part of this file, please credit the author and leave this note. *
+*  - For use in anything commercial, please request my approval.     *
+*  - Share your work and ideas too as much as you can.             *
+*                                                                *
+\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+[Rootsig]
+
+struct SConstants
+{
+	mat4 InvViewProj;
+};
+
+// Define the root signature. This will be parsed by the PipelineCompiler.
+ROOT_BEGIN
+	CBUFFER		SConstants Constants;
+	RT_BEGIN Resources
+		TEXTURE		textureCube Skybox;
+	RT_END
+	ST_BEGIN Samplers
+		SAMPLER		sampler Filter;
+	ST_END
+ROOT_END
+
+
+[Vertex: VertexShader]
+
+layout(location = 0) out vec3 TexCoord;
+
+void main()
+{
+	// Produce a fullscreen triangle
+	vec4 position;
+	position.x = (gl_VertexIndex == 0)? 3.0f : -1.0f;
+	position.y = (gl_VertexIndex == 2)? 3.0f : -1.0f;
+	position.z = 0.0f;
+	position.w = 1.0f;
+
+	gl_Position = position;
+	TexCoord = vec3(Constants.InvViewProj * position);
+}
+
+[Pixel: PixelShader]
+
+layout(location = 0) in vec3 TexCoord;
+layout(location = 0) out vec4 Out;
+
+void main()
+{
+	Out = texture(samplerCube(Skybox, Filter), TexCoord);
+}
