@@ -90,7 +90,7 @@
       <FloatingPointModel>Fast</FloatingPointModel>
       <AdditionalOptions> /d2Zi+</AdditionalOptions>
       <Optimization>Full</Optimization>
-      <AdditionalIncludeDirectories>$();$(CUDA_PATH)/include;$(CUDA_PATH)/extras/cupti/include;./../../..;./../..;./../../d3d11;./../../d3d12;./../../../external/SDL2-2.0.4/include;./../../../external/glm;./../../../external/D3D12/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$();$(CUDA_PATH)/include;$(CUDA_PATH)/extras/cupti/include;./../../..;./../..;./../../d3d11;./../../d3d12;./../../../external/SDL2-2.0.4/include;./../../../external/glm;./../../../external/D3D12/include;./../../../external/soil/include/SOIL/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CONSOLE;WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <WarningLevel>Level3</WarningLevel>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -100,7 +100,7 @@
     </ClCompile>
     <Link>
       <AdditionalOptions>/DELAYLOAD:d3d11.dll /DELAYLOAD:d3d12.dll /DELAYLOAD:dxgi.dll</AdditionalOptions>
-      <AdditionalDependencies>cudart.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;d3dcompiler.lib;delayimp.lib;./../../../external/SDL2-2.0.4/lib/x64/SDL2.lib;./../../../external/SDL2-2.0.4/lib/x64/SDL2main.lib;./../../../external/NvToolsExt/lib/x64/nvToolsExt64_1.lib;./../../../external/D3D12/libs/x64/d3d12.lib;./../../../lib/win64/NvFlexReleaseCUDA_x64.lib;./../../../lib/win64/NvFlexExtReleaseCUDA_x64.lib;./../../../lib/win64/NvFlexDeviceRelease_x64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>cudart.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;d3dcompiler.lib;delayimp.lib;./../../../external/SDL2-2.0.4/lib/x64/SDL2.lib;./../../../external/SDL2-2.0.4/lib/x64/SDL2main.lib;./../../../external/NvToolsExt/lib/x64/nvToolsExt64_1.lib;./../../../external/D3D12/libs/x64/d3d12.lib;./../../../lib/win64/NvFlexReleaseCUDA_x64.lib;./../../../lib/win64/NvFlexExtReleaseCUDA_x64.lib;./../../../lib/win64/NvFlexDeviceRelease_x64.lib;./../../../external/soil/lib/SOIL.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)NvFlexDemoReleaseCUDA_x64.exe</OutputFile>
       <AdditionalLibraryDirectories>$(CUDA_PATH)/lib/x64;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ProgramDatabaseFile>$(OutDir)/NvFlexDemoReleaseCUDA_x64.exe.pdb</ProgramDatabaseFile>
@@ -119,12 +119,14 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
     <LocalDebuggerWorkingDirectory>$(OutputPath)</LocalDebuggerWorkingDirectory>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemGroup>
     <ClInclude Include="..\..\custom\customScene.h" />
     <ClInclude Include="..\..\custom\dragon.h" />
     <ClInclude Include="..\..\custom\lavalamp.h" />
     <ClInclude Include="..\..\opengl\fluidShader.h" />
+    <ClInclude Include="..\..\opengl\render.h" />
     <ClInclude Include="..\..\opengl\shadersGL.h" />
     <ClInclude Include="..\..\opengl\Shaders\base_shader.h" />
     <ClInclude Include="..\..\opengl\Shaders\pointdepth_shader.h" />
@@ -246,6 +248,7 @@
     <ClCompile Include="..\..\main.cpp">
     </ClCompile>
     <ClCompile Include="..\..\opengl\demoContextOGL.cpp" />
+    <ClCompile Include="..\..\opengl\shadersGL.cpp" />
     <ClCompile Include="..\..\shadersDemoContext.cpp">
     </ClCompile>
     <ClCompile Include="Material.cpp" />

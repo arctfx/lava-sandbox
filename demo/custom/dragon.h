@@ -25,18 +25,19 @@ public:
 		float size = 5.0f;
 
 		//for (int i = 0; i < 1; ++i) for (int j = 0; j < 3; ++j)
-		CreateParticleShape(mesh, Vec3(-2.0f + size, 3.0f + size, size), size, 0.0f, spacing, Vec3(0.0f, 0.0f, 0.0f), 1.0f, true, 1.f, phase, false, 0.0f);
+		CreateParticleShape(mesh, Vec3(size, 0, size), size, 0.0f, spacing, Vec3(0.0f, 0.0f, 0.0f), 1.0f, true, 1.f, phase, false, 0.0f);
 
 		delete mesh;
 
 		// plinth
-		AddBox(2.0f, Vec3(0.0f, 1.0f, 0.0f));
+		//AddBox(2.0f, Vec3(0.0f, 0.0f, 0.0f));
 		
 		g_numSubsteps = 2;
 
-		// draw options		
-		g_drawPoints = true;
-		g_drawMesh = false;
+		// draw options	
+		g_drawEllipsoids = true;
+		g_drawPoints = false;
+		g_drawMesh = true;
 
 		mFrame = 0;
 	}

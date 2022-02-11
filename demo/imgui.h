@@ -19,6 +19,18 @@
 #ifndef IMGUI_H
 #define IMGUI_H
 
+#include <string>
+
+//COLORS:
+//unsigned int g_COLOR_PANEL;
+//unsigned int g_COLOR_POPUP;
+#define G_COLOR_PANEL	(7) | (7 << 8) | (36 << 16) | (200 << 24)	//rgba(91, 98, 117, 200)
+#define G_COLOR_POPUP	(20) | (20 << 8) | (56 << 16) | (255 << 24)	//rgba(91, 98, 117, 200)
+
+//CUSTOM!!!
+static bool g_inputbox = false;
+static std::string g_inputbuffer;
+
 enum imguiMouseButton
 {
 	IMGUI_MBUT_LEFT = 0x01,
@@ -43,6 +55,10 @@ void imguiEndFrame();
 bool imguiBeginScrollArea(const char* name, int x, int y, int w, int h, int* scroll);
 void imguiEndScrollArea();
 
+//CUSTOM!!!
+bool imguiBeginPopUp(const char* name, int x, int y, int w, int h, int* scroll);
+void imguiEndPopUp();
+
 void imguiIndent();
 void imguiUnindent();
 void imguiSeparator();
@@ -55,6 +71,8 @@ bool imguiCollapse(const char* text, const char* subtext, bool checked, bool ena
 void imguiLabel(const char* text);
 void imguiValue(const char* text);
 bool imguiSlider(const char* text, float* val, float vmin, float vmax, float vinc, bool enabled = true);
+//CUSTOM!!!
+bool imguiFloatingButton(const char* text, int x, int y, int w, int h, bool enabled = true); //button with fixed sized and relative to the parent position
 
 void imguiDrawText(int x, int y, int align, const char* text, unsigned int color);
 void imguiDrawLine(float x0, float y0, float x1, float y1, float r, unsigned int color);

@@ -47,6 +47,8 @@
 #include "Shaders/base_shader.h"
 #include "Shaders/pointdepth_shader.h"
 
+#include "render.h"
+
 #ifdef ANDROID
 #include "android/Log.h"
 #include "android/AndroidDefine.h"
@@ -231,24 +233,8 @@ struct RenderTexture
     }
 };
 
-namespace
-{
 
-int g_msaaSamples;
-GLuint g_msaaFbo;
-GLuint g_msaaColorBuf;
-GLuint g_msaaDepthBuf;
 
-int g_screenWidth;
-int g_screenHeight;
-
-SDL_Window* g_window;
-
-static float g_spotMin = 0.5f;
-static float g_spotMax = 1.0f;
-float g_shadowBias = 0.05f;
-
-} // anonymous namespace
 
 extern NvFlexLibrary* g_flexLib;
 extern Colour g_colors[];
@@ -256,9 +242,27 @@ extern Colour g_colors[];
 extern Mesh* g_mesh;
 void DrawShapes();
 
-
+//CUSTOM!!!
+static bool g_save_image = false;
 
 namespace OGL_Renderer {
+
+	/*namespace {
+		int g_msaaSamples;
+		GLuint g_msaaFbo;
+		GLuint g_msaaColorBuf;
+		GLuint g_msaaDepthBuf;
+
+		int g_screenWidth;
+		int g_screenHeight;
+
+		SDL_Window* g_window;
+
+		static float g_spotMin = 0.5f;
+		static float g_spotMax = 1.0f;
+		float g_shadowBias = 0.05f;
+	//} // anonymous namespace*/
+
 
 void InitRender(const RenderInitOptions& options)
 {
@@ -316,6 +320,11 @@ void EndFrame()
 {
 	if (g_msaaFbo)
 	{
+		if (g_save_image == true)
+		{
+			saveScreenshotToFile("render.tga", g_screenHeight, g_screenHeight);
+			g_save_image = false;
+		}
 		// blit the msaa buffer to the window
 		glVerify(glBindFramebuffer(GL_READ_FRAMEBUFFER_EXT, g_msaaFbo));
 		glVerify(glBindFramebuffer(GL_DRAW_FRAMEBUFFER_EXT, 0));
@@ -595,7 +604,7 @@ void DrawPoints(FluidRenderBuffers* buffersIn, int n, int offset, float radius, 
 	if (sprogram == -1)
 	{
 		//sprogram = CompileProgram(vertexPointShader, fragmentLavaFlow);
-		sprogram = CompileProgram(vertexPointShader, fragmentLavaFlow, NULL);
+		sprogram = CompileProgram(vertexPointShader, fragmentPointShader, NULL);
 	}
 
 	if (sprogram)

@@ -12,7 +12,7 @@ Shaders TO-DO:
 subsurface scattering (SSS)
 Refraction and reflection
 Smooth clothing (bezier)
-Smooth fluids (fluid shader
+Smooth fluids (fluid shader)
 
 Futures TO-DO:
 import models

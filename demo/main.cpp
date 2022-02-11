@@ -50,6 +50,7 @@
 #include "imgui.h"
 
 #include "shadersDemoContext.h"
+#include "opengl/render.h"
 
 #if FLEX_DX
 #include "d3d\appGraphCtx.h"
@@ -131,6 +132,10 @@ bool g_d3d12 = false;
 bool g_useAsyncCompute = true;		
 bool g_increaseGfxLoadForAsyncComputeTesting = false;
 int g_graphics = 0;	// 0=ogl, 1=DX11, 2=DX12
+//CUSTOM!!!
+bool g_popup_importmesh = false;
+//extern bool g_save_image;
+//extern void saveScreenshotToFile(std::string filename, int _width, int _height);
 
 FluidRenderer* g_fluidRenderer;
 FluidRenderBuffers* g_fluidRenderBuffers;
@@ -420,7 +425,7 @@ void DestroyBuffers(SimBuffers* buffers)
 	delete buffers;
 }
 
-Vec3 g_camPos(6.0f, 8.0f, 18.0f);
+Vec3 g_camPos(0.0f, 0.0f, 0.0f);
 Vec3 g_camAngle(0.0f, -DegToRad(20.0f), 0.0f);
 Vec3 g_camVel(0.0f);
 Vec3 g_camSmoothVel(0.0f);
@@ -1323,8 +1328,8 @@ void RenderScene()
 	Vec3 sceneExtents = g_sceneUpper - g_sceneLower;
 	Vec3 sceneCenter = 0.5f*(g_sceneUpper + g_sceneLower);
 
-	g_lightDir = Normalize(Vec3(5.0f, 15.0f, 7.5f));
-	g_lightPos = sceneCenter + g_lightDir*Length(sceneExtents)*g_lightDistance;
+	g_lightDir = Normalize(Vec3(2.0f, 15.0f, 3.5f));
+	g_lightPos = sceneCenter + g_lightDir*Length(sceneExtents)*g_lightDistance + Vec3(10.0f, 0.0f, 0.0f);
 	g_lightTarget = sceneCenter;
 
 	// calculate tight bounds for shadow frustum
@@ -1797,7 +1802,8 @@ int DoUI()
 		int uiRight = g_screenWidth - uiBorder - uiWidth; //change
 
 		if (g_tweakPanel)
-			imguiBeginScrollArea("Scene", uiLeft, g_screenHeight - uiBorder - uiOffset, uiWidth, uiOffset, &g_levelScroll);
+			imguiBeginScrollArea("Scene", uiLeft, g_screenHeight - 2*uiBorder- uiOffset - uiHeight, uiWidth, uiOffset, &g_levelScroll);
+			//imguiBeginScrollArea("Scene", uiLeft, g_screenHeight - uiBorder - uiOffset, uiWidth, uiOffset, &g_levelScroll);
 		else
 			imguiBeginScrollArea("Scene", uiLeft, uiBorder, uiWidth, g_screenHeight - uiBorder - uiBorder, &g_levelScroll);
 
@@ -1816,7 +1822,8 @@ int DoUI()
 		{
 			static int scroll = 0;
 
-			imguiBeginScrollArea("Options", uiLeft, g_screenHeight - uiBorder - uiHeight - uiOffset - uiBorder, uiWidth, uiHeight, &scroll);
+			imguiBeginScrollArea("Options", uiLeft, g_screenHeight - uiBorder - uiHeight, uiWidth, uiHeight, &scroll);
+			//imguiBeginScrollArea("Options", uiLeft, g_screenHeight - uiBorder - uiHeight - uiOffset - uiBorder, uiWidth, uiHeight, &scroll);
 			imguiSeparatorLine();
 
 			// global options
@@ -1937,13 +1944,46 @@ int DoUI()
 
 		///CUSTOM PANEL
 		{
+			//object panel
 			static int scroll = 0;
 
-			imguiBeginScrollArea("Objects", uiRight, g_screenHeight - uiBorder - uiHeight - uiOffset - uiBorder, uiWidth, uiHeight, &scroll);
+			imguiBeginScrollArea("Objects", uiRight, g_screenHeight - uiBorder - uiHeight - uiOffset - uiBorder, uiWidth, 100, &scroll);
 			imguiSeparatorLine();
+
+			//imguiCollapse("material", "choose material", true);
+			//imguiCheck("textured", false);
+			//imguiItem("Item 1");
+			//imguiValue("value");
+			if (imguiButton("Import mesh"))
+				g_popup_importmesh = true;
+			if (imguiButton("Save as image"))
+				saveScreenshotToFile("render.tga", g_screenWidth, g_screenHeight);
 
 			imguiEndScrollArea();
 		}
+		{
+			//import mesh panel
+			static int scroll = 0;
+			if (g_popup_importmesh)
+			{
+				imguiBeginPopUp("Import mesh", (g_screenWidth - 300) / 2, (g_screenHeight - 100) / 2, 300, 150, &scroll);
+				imguiSeparatorLine();
+				if (imguiItem("NOTE: input box is not working currently")) //<-- imguiInputField
+				{
+
+
+				}
+				if (imguiFloatingButton("Import", 10, 20, 100, 20))
+				{
+					//. . . 
+					g_popup_importmesh = false;
+				}
+				if (imguiFloatingButton("Cancel", 300 - 130, 20, 100, 20))
+					g_popup_importmesh = false;
+				imguiEndPopUp();
+			}
+		}
+
 		imguiEndFrame();
 
 		// kick render commands
@@ -2330,223 +2370,230 @@ void InputArrowKeysUp(int key, int x, int y)
 
 bool InputKeyboardDown(unsigned char key, int x, int y)
 {
-	if (key > '0' && key <= '9') //start scene 1 to 9
+	if (g_inputbox)
 	{
-		g_scene = key - '0' - 1;
-		Init(g_scene);
-		return false;
-	}
 
-	float kSpeed = g_camSpeed;
-
-	switch (key)
-	{
-	case 'w': //move cam forward
-	{
-		g_camVel.z = kSpeed;
-		break;
 	}
-	case 's': //move cam back
+	else 
 	{
-		g_camVel.z = -kSpeed;
-		break;
-	}
-	case 'a': //move cam left
-	{
-		g_camVel.x = -kSpeed;
-		break;
-	}
-	case 'd': //move cam right
-	{
-		g_camVel.x = kSpeed;
-		break;
-	}
-	case 'q': //move cam up
-	{
-		g_camVel.y = kSpeed;
-		break;
-	}
-	case 'z': //move cam down
-	{
-		//g_drawCloth = !g_drawCloth;
-		g_camVel.y = -kSpeed;
-		break;
-	}
-
-	case 'u':
-	{
-#ifndef ANDROID
-		if (g_fullscreen)
+		if (key > '0' && key <= '9') //start scene 1 to 9
 		{
-			SDL_SetWindowFullscreen(g_window, 0);
-			ReshapeWindow(1280, 720);
-			g_fullscreen = false;
+			g_scene = key - '0' - 1;
+			Init(g_scene);
+			return false;
 		}
-		else
+
+		float kSpeed = g_camSpeed;
+
+		switch (key)
 		{
-			SDL_SetWindowFullscreen(g_window, SDL_WINDOW_FULLSCREEN_DESKTOP);
-			g_fullscreen = true;
+		case 'w': //move cam forward
+		{
+			g_camVel.z = kSpeed;
+			break;
 		}
-#endif
-		break;
-	}
-	case 'r': //reset scene (what's the difference with restarting scene?)
-	{
-		g_resetScene = true;
-		break;
-	}
-	case 'y': //???
-	{
-		g_wavePool = !g_wavePool;
-		break;
-	}
-	case 'c': //capture, NOT WORKING!
-	{
-#if _WIN32
-		if (!g_ffmpeg)
+		case 's': //move cam back
 		{
+			g_camVel.z = -kSpeed;
+			break;
+		}
+		case 'a': //move cam left
+		{
+			g_camVel.x = -kSpeed;
+			break;
+		}
+		case 'd': //move cam right
+		{
+			g_camVel.x = kSpeed;
+			break;
+		}
+		case 'q': //move cam up
+		{
+			g_camVel.y = kSpeed;
+			break;
+		}
+		case 'z': //move cam down
+		{
+			//g_drawCloth = !g_drawCloth;
+			g_camVel.y = -kSpeed;
+			break;
+		}
 
-			// open ffmpeg stream
-
-			int i = 0;
-			char buf[255];
-			FILE* f = NULL;
-
-			do
+		case 'u':
+		{
+	#ifndef ANDROID
+			if (g_fullscreen)
 			{
-				sprintf(buf, "../../movies/output%d.mp4", i);
-				f = fopen(buf, "rb");
-				if (f)
-					fclose(f);
-
-				++i;
-			} while (f);
-
-			const char* str = "ffmpeg -r 60 -f rawvideo -pix_fmt rgba -s 1280x720 -i - "
-				"-threads 0 -preset fast -y -crf 19 -pix_fmt yuv420p -tune animation -vf vflip %s";
-
-			char cmd[1024];
-			sprintf(cmd, str, buf);
-
-			g_ffmpeg = _popen(cmd, "wb");
-			assert(g_ffmpeg);
+				SDL_SetWindowFullscreen(g_window, 0);
+				ReshapeWindow(1280, 720);
+				g_fullscreen = false;
+			}
+			else
+			{
+				SDL_SetWindowFullscreen(g_window, SDL_WINDOW_FULLSCREEN_DESKTOP);
+				g_fullscreen = true;
+			}
+	#endif
+			break;
 		}
-		else
+		case 'r': //reset scene (what's the difference with restarting scene?)
 		{
-			_pclose(g_ffmpeg);
-			g_ffmpeg = NULL;
+			g_resetScene = true;
+			break;
 		}
+		case 'y': //???
+		{
+			g_wavePool = !g_wavePool;
+			break;
+		}
+		case 'c': //capture, NOT WORKING!
+		{
+	#if _WIN32
+			if (!g_ffmpeg)
+			{
 
-		g_capture = !g_capture;
-		g_frame = 0;
-#endif
-		break;
-	}
-	case 'p': //pause
-	{
-		g_pause = !g_pause;
-		break;
-	}
-	case 'o': //???
-	{
-		g_step = true;
-		break;
-	}
-	case 'h': //hide
-	{
-		g_showHelp = !g_showHelp;
-		break;
-	}
-	case 'e': //draw fluid
-	{
-		g_drawEllipsoids = !g_drawEllipsoids;
-		break;
-	}
-	case 't': //draw opaque elipsoids
-	{
-		g_drawOpaque = !g_drawOpaque;
-		break;
-	}
-	case 'v': //draw points
-	{
-		g_drawPoints = !g_drawPoints;
-		break;
-	}
-	case 'f': //draw strings blue/green (2 modes of drawing)
-	{
-		g_drawSprings = (g_drawSprings + 1) % 3;
-		break;
-	}
-	case 'i': //???
-	{
-		g_drawDiffuse = !g_drawDiffuse;
-		break;
-	}
-	case 'm': //draw mesh
-	{
-		g_drawMesh = !g_drawMesh;
-		break;
-	}
-	case 'n': //???
-	{
-		g_drawRopes = !g_drawRopes;
-		break;
-	}
-	case 'j': //soft wind
-	{
-		g_windTime = 0.0f;
-		g_windStrength = 1.5f;
-		g_windFrequency = 0.2f;
-		break;
-	}
-	case '.': //gpu latencies statistic
-	{
-		g_profile = !g_profile;
-		break;
-	}
-	case 'g': //turn on/off gravity
-	{
-		if (g_params.gravity[1] != 0.0f)
-			g_params.gravity[1] = 0.0f;
-		else
-			g_params.gravity[1] = -9.8f;
+				// open ffmpeg stream
 
-		break;
-	}
-	case '-': //remove planes
-	{
-		if (g_params.numPlanes)
-			g_params.numPlanes--;
+				int i = 0;
+				char buf[255];
+				FILE* f = NULL;
 
-		break;
+				do
+				{
+					sprintf(buf, "../../movies/output%d.mp4", i);
+					f = fopen(buf, "rb");
+					if (f)
+						fclose(f);
+
+					++i;
+				} while (f);
+
+				const char* str = "ffmpeg -r 60 -f rawvideo -pix_fmt rgba -s 1280x720 -i - "
+					"-threads 0 -preset fast -y -crf 19 -pix_fmt yuv420p -tune animation -vf vflip %s";
+
+				char cmd[1024];
+				sprintf(cmd, str, buf);
+
+				g_ffmpeg = _popen(cmd, "wb");
+				assert(g_ffmpeg);
+			}
+			else
+			{
+				_pclose(g_ffmpeg);
+				g_ffmpeg = NULL;
+			}
+
+			g_capture = !g_capture;
+			g_frame = 0;
+	#endif
+			break;
+		}
+		case 'p': //pause
+		{
+			g_pause = !g_pause;
+			break;
+		}
+		case 'o': //???
+		{
+			g_step = true;
+			break;
+		}
+		case 'h': //hide
+		{
+			g_showHelp = !g_showHelp;
+			break;
+		}
+		case 'e': //draw fluid
+		{
+			g_drawEllipsoids = !g_drawEllipsoids;
+			break;
+		}
+		case 't': //draw opaque elipsoids
+		{
+			g_drawOpaque = !g_drawOpaque;
+			break;
+		}
+		case 'v': //draw points
+		{
+			g_drawPoints = !g_drawPoints;
+			break;
+		}
+		case 'f': //draw strings blue/green (2 modes of drawing)
+		{
+			g_drawSprings = (g_drawSprings + 1) % 3;
+			break;
+		}
+		case 'i': //???
+		{
+			g_drawDiffuse = !g_drawDiffuse;
+			break;
+		}
+		case 'm': //draw mesh
+		{
+			g_drawMesh = !g_drawMesh;
+			break;
+		}
+		case 'n': //???
+		{
+			g_drawRopes = !g_drawRopes;
+			break;
+		}
+		case 'j': //soft wind
+		{
+			g_windTime = 0.0f;
+			g_windStrength = 1.5f;
+			g_windFrequency = 0.2f;
+			break;
+		}
+		case '.': //gpu latencies statistic
+		{
+			g_profile = !g_profile;
+			break;
+		}
+		case 'g': //turn on/off gravity
+		{
+			if (g_params.gravity[1] != 0.0f)
+				g_params.gravity[1] = 0.0f;
+			else
+				g_params.gravity[1] = -9.8f;
+
+			break;
+		}
+		case '-': //remove planes
+		{
+			if (g_params.numPlanes)
+				g_params.numPlanes--;
+
+			break;
+		}
+		case ' ': //emit particles (if eny)
+		{
+			g_emit = !g_emit;
+			break;
+		}
+		case ';':
+		{
+			g_debug = !g_debug;
+			break;
+		}
+		case 13: //enter -> refresh scene
+		{
+			g_scene = g_selectedScene;
+			Init(g_scene);
+			break;
+		}
+		case 27: //escape button -> quit app
+		{
+			// return quit = true
+			return true;
+		}
+	#if ENABLE_AFTERMATH_SUPPORT
+		case 'l':
+			DumpAftermathData();
+			break;
+	#endif
+		};
 	}
-	case ' ': //emit particles (if eny)
-	{
-		g_emit = !g_emit;
-		break;
-	}
-	case ';':
-	{
-		g_debug = !g_debug;
-		break;
-	}
-	case 13: //enter -> refresh scene
-	{
-		g_scene = g_selectedScene;
-		Init(g_scene);
-		break;
-	}
-	case 27: //escape button -> quit app
-	{
-		// return quit = true
-		return true;
-	}
-#if ENABLE_AFTERMATH_SUPPORT
-	case 'l':
-		DumpAftermathData();
-		break;
-#endif
-	};
 
 	g_scenes[g_scene]->KeyDown(key);
 
@@ -2895,7 +2942,6 @@ int main(int argc, char* argv[])
 	}
 
 	// opening scene
-	g_scenes.push_back(new PotPourri("Pot Pourri"));
 
 	// soft body scenes
 	SoftBody::Instance octopus("../../data/softs/octopus.obj");
@@ -2945,6 +2991,13 @@ int main(int argc, char* argv[])
 	SoftBodyFixed* softRodSceneNew = new SoftBodyFixed("Soft Rod");
 	softRodSceneNew->AddStack(rod, 3);
 
+	SoftBody::Instance armadillo("../../data/armadillo.ply");
+	armadillo.mScale = Vec3(25.0f);
+	armadillo.mClusterSpacing = 3.0f;
+	armadillo.mClusterRadius = 0.0f;
+	SoftBody* softArmadilloSceneNew = new SoftBody("Soft Armadillo");
+	softArmadilloSceneNew->AddInstance(armadillo);
+
 	SoftBody::Instance teapot("../../data/teapot.ply");
 	teapot.mScale = Vec3(25.0f);
 	teapot.mClusterSpacing = 3.0f;
@@ -2953,14 +3006,7 @@ int main(int argc, char* argv[])
 	SoftBody* softTeapotSceneNew = new SoftBody("Soft Teapot");
 	softTeapotSceneNew->AddInstance(teapot);
 
-	SoftBody::Instance armadillo("../../data/armadillo.ply");
-	armadillo.mScale = Vec3(25.0f);
-	armadillo.mClusterSpacing = 3.0f;
-	armadillo.mClusterRadius = 0.0f;
-	SoftBody* softArmadilloSceneNew = new SoftBody("Soft Armadillo");
-	softArmadilloSceneNew->AddInstance(armadillo);
-
-	SoftBody::Instance softbunny("../../data/bunny.ply");
+	SoftBody::Instance softbunny("../../data/spot.obj"); //CUSTOM!!! bunny.ply
 	softbunny.mScale = Vec3(20.0f);
 	softbunny.mClusterSpacing = 3.5f;
 	softbunny.mClusterRadius = 0.0f;
@@ -3034,6 +3080,20 @@ int main(int argc, char* argv[])
 		plasticStackScene->AddInstance(stackBox);
 		plasticStackScene->AddInstance(stackSphere);
 	}
+	
+	
+	//g_scenes.push_back(softArmadilloSceneNew);
+
+	//CUSTOM
+	g_scenes.push_back(new GranularPile("Granular Pile"));
+	g_scenes.push_back(new FrictionRamp("Friction Ramp"));
+	g_scenes.push_back(new Inflatable("Inflatables"));
+	g_scenes.push_back(new Dragon("Stanford Dragon Melting"));
+	//g_scenes.push_back(new Lavalamp("Lava lamp"));
+	g_scenes.push_back(new BunnyBath("Bunny Bath Dam", true));
+	g_scenes.push_back(new FlagCloth("Flag Cloth"));
+	g_scenes.push_back(new ParachutingBunnies("Parachuting Bunnies"));
+	g_scenes.push_back(new Tearing("Tearing"));
 
 	g_scenes.push_back(softOctopusSceneNew);
 	g_scenes.push_back(softTeapotSceneNew);
@@ -3041,19 +3101,17 @@ int main(int argc, char* argv[])
 	g_scenes.push_back(softClothSceneNew);
 	g_scenes.push_back(softBowlSceneNew);
 	g_scenes.push_back(softRodSceneNew);
-	g_scenes.push_back(softArmadilloSceneNew);
+	
 	g_scenes.push_back(softBunnySceneNew);
+
+	g_scenes.push_back(new PotPourri("Pot Pourri"));
 
 	g_scenes.push_back(plasticBunniesSceneNew);
 	g_scenes.push_back(plasticComparisonScene);
 	g_scenes.push_back(plasticStackScene);
 
-	//CUSTOM
-	g_scenes.push_back(new Dragon("Stanford Dragon Melting"));
-	g_scenes.push_back(new Lavalamp("Lava lamp"));
-
 	// collision scenes
-	g_scenes.push_back(new FrictionRamp("Friction Ramp"));
+	//g_scenes.push_back(new FrictionRamp("Friction Ramp"));
 	g_scenes.push_back(new FrictionMovingShape("Friction Moving Box", 0));
 	g_scenes.push_back(new FrictionMovingShape("Friction Moving Sphere", 1));
 	g_scenes.push_back(new FrictionMovingShape("Friction Moving Capsule", 2));
@@ -3068,11 +3126,11 @@ int main(int argc, char* argv[])
 	// cloth scenes
 	g_scenes.push_back(new EnvironmentalCloth("Env Cloth Small", 6, 6, 40, 16));
 	g_scenes.push_back(new EnvironmentalCloth("Env Cloth Large", 16, 32, 10, 3));
-	g_scenes.push_back(new FlagCloth("Flag Cloth"));
-	g_scenes.push_back(new Inflatable("Inflatables"));
+	//g_scenes.push_back(new FlagCloth("Flag Cloth"));
+	//g_scenes.push_back(new Inflatable("Inflatables"));
 	g_scenes.push_back(new ClothLayers("Cloth Layers"));
 	g_scenes.push_back(new SphereCloth("Sphere Cloth"));
-	g_scenes.push_back(new Tearing("Tearing"));
+	//g_scenes.push_back(new Tearing("Tearing"));
 	g_scenes.push_back(new Pasta("Pasta"));
 
 	// game mesh scenes
@@ -3115,16 +3173,16 @@ int main(int argc, char* argv[])
 	g_scenes.push_back(new LowDimensionalShapes("Low Dimensional Shapes"));
 
 	// granular scenes
-	g_scenes.push_back(new GranularPile("Granular Pile"));
+	//g_scenes.push_back(new GranularPile("Granular Pile"));
 
 	// coupling scenes
-	g_scenes.push_back(new ParachutingBunnies("Parachuting Bunnies"));
+	//g_scenes.push_back(new ParachutingBunnies("Parachuting Bunnies"));
 	g_scenes.push_back(new WaterBalloon("Water Balloons"));
 	g_scenes.push_back(new RigidFluidCoupling("Rigid Fluid Coupling"));
 	g_scenes.push_back(new FluidBlock("Fluid Block"));
 	g_scenes.push_back(new FluidClothCoupling("Fluid Cloth Coupling Water", false));
 	g_scenes.push_back(new FluidClothCoupling("Fluid Cloth Coupling Goo", true));
-	g_scenes.push_back(new BunnyBath("Bunny Bath Dam", true));
+	//g_scenes.push_back(new BunnyBath("Bunny Bath Dam", true));
 
 	// init graphics
 	RenderInitOptions options;

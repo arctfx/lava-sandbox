@@ -260,3 +260,4 @@ void DemoContextOGL::getRenderDevice(void** device, void** context)
 {
 	OGL_Renderer::GetRenderDevice(device, context);
 }
+

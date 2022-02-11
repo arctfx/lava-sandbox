@@ -209,6 +209,9 @@
     <ClInclude Include="..\..\opengl\Shaders\pointdepth_shader.h">
       <Filter>opengl\Shaders</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\opengl\render.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\imgui.cpp">
@@ -254,6 +257,9 @@
       <Filter>Classes</Filter>
     </ClCompile>
     <ClCompile Include="Project.cpp" />
+    <ClCompile Include="..\..\opengl\shadersGL.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="include">

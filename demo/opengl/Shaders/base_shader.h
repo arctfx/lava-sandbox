@@ -166,7 +166,7 @@ void main()
 
 	vec3 fog = mix(vec3(fogColor), diffuse + ambient, exp(gl_TexCoord[7].z*fogColor.w));
 
-	gl_FragColor = vec4(pow(fog, vec3(1.0/2.2)), 1.0);				
+	gl_FragColor = vec4(pow(fog, vec3(1.0/2.2)), 1.0);
 }
 );
 
