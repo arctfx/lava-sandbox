@@ -12,6 +12,18 @@
     <Filter Include="opengl\Shaders">
       <UniqueIdentifier>{7d4d7764-7aea-49fb-b18d-f34593c0eb41}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ImGui">
+      <UniqueIdentifier>{124e85a5-5d16-4918-9f70-cf3a1e852dd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImGui\misc">
+      <UniqueIdentifier>{241df184-a7f4-4c03-a04c-c0dfcafa0f66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImGui\misc\cpp">
+      <UniqueIdentifier>{50142e88-2389-4a82-bf04-8f3cd73783fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImGui\backends">
+      <UniqueIdentifier>{5d859b1f-6bc8-4ac9-9477-2ac3f5856ce2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="demo\scenes">
